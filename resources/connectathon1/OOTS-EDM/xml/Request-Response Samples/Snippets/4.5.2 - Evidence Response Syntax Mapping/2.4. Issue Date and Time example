@@ -1,0 +1,7 @@
+<!-- IssueDateTime Slot -->
+<rim:Slot name="IssueDateTime">
+    <rim:SlotValue xsi:type="rim:DateTimeValueType">
+        <!-- MUST be according to xsd:dateTime.  -->
+        <rim:Value>2022-05-19T17:10:10.872Z</rim:Value>
+    </rim:SlotValue>
+</rim:Slot>

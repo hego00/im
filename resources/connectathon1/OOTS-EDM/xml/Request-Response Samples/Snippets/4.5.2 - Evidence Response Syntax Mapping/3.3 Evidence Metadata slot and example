@@ -1,0 +1,57 @@
+<!--   EvidenceMetadata Slot  -->
+ <rim:Slot name="EvidenceMetadata">
+    <rim:SlotValue xsi:type="rim:AnyValueType">
+        <sdg:Evidence>
+            <!--   The value of 'Identifier' of an 'Evidence' MUST be unique UUID (RFC 4122).  -->
+            <sdg:Identifier>37a169f1-9cf6-4aa8-ac24-b083fa569173</sdg:Identifier>
+            <sdg:IsAbout>
+            <!-- Must contain the Minimum Data Set part of the Evidence Subject attributes of the Evidence Request to confirm identity matching. -->
+                <!-- Must contain either a IsAbout <<NaturalPerson>> or <<LegalPerson>> but NOT both. An example for <<LegalPerson>> is  <sdg:LegalPersonIdentifier schemeID="eidas">ES/SE/12132123Y</sdg:LegalPersonIdentifier> <sdg:LegalName>AnyCompanyName</sdg:LegalName> -->
+                <sdg:NaturalPerson>
+                    <!-- The identifier of the user retrieved through the EvidenceRequest from eIDAS -->
+                    <!-- eIDAS Identifier: MUST have the format XX/YY/ZZZZZZZ where XX is the Nationality Code of the identifier and YY is the Nationality Code of the destination country and ZZZZZZZ is an undefined combination of characters which uniquely identifies the identity asserted in the country of origin. The values of XX and YY MUST be part of the code list 'CountryIdentificationCode' (ISO 3166-1' alpha-2 codes). Example: ES/AT/02635542Y.  -->
+                    <!-- The 'schemeID' attribute of the 'Identifier' MUST have the fixed value 'eidas'.  -->
+                    <sdg:Identifier schemeID="eidas">DK/DE/123456</sdg:Identifier>
+                    <!-- Mandatory Minimum Data Set -->
+                    <sdg:FamilyName>Smith</sdg:FamilyName>
+                    <sdg:GivenName>John</sdg:GivenName>
+                    <!-- The value of 'DateOfBirth' MUST use the following format YYYY + “-“ + MM + “-“ + DD (as defined for xsd:date)  -->
+                    <sdg:DateOfBirth>1985-09-09</sdg:DateOfBirth>
+                </sdg:NaturalPerson>
+            </sdg:IsAbout>
+
+            <!-- The issuing authority which might be different from the evidence provider e.g. if the evidence provider acts as national base registry that aggregates local authorities issuing the evidence -->
+            <sdg:IssuingAuthority>
+                <sdg:Identifier schemeID="urn:cef.eu:names:identifier:EAS:9930">DE73524311</sdg:Identifier>
+                <sdg:Name lang="EN">Civil Registration Office Berlin I</sdg:Name>
+            </sdg:IssuingAuthority>
+            <sdg:IsConformantTo>
+                <!-- MUST be a UUID of the request which was retrieved from the Evidence Broker/DSD and include a code of the code list 'CountryIdentificationCode' (ISO 3166-1' alpha-2 codes) using the prefix and scheme ''https://sr.oots.tech.europa.eu/evidencetypeclassifications/[CountryIdentificationCode]/[UUID]'' pointing to the Semantic Repository -->
+                <sdg:EvidenceTypeClassification>https://sr.oots.tech.europa.eu/evidencetypeclassifications/DE/620c08b0-eca2-4dd9-9d1e-45fdb0baac8e</sdg:EvidenceTypeClassification>
+                <!-- The value of 'lang' attribute of Title and Description MUST be part of the code list 'LanguageCode' (ISO 639-1 two-letter code).    -->
+                <sdg:Title lang="EN">Certificate of Birth</sdg:Title>
+                <sdg:Title lang="DE">Geburtsurkunde</sdg:Title>
+                <sdg:Description lang="EN">An official certificate of birth of a person - with first name, surname, sex, date and place of birth, which is obtained from the birth register of the place of birth.</sdg:Description>
+                <sdg:Description lang="DE">Eine amtliche Bescheinigung über die Geburt einer Person – mit Vorname, Familienname, Geschlecht, Datum und Ort der Geburt, welche aus dem Geburtsregister des Geburtsortes erstellt wird.</sdg:Description>
+            </sdg:IsConformantTo>
+
+            <!-- The issuing date, distribution and validity period of the evidence. MUST be according to xsd:date. -->
+            <sdg:IssuingDate>1985-09-11</sdg:IssuingDate>
+            <sdg:Distribution>
+                <!-- The value of 'Format' of the requested distribution MUST be part of the code list 'OOTSMediaTypes' and should match the one requested by the Evidence Requester -->
+                <sdg:Format>application/xml</sdg:Format>
+                <!-- The value of Language attribute MUST be part of the code list 'LanguageCode' (ISO 639-1 two-letter code).    -->
+                <sdg:Language>DE</sdg:Language>
+                <!-- MUST be a persistent URL with a link to a "DataModelScheme" of the Evidence Type retrieved by the DSD and described in the Semantic Repository which uses the prefix "https://sr.oots.tech.europa.eu/distributions/[DataModelScheme]".-->
+                <sdg:ConformsTo>https://sr.oots.tech.europa.eu/distributions/birthcert-1.0.0</sdg:ConformsTo>
+                <!-- MUST be a persistent URL with link to a "DataModelScheme" and "Subset" of the EvidenceType retrieved from the Data Service Directory, described in the Semantic Repository which uses the prefix "https://sr.oots.tech.europa.eu/distributions/[DataModelScheme]/[Subset]"-->
+                <sdg:Transformation>https://sr.oots.tech.europa.eu/distributions/birthcert-1.0.0/age-of-majority</sdg:Transformation>
+            </sdg:Distribution>
+            <sdg:ValidityPeriod>
+                <!-- The StartDate and EndDate MUST be according to xsd:date. -->
+                <sdg:StartDate>2022-05-20</sdg:StartDate>
+                <sdg:EndDate>2023-05-20</sdg:EndDate>
+            </sdg:ValidityPeriod>
+        </sdg:Evidence>
+    </rim:SlotValue>
+</rim:Slot>

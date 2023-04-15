@@ -1,0 +1,26 @@
+<!-- EvidenceRequester Slot  -->
+<rim:Slot name="EvidenceRequester">
+        <rim:SlotValue xsi:type="rim:CollectionValueType">
+            <rim:Element xsi:type="rim:AnyValueType">
+                <sdg:Agent>
+                    <!-- The value of the 'schemeID' attribute of the 'Identifier' MUST be part of the code list 'EAS' (Electronic Address Scheme ) and use the prefix 'urn:cef.eu:names:identifier:EAS:[Code]'  -->
+                    <sdg:Identifier schemeID="urn:cef.eu:names:identifier:EAS:0096">DK22233223</sdg:Identifier>
+                    <!-- The value of 'lang' attribute MUST be part of the code list 'LanguageCode' (ISO 639-1 two-letter code).  -->
+                    <sdg:Name lang="EN">Denmark University Portal</sdg:Name>
+                    <sdg:Address>
+                        <sdg:FullAddress>Prince Street 15, 1050 Copenhagen, Denmark</sdg:FullAddress>
+                        <sdg:LocatorDesignator>15</sdg:LocatorDesignator>
+                        <sdg:PostCode>1050</sdg:PostCode>
+                        <sdg:PostCityName>Copenhagen</sdg:PostCityName>
+                        <sdg:Thoroughfare>Prince Street</sdg:Thoroughfare>
+                        <!-- The value of the 'AdminUnitLevel1' MUST be coded using the code list 'CountryIdentificationCode' (ISO 3166-1' alpha-2 codes).  -->
+                        <sdg:AdminUnitLevel1>DK</sdg:AdminUnitLevel1>
+                        <!-- The value of the 'AdminUnitLevel2' MUST be coded using the code list 'NUTS' (Nomenclature of Territorial Units for Statistics).  -->
+                        <sdg:AdminUnitLevel2>DK011</sdg:AdminUnitLevel2>
+                    </sdg:Address>
+                    <!-- The value MUST be part of the code list 'AgentClassification'. Default value: ER (Evidence Requester). If the code 'IP' (Intermediary Platform) is present there must be another 'sdg:Agent' Element containing the code 'ER'. The codes 'EP' and 'ERRP' shall not be used by this transaction.   -->
+                    <sdg:Classification>ER</sdg:Classification>
+                </sdg:Agent>
+            </rim:Element>
+        </rim:SlotValue>
+</rim:Slot>

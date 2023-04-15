@@ -1,0 +1,31 @@
+<lcm:SubmitObjectsRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:4.0"
+                          xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"
+                          xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:4.0"
+                          xmlns:lcm="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0"
+                          xmlns:sdg="http://data.europa.eu/p4s"
+                          id="urn:uuid:e5af5ba0-39a2-43d7-89c0-04f623c59855">
+
+    <rim:RegistryObjectList>
+        <!-- Other registry objects are omitted for clarity -->
+
+        <rim:RegistryObject id="urn:uuid:315cfd75-6605-49c4-b0fe-799833b41099">
+            <rim:Slot name="Requirement">
+                <!-- The underlying requirement -->
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <sdg:Requirement>
+                        <sdg:Identifier>https://sr.oots.tech.europa.eu/requirements/315cfd75-6605-49c4-b0fe-799833b41099</sdg:Identifier>
+                        <sdg:Name lang="EN">Proof of Birth</sdg:Name>
+                        <sdg:Name lang="DE">Geburtsnachweis</sdg:Name>
+                    </sdg:Requirement>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- A unique id for this classification 22333046-3429-4684-85de-d9db69e236a1 -->
+            <!-- The classification scheme under which the specific classification nodes reside for the EB Service -->
+            <!-- A classification node defining the registry object as Requirement -->
+            <rim:Classification id="urn:uuid:22333046-3429-4684-85de-d9db69e236a1"
+                classificationScheme="urn:fdc:oots:classification:eb"
+                classificationNode="Requirement"/>
+        </rim:RegistryObject>
+    </rim:RegistryObjectList>
+</lcm:SubmitObjectsRequest>

@@ -1,0 +1,7 @@
+<!-- PreviewLocation Slot -->
+ <rim:Slot name="PreviewLocation">
+     <rim:SlotValue xsi:type="rim:StringValueType">
+         <!-- MUST be a URI starting with 'https://' -->
+         <rim:Value>https://preview.space.example.com/requests/d36af8bc-fea6-4ee5-a32d-5bef82cdb071</rim:Value>
+     </rim:SlotValue>
+ </rim:Slot>

@@ -1,0 +1,223 @@
+<lcm:SubmitObjectsRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:4.0"
+    xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"
+    xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:4.0"
+    xmlns:lcm="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0"
+    xmlns:sdg="http://data.europa.eu/p4s"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    id="urn:uuid:f7dc04fe-337c-4523-85c7-35a7ab95bbac">
+    
+    <!-- validated by dsd_lcm_submit.sch-->
+    <rim:RegistryObjectList>
+        <!-- This is the registry object id for the Evidence Provider "Civil Registration Office Berlin I" -->
+        <rim:RegistryObject id="urn:uuid:a1be6e74-bbbb-4444-b04c-0376f367b8fd">
+            
+            <!-- The actual Evidence Provider Structure -->
+            <rim:Slot name="EvidenceProvider">
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <!-- - - Evidence Provider and Data Service Metadata - - -->
+                    
+                    <!-- Access Service represents the Data Service serving the piece of Evidence on behalf of an Evidence Provider -->
+                    <!-- Multiple Access Services, one per Evidence Provider. In this example the same Access Service (e.g. an Intermediary Platform) is referenced for both Evidence Providers (Publishers) -->
+                    <sdg:AccessService>
+                        <sdg:Identifier schemeID="urn:cef.eu:names:identifier:EAS:0060">8889909098</sdg:Identifier>
+                        <!-- The identifier of the Access Service, using ebcore Party ID Type. Used in eDelivery Evidence Exchange for PMode Mapping - Corner 3 (C3). C3 is an Access Point that receives messages on behalf of C4. The scheme ID must point to a valid Electronic Address Scheme (EAS) from the codelist EAS.gc -->
+                        <sdg:ConformsTo>oots-edm:v1.0</sdg:ConformsTo>
+                        <!-- The Evidence Exchange profile version to which this access service expects / serves -->
+                        
+                        <!-- The Evidence Provider Information of this Access Service - Corner 4 (C4). C4 is the final recipient party, which can be selected to receive the Evidence Request Query. The scheme ID must point to a valid Electronic Address Scheme (EAS) from the codelist EAS.gc  -->
+                        <sdg:Publisher>
+                            <sdg:Identifier schemeID="urn:cef.eu:names:identifier:EAS:9930">DE73524311</sdg:Identifier>
+                            <sdg:Name lang="EN">Civil Registration Office Berlin I</sdg:Name>
+                            <sdg:Address>
+                                <sdg:FullAddress>Schönstedtstraße 5, 13357 Berlin, Germany</sdg:FullAddress>
+                                <sdg:LocatorDesignator>5</sdg:LocatorDesignator>
+                                <sdg:PostCode>13357</sdg:PostCode>
+                                <sdg:PostCityName>Berlin</sdg:PostCityName>
+                                <sdg:Thoroughfare>Schönstedtstraße</sdg:Thoroughfare>
+                                <!-- Country Code -->
+                                <sdg:AdminUnitLevel1>DE</sdg:AdminUnitLevel1>
+                                <!-- NUTS Code -->
+                                <sdg:AdminUnitLevel2>DE3</sdg:AdminUnitLevel2>
+                            </sdg:Address>
+                            
+                            <!-- The Publisher is only able to provide information for LAU 11000000, Berlin, City   -->
+                            <sdg:Jurisdiction>
+                                <sdg:AdminUnitLevel1>DE</sdg:AdminUnitLevel1>
+                                <sdg:AdminUnitLevel3>11000000</sdg:AdminUnitLevel3>
+                            </sdg:Jurisdiction>
+                            
+                            <!-- An Example of an Information Concept that can be used to distinguish the capabilities of the Evidence Provider. In this example the capablity of the publisher to  provide information even if the applicant has never resided in the country is identified. The string values indicate that the Publisher is able to provide information even if the applicant has never resided in Germany.-->
+                            <sdg:ClassificationConcept>
+                                <sdg:Identifier>b07146b6-1468-41a7-a10f-ee2a61429dbc</sdg:Identifier>
+                                <sdg:Type>Codelist</sdg:Type>
+                                <!-- Definition of the value expression. Must be published in the Semantic Repository -->
+                                <sdg:ValueExpression>https://sr.oots.tech.europa.eu/ep-classification/de/countryresidence</sdg:ValueExpression>
+                                <sdg:Description lang="EN">Rules of responsibility for the processing of personal status cases of German citizens without residence information
+                                </sdg:Description>
+                                <sdg:Description lang="DE">Zuständigkeitsregelungen für die Bearbeitung von personenstandsrechtlichen Vorgängen deutscher Staatsangehöriger ohne Wohnsitzinformation</sdg:Description>
+                                <sdg:SupportedValue>
+                                    <sdg:StringValue>ApplicantHasNeverBeenResidentInGermany</sdg:StringValue>
+                                    <sdg:StringValue>ApplicantHasBeenResidentInGermany</sdg:StringValue>
+                                </sdg:SupportedValue>
+                            </sdg:ClassificationConcept>
+                        </sdg:Publisher>
+                    </sdg:AccessService>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- A unique id for this classification a8bfb6c5-d8df-4a60-8351-2c5743e43481 -->
+            <!-- The classification scheme under which the specific classification nodes reside for the DSD Service -->
+            <!-- A classification node defining the registry object as EvidenceProvider -->
+            <rim:Classification id="urn:uuid:a8bfb6c5-d8df-4a60-8351-2c5743e43481"
+                classificationScheme="urn:fdc:oots:classification:dsd"
+                classificationNode="EvidenceProvider"/>
+        </rim:RegistryObject>
+        
+        <!-- This is the registry object id for the Evidence Provider "Civil Registration Office Hamburg" -->
+        <rim:RegistryObject id="urn:uuid:20dc247f-c59f-4092-876f-24722f0a3ef2">
+            
+            <!-- The actual Evidence Provider Structure -->
+            <rim:Slot name="EvidenceProvider">
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <sdg:AccessService>
+                        <sdg:Identifier schemeID="urn:cef.eu:names:identifier:EAS:0060">8889909099</sdg:Identifier>
+                        <!-- The identifier of the Access Service, using ebcore Party ID Type. Used in eDelivery Evidence Exchange for PMode Mapping - Corner 3 (C3). C3 is an Access Point that receives messages on behalf of C4. The scheme ID must point to a valid Electronic Address Scheme (EAS) from the codelist EAS.gc -->
+                        <sdg:ConformsTo>oots-edm:v1.0</sdg:ConformsTo>
+                        <sdg:Publisher>
+                            <!-- The Evidence Provider Information of this Access Service - Corner 4 (C4). C4 is the final recipient party, which can be selected to receive the Evidence Request Query. The scheme ID must point to a valid Electronic Address Scheme (EAS) from the codelist EAS.gc  -->
+                            <sdg:Identifier schemeID="urn:cef.eu:names:identifier:EAS:0204">02-CivilRegistration-66</sdg:Identifier>
+                            <sdg:Name lang="EN">Civil Registration Office Hamburg</sdg:Name>
+                            
+                            <sdg:Address>
+                                <sdg:FullAddress>Hamburger Str. 31</sdg:FullAddress>
+                                <sdg:LocatorDesignator>31</sdg:LocatorDesignator>
+                                <sdg:PostCode>22083</sdg:PostCode>
+                                <sdg:PostCityName>Hamburg</sdg:PostCityName>
+                                <!-- Country Code -->
+                                <sdg:AdminUnitLevel1>DE</sdg:AdminUnitLevel1>
+                                <!-- NUTS Code -->
+                                <sdg:AdminUnitLevel2>DE6</sdg:AdminUnitLevel2>
+                            </sdg:Address>
+                            
+                            <!-- The Publisher is only able to provide information for LAU 02000000, Hamburg City   -->
+                            <sdg:Jurisdiction>
+                                <sdg:AdminUnitLevel1>DE</sdg:AdminUnitLevel1>
+                                <sdg:AdminUnitLevel3>02000000</sdg:AdminUnitLevel3>
+                            </sdg:Jurisdiction>
+                            
+                            <!-- An Example of an Information Concept that can be used to distinguish the capabilities of the Evidence Provider. In this example the capablity of the publisher to  provide information even if the applicant has never resided in the country is identified. The string values indicate that the Publisher is only able to provide information if the applicant has resided in Germany.-->
+                            <sdg:ClassificationConcept>
+                                <sdg:Identifier>b07146b6-1468-41a7-a10f-ee2a61429dbc</sdg:Identifier>
+                                <sdg:Type>Codelist</sdg:Type>
+                                <!-- Definition of the value expression. Must be published in the Semantic Repository -->
+                                <sdg:ValueExpression>https://sr.oots.tech.europa.eu/ep-classification/de/countryresidence</sdg:ValueExpression>
+                                <sdg:Description lang="EN">Rules of responsibility for the processing of personal status cases of German citizens without residence information
+                                </sdg:Description>
+                                <sdg:Description lang="DE">Zuständigkeitsregelungen für die Bearbeitung von personenstandsrechtlichen Vorgängen deutscher Staatsangehöriger ohne Wohnsitzinformation</sdg:Description>
+                                <sdg:SupportedValue>
+                                    <sdg:StringValue>ApplicantHasBeenResidentInGermany</sdg:StringValue>
+                                </sdg:SupportedValue>
+                            </sdg:ClassificationConcept>
+                            
+                        </sdg:Publisher>
+                    </sdg:AccessService>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- A unique id for this classification ea70b1d9-44c2-4e70-ac4d-3c52da3c7335 -->
+            <!-- The classification scheme under which the specific classification nodes reside for the DSD Service -->
+            <!-- A classification node defining the registry object as EvidenceProvider -->
+            <rim:Classification id="urn:uuid:ea70b1d9-44c2-4e70-ac4d-3c52da3c7335"
+                classificationScheme="urn:fdc:oots:classification:dsd"
+                classificationNode="EvidenceProvider"/>
+            
+        </rim:RegistryObject>
+        
+        <!-- This is the registry object id for the DataServiceEvidenceType "Certificate of Birth" -->
+        <rim:RegistryObject id="urn:uuid:61165d22-657b-45fa-9240-f1ed35837c23">
+            <rim:Slot name="DataServiceEvidenceType">
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    
+                    <sdg:DataServiceEvidenceType>
+                        
+                        <!-- - - Evidence Type Metadata - - -->
+                        
+                        <!-- The Data Service assigned Unique Identifier of the Evidence Type. Must be used in the Evidence Exchange Request -->
+                        <sdg:Identifier>2af27699-f131-4411-8fdb-9e8cd4e8bded</sdg:Identifier>
+                        
+                        <!-- Classification Information - Used for linking with the Semantic Repository and Evidence Broker -->
+                        <sdg:EvidenceTypeClassification>https://sr.oots.tech.europa.eu/evidencetypeclassifications/DE/ca8afed6-2dc0-422a-a931-d21c3d8d370e</sdg:EvidenceTypeClassification>
+                        <sdg:Title lang="EN">Certificate of Birth</sdg:Title>
+                        <sdg:Title lang="DE">Geburtsurkunde</sdg:Title>
+                        <sdg:Description lang="EN">An official certificate of birth of a person - with first name, surname, sex, date and place of birth, which is obtained from the birth register of the place of birth.</sdg:Description>
+                        <sdg:Description lang="DE">Eine amtliche Bescheinigung über die Geburt einer Person – mit Vorname, Familienname, Geschlecht, Datum und Ort der Geburt, welche aus dem Geburtsregister des Geburtsortes erstellt wird.</sdg:Description>
+                        
+                        <!-- Distribution Information - Multiple Distributions per Data Service Evidence Type -->
+                        <!-- XML Distribution, conforming to the common data model on Birth Certificate -->
+                        <sdg:DistributedAs>
+                            <sdg:Format>application/xml</sdg:Format>
+                            <sdg:ConformsTo>https://sr.oots.tech.europa.eu/distributions/certificate-of-birth-1.0.0</sdg:ConformsTo>
+                        </sdg:DistributedAs>
+                        <!-- XML Distribution, conforming to the common data model on Birth Certificate, Linking to the subset "Age of Majority" only -->
+                        <sdg:DistributedAs>
+                            <sdg:Format>application/xml</sdg:Format>
+                            <sdg:ConformsTo>https://sr.oots.tech.europa.eu/distributions/certificate-of-birth-1.0.0</sdg:ConformsTo>
+                            <sdg:Transformation>https://sr.oots.tech.europa.eu/distributions/certificate-of-birth-1.0.0/age-of-majority</sdg:Transformation>
+                        </sdg:DistributedAs>
+                        <!-- PDF Distribution. PDF is unstructured data so there is no conformance to a data model -->
+                        <sdg:DistributedAs>
+                            <sdg:Format>application/pdf</sdg:Format>
+                        </sdg:DistributedAs>
+                        
+                        <sdg:EvidenceProviderJurisdictionDetermination>
+                            <sdg:JurisdictionContextId>5ce148b9-5578-4049-aecf-af7bb55714b5</sdg:JurisdictionContextId>
+                            <sdg:JurisdictionContext lang="EN">Place Of Birth</sdg:JurisdictionContext>
+                            <sdg:JurisdictionContext lang="DE">Geburtsort</sdg:JurisdictionContext>
+                            <!-- Codelist defining the jurisdiction levels, published in the semantic repository - JurisdictionLevel-CodeList.gc -->
+                            <sdg:JurisdictionLevel>LAU</sdg:JurisdictionLevel>
+                        </sdg:EvidenceProviderJurisdictionDetermination>
+                        
+                        <!-- Determination of the EvidenceProviderClassification to the User's attributes. In this example the applicant must indicate if he has ever resided in the country.  -->
+                        <sdg:EvidenceProviderClassification>
+                            <sdg:Identifier>b07146b6-1468-41a7-a10f-ee2a61429dbc</sdg:Identifier>
+                            <!-- Value from a Codelist required -->
+                            <sdg:Type>Codelist</sdg:Type>
+                            <!-- Definition of the value expression. Must be published in the Semantic Repository. The codelist contains the values ApplicantHasNeverBeenResidentInGermany and ApplicantHasBeenResidentInGermany -->
+                            <sdg:ValueExpression>https://sr.oots.tech.europa.eu/ep-classification/de/countryresidence</sdg:ValueExpression>
+                            <sdg:Description lang="EN">Rules of responsibility for the processing of personal status cases of German citizens without residence information
+                            </sdg:Description>
+                            <sdg:Description lang="DE">Zuständigkeitsregelungen für die Bearbeitung von personenstandsrechtlichen Vorgängen deutscher Staatsangehöriger ohne Wohnsitzinformation</sdg:Description>
+                        </sdg:EvidenceProviderClassification>
+                    </sdg:DataServiceEvidenceType>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- A unique id for this classification 967d12d8-3c6b-4c8f-878b-da4c0a2f5561 -->
+            <!-- The classification scheme under which the specific classification nodes reside for the DSD Service -->
+            <!-- A classification node defining the registry object as Data Service Evidence Type -->
+            <rim:Classification id="urn:uuid:967d12d8-3c6b-4c8f-878b-da4c0a2f5561"
+                classificationScheme="urn:fdc:oots:classification:dsd"
+                classificationNode="DataServiceEvidenceType"/>           
+        </rim:RegistryObject>
+        
+        <!-- Associate the EvidenceProvider "Civil Registration Office Berlin I" with DataServiceEvidenceType "Certificate of Birth"-->
+        <!-- A unique id for this association 7c59a148-6b74-464a-971a-92e9e309c02f -->
+        <!-- The sourceObject is the 'rim:RegistryObject' id of the EvidenceProvider "Civil Registration Office Berlin I" -->
+        <!-- The targetObject is the 'rim:RegistryObject' id of the DataServiceEvidenceType "Certificate of Birth" -->
+        <rim:RegistryObject xsi:type="rim:AssociationType" 
+            id="urn:uuid:7c59a148-6b74-464a-971a-92e9e309c02f"
+            sourceObject="urn:uuid:a1be6e74-bbbb-4444-b04c-0376f367b8fd"
+            targetObject="urn:uuid:61165d22-657b-45fa-9240-f1ed35837c23"
+            type="urn:oasis:names:tc:ebxml-regrep:AssociationType:ServesEvidenceType"/>
+        
+        <!-- Associate the EvidenceProvider "Civil Registration Office Hamburg" with DataServiceEvidenceType "Certificate of Birth"-->
+        <!-- A unique id for this association bab0070e-a538-47b2-8e72-e283ecfccb4f -->
+        <!-- The sourceObject is the 'rim:RegistryObject' id of the EvidenceProvider "Civil Registration Office Hamburg" -->
+        <!-- The targetObject is the 'rim:RegistryObject' id of the DataServiceEvidenceType "Certificate of Birth" -->
+        <rim:RegistryObject xsi:type="rim:AssociationType"
+            id="urn:uuid:bab0070e-a538-47b2-8e72-e283ecfccb4f"
+            sourceObject="urn:uuid:20dc247f-c59f-4092-876f-24722f0a3ef2"
+            targetObject="urn:uuid:61165d22-657b-45fa-9240-f1ed35837c23"
+            type="urn:oasis:names:tc:ebxml-regrep:AssociationType:ServesEvidenceType"/>
+        
+    </rim:RegistryObjectList>
+    
+</lcm:SubmitObjectsRequest>

@@ -1,0 +1,28 @@
+<!-- EvidenceRequest Slot  -->
+<rim:Slot name="EvidenceRequest">
+    <rim:SlotValue xsi:type="rim:AnyValueType">
+        <sdg:DataServiceEvidenceType>
+            <!-- MUST be unique UUID (RFC 4122) fetched from the Data Services Directory -->
+            <sdg:Identifier>2af27699-f131-4411-8fdb-9e8cd4e8bded</sdg:Identifier>
+
+            <!-- MUST be a UUID retrieved from the Evidence Broker/DSD and include a code of the code list 'CountryIdentificationCode' (ISO 3166-1' alpha-2 codes) using the prefix and scheme ''https://sr.oots.tech.europa.eu/evidencetypeclassifications/[CountryIdentificationCode]/[UUID]'' pointing to the Semantic Repository -->
+            <sdg:EvidenceTypeClassification>https://sr.oots.tech.europa.eu/evidencetypeclassifications/DE/620c08b0-eca2-4dd9-9d1e-45fdb0baac8e</sdg:EvidenceTypeClassification>
+            <!-- The value of 'lang' attribute of Title and Description MUST be part of the code list 'LanguageCode' (ISO 639-1 two-letter code).    -->
+            <sdg:Title lang="EN">Certificate of Birth</sdg:Title>
+            <sdg:Title lang="DE">Geburtsurkunde</sdg:Title>
+            <sdg:Description lang="EN">An official certificate of birth of a person - with first name, surname, sex, date and place of birth, which is obtained from the birth register of the place of birth.</sdg:Description>
+            <sdg:Description lang="DE">Eine amtliche Bescheinigung über die Geburt einer Person – mit Vorname, Familienname, Geschlecht, Datum und Ort der Geburt, welche aus dem Geburtsregister des Geburtsortes erstellt wird.</sdg:Description>
+
+            <!-- This is the selected distribution requested.
+            It must be one of the distributions provided by the DSD for this specific Data Service Evidence Type-->
+            <sdg:DistributedAs>
+                <!-- The value of 'Format' of the requested distribution MUST be part of the code list 'OOTSMediaTypes'.-->
+               <sdg:Format>application/xml</sdg:Format>
+                <!-- MUST be a persistent URL with a link to a "DataModelScheme" of the DataServiceEvidenceType retrieved by the DSD and described in the Semantic Repository which uses the prefix "https://sr.oots.tech.europa.eu/distributions/[DataModelScheme]".-->
+               <sdg:ConformsTo>https://sr.oots.tech.europa.eu/distributions/birthcert-1.0.0</sdg:ConformsTo>
+                <!-- MUST be a persistent URL with link to a "DataModelScheme" and "Subset" of the DataServiceEvidenceType retrieved from the Data Service Directory, described in the Semantic Repository which uses the prefix "https://sr.oots.tech.europa.eu/distributions/[DataModelScheme]/[Subset]"-->
+               <sdg:Transformation>https://sr.oots.tech.europa.eu/distributions/birthcert-1.0.0/age-of-majority</sdg:Transformation>
+           </sdg:DistributedAs>
+       </sdg:DataServiceEvidenceType>
+   </rim:SlotValue>
+</rim:Slot>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<query:QueryResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:4.0"
+    xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"
+    xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:4.0"
+    xmlns:sdg="http://data.europa.eu/p4s"
+    status="urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Failure">
+
+    <!-- Additional elements describing the response 
+    Validated with sch/dsd_query_error.sch-->
+
+    <rs:Exception xsi:type="rs:ObjectNotFoundExceptionType" severity="urn:sr.oots.tech.europa.eu:codes:ErrorSeverity:DSDErrorResponse:AdditionalInput" message="The query requires the included extra attributes to be provided by the user." detail="UserRequestedClassificationConcepts" code="DSD:ERR:0005">
+        <rim:Slot name="DataServiceEvidenceType">
+            <rim:SlotValue xsi:type="rim:AnyValueType">
+                <sdg:DataServiceEvidenceType xmlns:sdg="http://data.europa.eu/p4s">
+                    <sdg:Identifier>6ee853e4-7188-44b0-b850-785dfd4d8c48</sdg:Identifier>
+
+                    <!-- Classification Information - Used for linking with the Evidence Broker -->
+                    <sdg:EvidenceTypeClassification>https://sr.oots.tech.europa.eu/evidencetypeclassifications/ES/edf717b7-b373-40b1-b51b-cbb7c9d64de5</sdg:EvidenceTypeClassification>
+                    <sdg:Title lang="EN">Certificate on the payment of social security contributions</sdg:Title>
+                    <sdg:Title lang="DE">Unbedenklichkeitsbescheinigung über die Zahlung von Sozialversicherungsbeiträgen </sdg:Title>
+                    <sdg:Description lang="EN">In the "clearance certificate", a health insurance fund declares that a company is listed as an employer and has fulfilled its obligation to pay social security contributions. The clearance certificate is often required for participation in a public tender.</sdg:Description>
+                    <sdg:Description lang="DE">In der "Unbedenklichkeitsbescheinigung" erklärt eine Krankenkasse, dass ein Unternehmen als Arbeitgeber geführt wird und seiner Pflicht zur Zahlung der Sozialversicherungsbeiträge nachgekommen ist.</sdg:Description>
+
+                    <!-- Distribution Information - Multiple Distributions per Data Service Evidence Type -->
+                    <!-- XML Distribution, conforming to the common data model on Social Security Contributions -->
+                    <sdg:DistributedAs>
+                        <sdg:Format>application/xml</sdg:Format>
+                        <sdg:ConformsTo>https://sr.oots.tech.europa.eu/distributions/social-security-contributions-1.0.0</sdg:ConformsTo>
+                    </sdg:DistributedAs>
+                    <!-- XML Distribution, conforming to the common data model on Social Security Contributions, Linking to the subset "Clearance Certificate" only -->
+                    <sdg:DistributedAs>
+                        <sdg:Format>application/xml</sdg:Format>
+                        <sdg:ConformsTo>https://sr.oots.tech.europa.eu/distributions/social-security-contributions-1.0.0</sdg:ConformsTo>
+                        <sdg:Transformation>https://sr.oots.tech.europa.eu/distributions/social-security-contributions-1.0.0/clearance-certificate</sdg:Transformation>
+                    </sdg:DistributedAs>
+                    <!-- PDF Distribution. PDF is unstructured data so there is no conformance to a data model -->
+                    <sdg:DistributedAs>
+                        <sdg:Format>application/pdf</sdg:Format>
+                    </sdg:DistributedAs>
+                </sdg:DataServiceEvidenceType>
+            </rim:SlotValue>
+        </rim:Slot>
+
+        <!-- Evidence Provider Classification Scheme. Evidence Subject must select appropriate value from codelist to find the correct Evidence Provider -->
+        <!-- In this example a classification into private and statutory health insurance is described -->
+        <rim:Slot name="UserRequestedClassificationConcepts">
+            <rim:SlotValue xsi:type="rim:CollectionValueType"
+                collectionType="urn:oasis:names:tc:ebxml-regrep:CollectionType:Set">
+                <rim:Element xsi:type="rim:AnyValueType">
+                    <sdg:EvidenceProviderClassification>
+                        <sdg:Identifier>1a56b43f-6fa7-4bbf-b2d7-af6134918716</sdg:Identifier>
+                        <sdg:Type>Codelist</sdg:Type>
+                        <!-- Definition of the value expression. Must be published in the Semantic Repository. In this example the codelist would consist of two values, StatutoryHealthInsurance and PrivateHealthInsurance -->
+                        <sdg:ValueExpression>https://sr.oots.tech.europa.eu/ep-classification/de/health-insurance-type</sdg:ValueExpression>
+                        <sdg:Description lang="EN">Concept for distinguishing private and statutory health insurance
+                        </sdg:Description>
+                        <sdg:Description lang="DE">Konzept zur Unterscheidung von privaten und gesetzlichen Krankenversicherung</sdg:Description>
+                    </sdg:EvidenceProviderClassification>
+                </rim:Element>
+            </rim:SlotValue>
+        </rim:Slot>
+    </rs:Exception>
+</query:QueryResponse>

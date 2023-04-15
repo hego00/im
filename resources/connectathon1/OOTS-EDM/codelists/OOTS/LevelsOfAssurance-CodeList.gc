@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gc:CodeList xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             xmlns:fn="http://www.w3.org/2005/xpath-functions"
+             xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+             xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Identification>
+      <ShortName>LoA</ShortName>
+      <LongName xml:lang="en">eIDAS Levels Of Assurance</LongName>
+      <Version>2022-12</Version>
+      <CanonicalUri>urn:sr.oots.tech.europa.eu:codelists:loa</CanonicalUri>
+      <CanonicalVersionUri>urn:sr.oots.tech.europa.eu:codelists:loa-2022-12</CanonicalVersionUri>
+      <LocationUri>https://sr.oots.tech.europa.eu/codelists/loa</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Directorate-General for Informatics</LongName>
+         <Identifier>DIGIT</Identifier>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" Lang="en"/>
+      </Column>
+      <Column Use="optional" Id="name-Value">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="Value"/>
+      </Column>
+      <Column Use="optional" Id="name-URI">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="URI"/>
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>Low</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Value">
+            <SimpleValue>Limited degree of confidence in the claimed or asserted identity of a Person.</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-URI">
+            <SimpleValue>http://eidas.europa.eu/LoA/Low</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>Substantial</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Value">
+            <SimpleValue>Substantial degree of confidence in the claimed or asserted identity of a Person.</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-URI">
+            <SimpleValue>http://eidas.europa.eu/LoA/Substiantial</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>High</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Value">
+            <SimpleValue>Higher degree of confidence in the claimed or asserted identity of a Person.</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-URI">
+            <SimpleValue>http://eidas.europa.eu/LoA/High</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

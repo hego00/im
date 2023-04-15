@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gc:CodeList xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             xmlns:fn="http://www.w3.org/2005/xpath-functions"
+             xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+             xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Identification>
+      <ShortName>EBErrorCodes</ShortName>
+      <LongName xml:lang="en">Evidence Broker Error Response Codes</LongName>
+      <Version>2022-12</Version>
+      <CanonicalUri>urn:sr.oots.tech.europa.eu:codelists:eberrorcodes</CanonicalUri>
+      <CanonicalVersionUri>urn:sr.oots.tech.europa.eu:codelists:eberrorcodes-2022-12</CanonicalVersionUri>
+      <LocationUri>https://sr.oots.tech.europa.eu/codelists/eberrorcodes</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Directorate-General for Informatics</LongName>
+         <Identifier>DIGIT</Identifier>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" Lang="en"/>
+      </Column>
+      <Column Use="optional" Id="name-Value">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="Value"/>
+      </Column>
+      <Column Use="optional" Id="name-Type">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="Type"/>
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EB:ERR:0001</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Value">
+            <SimpleValue>The result set is empty</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Type">
+            <SimpleValue>rs:ObjectNotFoundExceptionType</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EB:ERR:0002</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Value">
+            <SimpleValue>The requirement requested, represented by the requirement id, does not exist</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Type">
+            <SimpleValue>rs:ObjectNotFoundExceptionType</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EB:ERR:0003</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Value">
+            <SimpleValue>The query parameters do not follow the query specification</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Type">
+            <SimpleValue>rs:InvalidRequestExceptionType</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EB:ERR:0004</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Value">
+            <SimpleValue>The jurisdiction level code query parameter is invalid or unknown</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Type">
+            <SimpleValue>rs:InvalidRequestExceptionType</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EB:ERR:0005</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Value">
+            <SimpleValue>The value of the procedure-id query parameter is invalid or unknown</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Type">
+            <SimpleValue>rs:InvalidRequestExceptionType</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EB:ERR:0006</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Value">
+            <SimpleValue>The value of the procedure implementation country query parameter is invalid or unknown</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Type">
+            <SimpleValue>rs:InvalidRequestExceptionType</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EB:ERR:0007</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Value">
+            <SimpleValue>The requested Query does not exist</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Type">
+            <SimpleValue>rs:InvalidRequestExceptionType</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

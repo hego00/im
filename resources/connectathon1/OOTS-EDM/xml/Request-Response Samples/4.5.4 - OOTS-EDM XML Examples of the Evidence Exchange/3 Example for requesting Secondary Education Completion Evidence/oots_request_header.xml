@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<eb:Messaging xmlns:eb="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/ 
+    https://www.oasis-open.org/committees/download.php/64179/ebms-header-3_0-200704_with_property_type_attribute.xsd">
+    <eb:UserMessage>
+        <eb:MessageInfo>
+            <eb:Timestamp>2017-10-24T09:07:36.000Z</eb:Timestamp>
+            <eb:MessageId>69b00c83-ab63-4426-b90d-1896817cceec@example.oots.eu</eb:MessageId>
+        </eb:MessageInfo>
+        <eb:PartyInfo>
+            <eb:From>
+                <eb:PartyId type="urn:oasis:names:tc:ebcore:partyid-type:unregistered:oots-simulator"
+                    >urn:oasis:names:tc:ebcore:partyid-type:unregistered:C2</eb:PartyId>
+                <eb:Role>http://sdg.europa.eu/edelivery/gateway</eb:Role>
+            </eb:From>
+            <eb:To>
+                <eb:PartyId type="urn:oasis:names:tc:ebcore:partyid-type:unregistered:oots-simulator"
+                    >urn:oasis:names:tc:ebcore:partyid-type:unregistered:C3</eb:PartyId>
+                <eb:Role>http://sdg.europa.eu/edelivery/gateway</eb:Role>
+            </eb:To>
+        </eb:PartyInfo>
+        <eb:CollaborationInfo>
+            <eb:Service type="urn:oasis:names:tc:ebcore:ebrs:ebms:binding:1.0">QueryManager</eb:Service>
+            <eb:Action>ExecuteQueryRequest</eb:Action>
+            <eb:ConversationId>b11c2a3c-3be9-4aac-9a03-cf2c6d4e7bbe</eb:ConversationId>
+        </eb:CollaborationInfo>
+        <eb:MessageProperties>
+            <eb:Property name="originalSender">urn:oasis:names:tc:ebcore:partyid-type:unregistered:C1</eb:Property>
+            <eb:Property name="finalRecipient">urn:oasis:names:tc:ebcore:partyid-type:unregistered:C4</eb:Property>
+        </eb:MessageProperties>
+        <eb:PayloadInfo>
+            <eb:PartInfo href="cid:1bbf5e17-ccee-4698-8919-6dd2c242dd0e@oots.example.eu">
+                <eb:PartProperties>
+                    <eb:Property name="MimeType">application/x-ebrs+xml</eb:Property>
+                    <eb:Property name="CompressionType">application/gzip</eb:Property>
+                </eb:PartProperties>
+            </eb:PartInfo>
+        </eb:PayloadInfo>
+    </eb:UserMessage>
+</eb:Messaging>

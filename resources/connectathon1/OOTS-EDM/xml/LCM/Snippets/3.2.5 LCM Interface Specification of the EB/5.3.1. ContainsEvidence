@@ -1,0 +1,18 @@
+<lcm:SubmitObjectsRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:4.0"
+                          xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"
+                          xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:4.0"
+                          xmlns:lcm="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0"
+                          xmlns:sdg="http://data.europa.eu/p4s"
+                          id="urn:uuid:e5af5ba0-39a2-43d7-89c0-04f623c59855">
+
+    <!-- Associate the EvidenceProvider "Civil Registration Office Berlin I" with DataServiceEvidenceType "Certificate of Birth"-->
+    <!-- A unique id for this association 826a2206-5dd0-45ff-abbc-23ba8f38477f -->
+    <!-- The sourceObject is the 'rim:RegistryObject' id of the EvidenceTypeList "970918e4-1b27-41f0-be20-0a7c5fe4059f" -->
+    <!-- The targetObject is the 'rim:RegistryObject' id of the EvidenceType "Certificate of Birth" -->
+    <rim:RegistryObject xsi:type="rim:AssociationType"
+        id="urn:uuid:826a2206-5dd0-45ff-abbc-23ba8f38477f"
+        sourceObject="urn:uuid:91197b3c-890b-475f-a07e-709742e59f23"
+        targetObject="urn:uuid:a1be6e74-e9ba-4d44-b04c-0376f367b8fd"
+        type="urn:oasis:names:tc:ebxml-regrep:AssociationType:ContainsEvidence"/>
+</lcm:SubmitObjectsRequest>

@@ -1,0 +1,642 @@
+<lcm:SubmitObjectsRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:4.0"
+    xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"
+    xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:4.0"
+    xmlns:lcm="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" 
+    xmlns:sdg="http://data.europa.eu/p4s"
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    id="urn:uuid:6d51920f-04a7-4482-be34-153e01b0b7a3">
+    
+    <!-- validated with eb_lcm_submit.sch-->
+    <rim:RegistryObjectList>
+        <rim:RegistryObject id="urn:uuid:a1be6e74-e9ba-4d44-b04c-0376f367b8fd">
+            <rim:Slot name="EvidenceType">
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <sdg:EvidenceType>
+                        <!-- An Evidence Type for Proof of birth -->
+                        <!-- EvidenceTypeClassification Information - Provided by the Evidence Broker on the basis of the Semantic Repository. Used for linking with the Semantic Repository and Data Service Directory -->
+                        <sdg:EvidenceTypeClassification>https://sr.oots.tech.europa.eu/evidencetypeclassifications/DE/ca8afed6-2dc0-422a-a931-d21c3d8d370e</sdg:EvidenceTypeClassification>
+                        <sdg:Title lang="EN">Certificate of Birth</sdg:Title>
+                        <sdg:Title lang="DE">Geburtsurkunde</sdg:Title>
+                        <sdg:Description lang="EN">An official certificate of birth of a person - with first name, surname, sex, date and place of birth, which is obtained from the birth register of the place of birth.</sdg:Description>
+                        <sdg:Description lang="DE">Eine amtliche Bescheinigung über die Geburt einer Person – mit Vorname, Familienname, Geschlecht, Datum und Ort der Geburt, welche aus dem Geburtsregister des Geburtsortes erstellt wird.</sdg:Description>
+                        <sdg:Jurisdiction>
+                            <!-- Country - Mandatory - ISO code -->
+                            <sdg:AdminUnitLevel1>DE</sdg:AdminUnitLevel1>
+                            <!-- Regional Code not applicable for DE (Common Evidence for the country) -->
+                        </sdg:Jurisdiction>
+                    </sdg:EvidenceType>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- A unique id for this classification 35c299d8-9383-47ce-ad8c-0ed70ea52827 -->
+            <!-- The classification scheme under which the specific classification nodes reside for the EB Service -->
+            <!-- A classification node defining the registry object as EvidenceType -->
+            <rim:Classification id="urn:uuid:35c299d8-9383-47ce-ad8c-0ed70ea52827"
+                classificationScheme="urn:fdc:oots:classification:eb"
+                classificationNode="EvidenceType"/>
+        </rim:RegistryObject>
+
+        <rim:RegistryObject id="urn:uuid:30855a65-562d-4a57-af81-e4f9c4db73fc">
+            <rim:Slot name="EvidenceType">
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <sdg:EvidenceType>
+                        <!-- An Evidence Type for Proof of secondary education diploma/certificate -->
+                        <!-- EvidenceTypeClassification Information - Provided by the Evidence Broker on the basis of the Semantic Repository. Used for linking with the Semantic Repository and Data Service Directory -->
+                        <sdg:EvidenceTypeClassification>https://sr.oots.tech.europa.eu/evidencetypeclassifications/DE/edf717b7-b373-40b1-b51b-cbb7c9d64de5</sdg:EvidenceTypeClassification>
+                        <sdg:Title lang="EN">Secondary Education Completion Evidence</sdg:Title>
+                        <sdg:Title lang="DE">Nachweis des Sekundarschulabschlusses</sdg:Title>
+                        <sdg:Description lang="EN">Proof of a secondary school graduation which is acquired after 12 or 13 school years in the upper secondary school and which entitles the holder to the general higher education entrance qualification, i.e. opens up access to all higher education institutions and fields of study.</sdg:Description>
+                        <sdg:Description lang="DE">Nachweis für einen Sekundarschulabschluss, der nach 12 bzw. 13 Schuljahren in der gymnasialen Oberstufe erworben wird und die Allgemeine Hochschulreife verleiht, d.h. den Zugang zu allen Hochschulen und Fachrichtungen eröffnet.</sdg:Description>
+                        <sdg:Jurisdiction>
+                            <!-- Country - Mandatory - ISO code -->
+                            <sdg:AdminUnitLevel1>DE</sdg:AdminUnitLevel1>
+                            <!-- Regional Code not applicable for DE (Common Evidence Type for the country) -->
+                        </sdg:Jurisdiction>
+                    </sdg:EvidenceType>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- A unique id for this classification 35c299d8-9383-47ce-ad8c-0ed70ea52827 -->
+            <!-- The classification scheme under which the specific classification nodes reside for the EB Service -->
+            <!-- A classification node defining the registry object as EvidenceType -->
+            <rim:Classification id="urn:uuid:819d6015-cc37-453f-a6f8-eb7249008ecd"
+                                classificationScheme="urn:fdc:oots:classification:eb"
+                                classificationNode="EvidenceType"/>
+        </rim:RegistryObject>
+
+        <rim:RegistryObject id="urn:uuid:d854080b-6dde-4969-967f-ad94faeb3cab">
+            <rim:Slot name="EvidenceType">
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <sdg:EvidenceType>
+                        <!-- An Evidence Type for Proof of secondary education diploma/certificate -->
+                        <!-- EvidenceTypeClassification Information - Provided by the Evidence Broker on the basis of the Semantic Repository. Used for linking with the Semantic Repository and Data Service Directory -->
+                        <sdg:EvidenceTypeClassification>https://sr.oots.tech.europa.eu/evidencetypeclassifications/DE/a7e1520a-7051-4a96-931f-a097b0f7c097</sdg:EvidenceTypeClassification>
+                        <sdg:Title lang="EN">Subject-specific higher education entrance qualification</sdg:Title>
+                        <sdg:Title lang="DE">Fachgebundene Hochschulreife</sdg:Title>
+                        <sdg:Description lang="EN">The subject-specific higher education entrance qualification is a higher education qualification that entitles the holder to study certain subjects and specialisations at universities and all subjects at universities of applied sciences. This school-leaving certificate is the secondary school leaving certificate without lessons/school examinations in a 2nd foreign language.</sdg:Description>
+                        <sdg:Description lang="DE">Die Fachgebundene Hochschulreife ist ein höherer Bildungsabschluss mit der Studienberechtigung für bestimmte Fächer und Fachrichtungen an Universitäten und für sämtliche Studienfächer an Fachhochschulen. Bei diesem Schulabschluss handelt es sich um das Abitur ohne Unterricht/schulische Prüfung in einer 2. Fremdsprache.</sdg:Description>
+                        <sdg:Jurisdiction>
+                            <!-- Country - Mandatory - ISO code -->
+                            <sdg:AdminUnitLevel1>DE</sdg:AdminUnitLevel1>
+                            <!-- Regional Code not applicable for DE (Common Evidence Type for the country) -->
+                        </sdg:Jurisdiction>
+                    </sdg:EvidenceType>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- A unique id for this classification 35c299d8-9383-47ce-ad8c-0ed70ea52827 -->
+            <!-- The classification scheme under which the specific classification nodes reside for the EB Service -->
+            <!-- A classification node defining the registry object as EvidenceType -->
+            <rim:Classification id="urn:uuid:fe106286-e326-4da7-92cf-e8fd5a0edcd2"
+                                classificationScheme="urn:fdc:oots:classification:eb"
+                                classificationNode="EvidenceType"/>
+        </rim:RegistryObject>
+
+        <rim:RegistryObject id="urn:uuid:6e381a39-ab57-45b4-b847-90e7fba31960">
+            <rim:Slot name="EvidenceType">
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <sdg:EvidenceType>
+                        <!-- An Evidence Type for Proof of secondary education diploma/certificate -->
+                        <!-- EvidenceTypeClassification Information - Provided by the Evidence Broker on the basis of the Semantic Repository. Used for linking with the Semantic Repository and Data Service Directory -->
+                        <sdg:EvidenceTypeClassification>https://sr.oots.tech.europa.eu/evidencetypeclassifications/DE/76aff882-b970-4400-a33e-6b51d46973c1</sdg:EvidenceTypeClassification>
+                        <sdg:Title lang="EN">Entrance qualification for studies at universities of applied sciences</sdg:Title>
+                        <sdg:Title lang="DE">Fachhochschulreife</sdg:Title>
+                        <sdg:Description lang="EN">The university entrance qualification for studies at universities of applied sciences (Fachhochschulreife, FHSR) is a higher educational qualification from upper secondary level that entitles the holder to study all degree programmes at universities of applied sciences and to take up a Bachelor's degree programme at some universities. </sdg:Description>
+                        <sdg:Description lang="DE">Die Fachhochschulreife (FHSR) ist ein höherer Bildungsabschluss der Sekundarstufe II, der zum Studium aller Studiengänge an Fachhochschulen und zur Aufnahme eines Bachelor-Studiengangs an einigen Universitäten berechtigt. </sdg:Description>
+                        <sdg:Jurisdiction>
+                            <!-- Country - Mandatory - ISO code -->
+                            <sdg:AdminUnitLevel1>DE</sdg:AdminUnitLevel1>
+                            <!-- Regional Code not applicable for DE (Common Evidence Type for the country) -->
+                        </sdg:Jurisdiction>
+                    </sdg:EvidenceType>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- A unique id for this classification 35c299d8-9383-47ce-ad8c-0ed70ea52827 -->
+            <!-- The classification scheme under which the specific classification nodes reside for the EB Service -->
+            <!-- A classification node defining the registry object as EvidenceType -->
+            <rim:Classification id="urn:uuid:95bad3ed-0d6f-4cc2-9e6b-c7f0dc7c879c"
+                                classificationScheme="urn:fdc:oots:classification:eb"
+                                classificationNode="EvidenceType"/>
+        </rim:RegistryObject>
+
+        <rim:RegistryObject id="urn:uuid:4e83cf9a-cc07-4f41-877f-58697f4e04ff">
+            <rim:Slot name="EvidenceType">
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <sdg:EvidenceType>
+                        <!-- An Evidence Type for Proof of secondary education diploma/certificate -->
+                        <!-- EvidenceTypeClassification Information - Provided by the Evidence Broker on the basis of the Semantic Repository. Used for linking with the Semantic Repository and Data Service Directory -->
+                        <sdg:EvidenceTypeClassification>https://sr.oots.tech.europa.eu/evidencetypeclassifications/DE/c194c647-2e0d-49b5-92ba-03b0e31cc611</sdg:EvidenceTypeClassification>
+                        <sdg:Title lang="EN">Completed master craftsman's examination</sdg:Title>
+                        <sdg:Title lang="DE">Abgeschlossene Meisterprüfung</sdg:Title>
+                        <sdg:Description lang="EN">With a qualification as a master craftsman, it is possible, among other things, to enter directly into a course of study of one's choice.</sdg:Description>
+                        <sdg:Description lang="ES">Mit einem Meisterabschluss kann unter anderem direkt in ein Studium nach Wahl eingestiegen werden</sdg:Description>
+                        <sdg:Jurisdiction>
+                            <!-- Country - Mandatory - ISO code -->
+                            <sdg:AdminUnitLevel1>DE</sdg:AdminUnitLevel1>
+                            <!-- Regional Code not applicable for DE (Common Evidence Type for the country) -->
+                        </sdg:Jurisdiction>
+                    </sdg:EvidenceType>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- A unique id for this classification 35c299d8-9383-47ce-ad8c-0ed70ea52827 -->
+            <!-- The classification scheme under which the specific classification nodes reside for the EB Service -->
+            <!-- A classification node defining the registry object as EvidenceType -->
+            <rim:Classification id="urn:uuid:b58439c1-1995-4d5f-a032-2a0d006b7732"
+                                classificationScheme="urn:fdc:oots:classification:eb"
+                                classificationNode="EvidenceType"/>
+        </rim:RegistryObject>
+
+        <rim:RegistryObject id="urn:uuid:70946cc4-ab39-4545-90fc-1b0d00a12715">
+            <rim:Slot name="EvidenceType">
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <sdg:EvidenceType>
+                        <!-- An Evidence Type for Proof of secondary education diploma/certificate -->
+                        <!-- EvidenceTypeClassification Information - Provided by the Evidence Broker on the basis of the Semantic Repository. Used for linking with the Semantic Repository and Data Service Directory -->
+                        <sdg:EvidenceTypeClassification>https://sr.oots.tech.europa.eu/evidencetypeclassifications/DE/3f085f27-ad1f-4f39-ad02-df70561d32b4</sdg:EvidenceTypeClassification>
+                        <sdg:Title lang="EN">Completed professional training with work experience</sdg:Title>
+                        <sdg:Title lang="DE">Abgeschlossene Berufsausbildung mit Berufserfahrung</sdg:Title>
+                        <sdg:Description lang="EN">With professional training and subsequent professional practical experience - usually of about three years - it is possible to enter a subject-related degree programme. Sometimes entrance examinations are to be expected.</sdg:Description>
+                        <sdg:Description lang="ES">Mit einer Berufsausbildung und anschließender beruflicher Praxiserfahrung – von meist etwa drei Jahren – kann in ein fachbezogenes Studium eingestiegen werden. Mitunter ist mit Aufnahmeprüfungen zu rechnen.</sdg:Description>
+                        <sdg:Jurisdiction>
+                            <!-- Country - Mandatory - ISO code -->
+                            <sdg:AdminUnitLevel1>DE</sdg:AdminUnitLevel1>
+                            <!-- Regional Code not applicable for DE (Common Evidence Type for the country) -->
+                        </sdg:Jurisdiction>
+                    </sdg:EvidenceType>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- A unique id for this classification 35c299d8-9383-47ce-ad8c-0ed70ea52827 -->
+            <!-- The classification scheme under which the specific classification nodes reside for the EB Service -->
+            <!-- A classification node defining the registry object as EvidenceType -->
+            <rim:Classification id="urn:uuid:3e7edcd9-6137-46c2-8d27-b06354083594"
+                                classificationScheme="urn:fdc:oots:classification:eb"
+                                classificationNode="EvidenceType"/>
+        </rim:RegistryObject>
+
+        <rim:RegistryObject id="urn:uuid:02295404-0780-4cfd-888b-74b07f4223ee">
+            <rim:Slot name="EvidenceType">
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <!-- An Evidence Type for Proof of payment of social contributions for employees -->
+                    <!-- Example structure of an evidence type having national coverage area / jurisdiction = DE -->
+                    <sdg:EvidenceType>
+                        <!-- EvidenceTypeClassification Information - Provided by the Evidence Broker on the basis of the Semantic Repository. Used for linking with the Semantic Repository and Data Service Directory -->
+                        <sdg:EvidenceTypeClassification>https://sr.oots.tech.europa.eu/evidencetypeclassifications/DE/d6bef643-fb9d-404f-8377-323ec2955e44</sdg:EvidenceTypeClassification>
+                        <sdg:Title lang="EN">Certificate on the payment of social security contributions</sdg:Title>
+                        <sdg:Title lang="DE">Unbedenklichkeitsbescheinigung über die Zahlung von Sozialversicherungsbeiträgen </sdg:Title>
+                        <sdg:Description lang="EN">In the "clearance certificate", a health insurance fund declares that a company is listed as an employer and has fulfilled its obligation to pay social security contributions. The clearance certificate is often required for participation in a public tender.</sdg:Description>
+                        <sdg:Description lang="DE">In der "Unbedenklichkeitsbescheinigung" erklärt eine Krankenkasse, dass ein Unternehmen als Arbeitgeber geführt wird und seiner Pflicht zur Zahlung der Sozialversicherungsbeiträge nachgekommen ist.</sdg:Description>
+                        <sdg:Jurisdiction>
+                            <!-- Country - Mandatory - ISO code -->
+                            <sdg:AdminUnitLevel1>DE</sdg:AdminUnitLevel1>
+                            <!-- Regional Code not applicable for DE (Common Evidence for the country) -->
+                        </sdg:Jurisdiction>
+                    </sdg:EvidenceType>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- A unique id for this classification 35c299d8-9383-47ce-ad8c-0ed70ea52827 -->
+            <!-- The classification scheme under which the specific classification nodes reside for the EB Service -->
+            <!-- A classification node defining the registry object as EvidenceType -->
+            <rim:Classification id="urn:uuid:e36b3ab0-1545-4304-b431-15ce1318f76d"
+                                classificationScheme="urn:fdc:oots:classification:eb"
+                                classificationNode="EvidenceType"/>
+        </rim:RegistryObject>
+
+
+        <rim:RegistryObject id="urn:uuid:91197b3c-890b-475f-a07e-709742e59f23">
+            <!-- List of Evidence Types that proof the Requirement "Proof of Birth" in Germany -->
+            <rim:Slot name="EvidenceTypeList">
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <sdg:EvidenceTypeList>
+                        <sdg:Identifier>970918e4-1b27-41f0-be20-0a7c5fe4059f</sdg:Identifier>
+                        <sdg:Name lang="EN">List of Birth Certificates</sdg:Name>
+                        <sdg:Name lang="EN">Liste der Geburtsurkunden</sdg:Name>
+                    </sdg:EvidenceTypeList>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- A unique id for this classification 4d44680b-432c-4b22-aa36-880d4ebd1b0d -->
+            <!-- The classification scheme under which the specific classification nodes reside for the EB Service -->
+            <!-- A classification node defining the registry object as EvidenceTypeList -->
+            <rim:Classification id="urn:uuid:4d44680b-432c-4b22-aa36-880d4ebd1b0d"
+                classificationScheme="urn:fdc:oots:classification:eb"
+                classificationNode="EvidenceTypeList"/>
+        </rim:RegistryObject>
+
+        <rim:RegistryObject id="urn:uuid:7638cc4c-51ea-40d8-93a9-29e8c4c2bb2a">
+            <!-- First list of Evidence Types that proof the Requirement "Proof of secondary education diploma/certificate" -->
+            <rim:Slot name="EvidenceTypeList">
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <sdg:EvidenceTypeList>
+                        <sdg:Identifier>48ab0f96-79a5-4d2d-93eb-06d651d5e2ca</sdg:Identifier>
+                        <sdg:Name lang="EN">Certificates about Higher education entrance qualification</sdg:Name>
+                        <sdg:Name lang="DE">Zeugnisse der Hochschulreife</sdg:Name>
+                    </sdg:EvidenceTypeList>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- A unique id for this classification 4d44680b-432c-4b22-aa36-880d4ebd1b0d -->
+            <!-- The classification scheme under which the specific classification nodes reside for the EB Service -->
+            <!-- A classification node defining the registry object as EvidenceTypeList -->
+            <rim:Classification id="urn:uuid:018d0cf7-a23b-44ee-a8a6-e65f0f5df700"
+                                classificationScheme="urn:fdc:oots:classification:eb"
+                                classificationNode="EvidenceTypeList"/>
+        </rim:RegistryObject>
+
+        <rim:RegistryObject id="urn:uuid:ce3f7323-69f1-4b45-92f0-fbd15453313b">
+            <!-- Second list of Evidence Types that proof the Requirement "Proof of secondary education diploma/certificate" -->
+            <rim:Slot name="EvidenceTypeList">
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <sdg:EvidenceTypeList>
+                    <!-- Example structure of an evidence type list having national coverage area / jurisdiction = DE -->
+                        <sdg:Identifier>c5d3e4e2-c671-48d3-812d-58c6f3bdbc39</sdg:Identifier>
+                        <sdg:Name lang="EN">Other university entrance qualifications</sdg:Name>
+                        <sdg:Name lang="DE">Sonstige Hochschulzugangsberechtigungen</sdg:Name>
+                    </sdg:EvidenceTypeList>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- A unique id for this classification 4d44680b-432c-4b22-aa36-880d4ebd1b0d -->
+            <!-- The classification scheme under which the specific classification nodes reside for the EB Service -->
+            <!-- A classification node defining the registry object as EvidenceTypeList -->
+            <rim:Classification id="urn:uuid:90fd8ba2-c5ed-43e4-9c2b-0f00a5606a01"
+                                classificationScheme="urn:fdc:oots:classification:eb"
+                                classificationNode="EvidenceTypeList"/>
+        </rim:RegistryObject>
+
+        <rim:RegistryObject id="urn:uuid:80638d77-646b-4678-8274-b35f3947b4b3">
+            <!-- List of Evidence Types that proof the Requirement "Proof of payment of social contributions for employees" -->
+            <rim:Slot name="EvidenceTypeList">
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <sdg:EvidenceTypeList>
+                        <sdg:Identifier>1048dfb0-7e43-4434-a1d8-6231b445f240</sdg:Identifier>
+                        <sdg:Name lang="EN">Certificates that proof the payment of social security contributions</sdg:Name>
+                        <sdg:Name lang="DE">Bescheinigungen zum Nachweis der Zahlung von Sozialversicherungsbeiträgen</sdg:Name>
+                    </sdg:EvidenceTypeList>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- A unique id for this classification 4d44680b-432c-4b22-aa36-880d4ebd1b0d -->
+            <!-- The classification scheme under which the specific classification nodes reside for the EB Service -->
+            <!-- A classification node defining the registry object as EvidenceTypeList -->
+            <rim:Classification id="urn:uuid:51e3fee8-e9df-45d9-853c-f88d3d75e849"
+                                classificationScheme="urn:fdc:oots:classification:eb"
+                                classificationNode="EvidenceTypeList"/>
+        </rim:RegistryObject>
+
+
+        <rim:RegistryObject id="urn:uuid:530936b7-9281-4ec8-8a70-e98a3f06e022">
+            <rim:Slot name="Requirement">
+                <!-- The underlying requirement "Proof of Birth"-->
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <sdg:Requirement>
+                        <sdg:Identifier>https://sr.oots.tech.europa.eu/requirements/315cfd75-6605-49c4-b0fe-799833b41099</sdg:Identifier>
+                        <sdg:Name lang="EN">Proof of Birth</sdg:Name>
+                        <sdg:Name lang="DE">Geburtsnachweis</sdg:Name>
+                    </sdg:Requirement>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- A unique id for this classification 22333046-3429-4684-85de-d9db69e236a1 -->
+            <!-- The classification scheme under which the specific classification nodes reside for the EB Service -->
+            <!-- A classification node defining the registry object as Requirement -->
+            <rim:Classification id="urn:uuid:22333046-3429-4684-85de-d9db69e236a1"
+                classificationScheme="urn:fdc:oots:classification:eb"
+                classificationNode="Requirement"/>
+        </rim:RegistryObject>
+
+        <rim:RegistryObject id="urn:uuid:96f14213-a9f3-4126-af76-4e43615855aa">
+            <rim:Slot name="Requirement">
+                <!-- The underlying requirement "Proof of secondary education diploma/certificate"-->
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <sdg:Requirement>
+                        <sdg:Identifier>https://sr.oots.tech.europa.eu/requirements/cfcd4e22-30f1-48fa-93e4-6cf98cedbf40</sdg:Identifier>
+                        <sdg:Name lang="EN">Proof of secondary education diploma/certificate</sdg:Name>
+                        <sdg:Name lang="DE">Nachweis eines Sekundarschulabschlusses/Zeugnisses</sdg:Name>
+                    </sdg:Requirement>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- A unique id for this classification 22333046-3429-4684-85de-d9db69e236a1 -->
+            <!-- The classification scheme under which the specific classification nodes reside for the EB Service -->
+            <!-- A classification node defining the registry object as Requirement -->
+            <rim:Classification id="urn:uuid:95b0172b-72d1-4404-8a28-2487ac7ff5b0"
+                                classificationScheme="urn:fdc:oots:classification:eb"
+                                classificationNode="Requirement"/>
+        </rim:RegistryObject>
+
+        <rim:RegistryObject id="urn:uuid:44a830ca-0f89-47ae-a6c2-c2c57d7e6087">
+            <rim:Slot name="Requirement">
+                <!-- The underlying requirement "Proof of payment of social contributions for employees"-->
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <sdg:Requirement>
+                        <sdg:Identifier>https://sr.oots.tech.europa.eu/requirements/777873c1-02c4-49ff-af8f-77c59a42a7f4</sdg:Identifier>
+                        <sdg:Name lang="EN">Proof of payment of social contributions for employees</sdg:Name>
+                        <sdg:Name lang="DE">Nachweis über die Zahlung von Sozialbeiträgen für Arbeitnehmer</sdg:Name>
+                    </sdg:Requirement>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- A unique id for this classification 22333046-3429-4684-85de-d9db69e236a1 -->
+            <!-- The classification scheme under which the specific classification nodes reside for the EB Service -->
+            <!-- A classification node defining the registry object as Requirement -->
+            <rim:Classification id="urn:uuid:516d261b-15fc-4291-b8aa-0b1e5753b201"
+                                classificationScheme="urn:fdc:oots:classification:eb"
+                                classificationNode="Requirement"/>
+        </rim:RegistryObject>
+
+
+        <rim:RegistryObject id="urn:uuid:b0c90eb4-6b66-4dd8-8c79-6d964ac3b9a1">
+            <rim:Slot name="ReferenceFramework">
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <sdg:ReferenceFramework>
+                        <!-- A Reference Framework for "Proof of birth" -->
+                        <!-- Link to the Procedure as implemented in Germany, uniquely identified by the Identifier and Jurisdiction. The name of the procedure, as declared in the SDG Regulation; Is possibly extended or replaced with national reference frameworks when the procedure is implemented by a Member State regulation -->
+                        <sdg:Identifier>118fd444-6443-42be-a084-c9fbfd1f674d</sdg:Identifier>
+                        <sdg:Title lang="EN">Procedure #1 - Requesting proof of registration of birth</sdg:Title>
+                        <sdg:Title lang="DE">Verfahren #1 - Beantragung des Nachweises über die Eintragung in das Geburtenregister</sdg:Title>
+                        <sdg:Description lang="EN"> Procedure #1 "Requesting proof of registration of birth" belongs to the life event "Birth" of Annex II of the Regulation (EU) 2018/1724
+                            of the European Parliament and of the Council of 2 October 2018 establishing a single digital gateway to provide access to information, to procedures and to assistance and problem-solving services and amending Regulation (EU) No 1024/2012
+                        </sdg:Description>
+                        <sdg:Description lang="DE"> Das Verfahren #1 "Beantragung des Nachweises über die Eintragung in das Geburtenregister" gehört zum Lebensereignis "Geburt" des Anhangs II der Verordnung (EU) 2018/1724 des Europäischen Parlaments und des Rates vom 2. Oktober 2018 über die Einrichtung eines einheitlichen digitalen Zugangstors zu Informationen, Verfahren, Hilfsund Problemlösungsdiensten und zur Änderung der Verordnung (EU) Nr. 1024/2012
+                        </sdg:Description>
+
+                        <!-- The Identifier of the SDGR Procedure which this procedure relates to encoded according to Procedures-CodeList.gc. In this case R1 relates to "Requesting a birth certificate" -->
+                        <sdg:RelatedTo>
+                            <sdg:Identifier>R1</sdg:Identifier>
+                        </sdg:RelatedTo>
+
+                        <!-- Country - Mandatory - ISO code. Requirement is connected to the implementation of Procedure 1 in Germany. Regional Codes (AdminUnitLevel 2 and 3) not applicable for DE in this Procedure (Common Reference Framework for the country)  -->
+                        <sdg:Jurisdiction>
+                            <sdg:AdminUnitLevel1>DE</sdg:AdminUnitLevel1>
+                        </sdg:Jurisdiction>
+
+                    </sdg:ReferenceFramework>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- A unique id for this classification 750869ec-aeac-4cc6-9386-75c86544e433 -->
+            <!-- The classification scheme under which the specific classification nodes reside for the EB Service -->
+            <!-- A classification node defining the registry object as ReferenceFramework -->
+            <rim:Classification id="urn:uuid:750869ec-aeac-4cc6-9386-75c86544e433"
+                classificationScheme="urn:fdc:oots:classification:eb"
+                classificationNode="ReferenceFramework"/>
+        </rim:RegistryObject>
+
+        <rim:RegistryObject id="urn:uuid:20e4eeab-6b3f-49b6-8e13-05ae4e250d14">
+            <rim:Slot name="ReferenceFramework">
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <sdg:ReferenceFramework>
+                        <!-- A Reference Framework for Proof of secondary education diploma/certificate -->
+                        <!-- Link to the Procedure as implemented in Schleswig-Holstein, Germany, uniquely identified by the Identifier and Jurisdiction. The name of the procedure is declared  with a regional reference framework in Schleswig-Holstein because the procedure is implemented by a regional Member State regulation -->
+                        <sdg:Identifier>5f661524-0ea6-4e5c-a6b8-e381e9908644</sdg:Identifier>
+                        <sdg:Title lang="EN">39 HSG - University Admission, Schleswig-Holstein</sdg:Title>
+                        <sdg:Title lang="DE">39 HSG – Hochschulzugang, Schleswig-Holstein</sdg:Title>
+                        <sdg:Description lang="EN"> Section 39 Law on Universities and the University Hospital of Schleswig-Holstein (Higher Education Act - HSG): (1) The following proven school-based higher education entrance qualifications shall entitle the holder to study with a first higher education degree: 1. the general higher education entrance qualification, 2. the subject-linked higher education entrance qualification, 3. the general entrance qualification for studies at universities of applied sciences, 4. the subject-linked entrance qualification for studies at universities of applied sciences.
+                        </sdg:Description>
+                        <sdg:Description lang="DE">39 Gesetz über die Hochschulen und das Universitätsklinikum Schleswig-Holstein (Hochschulgesetz - HSG): (1) Zu einem Studium mit einem ersten Hochschulabschluss berechtigen folgende nachgewiesene schulische Hochschulzugangsberechtigungen: 1.die allgemeine Hochschulreife, 2. die fachgebundene Hochschulreife, 3. die allgemeine Fachhochschulreife, 4. die fachgebundene Fachhochschulreife.
+                        </sdg:Description>
+
+                        <!-- The Identifier of the SDGR Procedure which this procedure relates to encoded according to Procedures-CodeList.gc. In this case T2 relates to "Submitting an initial application for admission to public tertiary education institution" -->
+                        <sdg:RelatedTo>
+                            <sdg:Identifier>T2</sdg:Identifier>
+                        </sdg:RelatedTo>
+
+                        <!-- Country - Mandatory - ISO code. Requirement is connected to the implementation of Procedure 4 in Schleswig-Holstein, Germany. Regional Codes (AdminUnitLevel 2) is provided because the regional law or reference framework in Schleswig-Holstein is relevant for the implementation (Common Reference Framework for the country)  -->
+                        <sdg:Jurisdiction>
+                            <sdg:AdminUnitLevel1>DE</sdg:AdminUnitLevel1>
+                            <sdg:AdminUnitLevel2>DEF</sdg:AdminUnitLevel2>
+                        </sdg:Jurisdiction>
+
+                    </sdg:ReferenceFramework>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- A unique id for this classification 750869ec-aeac-4cc6-9386-75c86544e433 -->
+            <!-- The classification scheme under which the specific classification nodes reside for the EB Service -->
+            <!-- A classification node defining the registry object as ReferenceFramework -->
+            <rim:Classification id="urn:uuid:e057ac01-0157-438b-b720-825f1d423326"
+                                classificationScheme="urn:fdc:oots:classification:eb"
+                                classificationNode="ReferenceFramework"/>
+        </rim:RegistryObject>
+
+        <rim:RegistryObject id="urn:uuid:dd6024b2-e7f7-4130-900c-0273f4423e2f">
+            <rim:Slot name="ReferenceFramework">
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <sdg:ReferenceFramework>
+                        <!-- A Reference Framework for Proof of secondary education diploma/certificate -->
+                        <!-- Link to the Procedure as implemented in Hesse Germany, uniquely identified by the Identifier and Jurisdiction. The name of the procedure is declared  with a regional reference framework in Hesse because the procedure is implemented by a regional Member State regulation -->
+                        <sdg:Identifier>b09b256e-37c7-4ca4-8578-31bfb82abba8</sdg:Identifier>
+                        <sdg:Title lang="EN">54 HessHG 2009 - University Admission, Hesse</sdg:Title>
+                        <sdg:Title lang="DE">54 HessHG 2009 – Hochschulzugang, Hessen</sdg:Title>
+                        <sdg:Description lang="EN">54 Hessian Higher Education Act (HessHG) 2009: (1) Students are entitled to study in an undergraduate degree programme if they can prove that they have the necessary qualifications (higher education entrance qualification). The eligible qualifications for study are described in (2) of the (§ 54 HessHG 2009).
+                        </sdg:Description>
+                        <sdg:Description lang="DE">54 Hessisches Hochschulgesetz (HessHG) 2009: (1) Zum Studium in einem grundständigen Studiengang ist berechtigt, wer die dafür erforderliche Qualifikation nachweist (Hochschulzugangsberechtigung). Die berechtigten Qualifikationen für ein Studium werden in (2) des (§ 54 HessHG 2009) beschrieben.
+                        </sdg:Description>
+
+                        <!-- The Identifier of the SDGR Procedure which this procedure relates to encoded according to Procedures-CodeList.gc. In this case T2 relates to "Submitting an initial application for admission to public tertiary education institution" -->
+                        <sdg:RelatedTo>
+                            <sdg:Identifier>T2</sdg:Identifier>
+                        </sdg:RelatedTo>
+
+                        <!-- Country - Mandatory - ISO code. Requirement is connected to the implementation of Procedure 4 in Hesse, Germany. Regional Codes (AdminUnitLevel 2) is provided because the regional law or reference framework in Hesse is relevant for the implementation (Common Reference Framework for the country)  -->
+                        <sdg:Jurisdiction>
+                            <sdg:AdminUnitLevel1>DE</sdg:AdminUnitLevel1>
+                            <sdg:AdminUnitLevel2>DE7</sdg:AdminUnitLevel2>
+                        </sdg:Jurisdiction>
+
+                    </sdg:ReferenceFramework>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- A unique id for this classification 750869ec-aeac-4cc6-9386-75c86544e433 -->
+            <!-- The classification scheme under which the specific classification nodes reside for the EB Service -->
+            <!-- A classification node defining the registry object as ReferenceFramework -->
+            <rim:Classification id="urn:uuid:db16c1c8-ddd6-4517-997a-e9cd5a00142a"
+                                classificationScheme="urn:fdc:oots:classification:eb"
+                                classificationNode="ReferenceFramework"/>
+        </rim:RegistryObject>
+
+        <rim:RegistryObject id="urn:uuid:30dbba63-dcff-4722-947c-17f0261dcd4e">
+            <rim:Slot name="ReferenceFramework">
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <sdg:ReferenceFramework>
+                        <!-- A Reference Framework for Proof of payment of social contributions for employees -->
+                        <!-- Link to the Procedure as implemented in Germany, uniquely identified by the Identifier and Jurisdiction. The name of the procedure, as declared in the SDG Regulation; Is possibly extended or replaced with national reference frameworks when the procedure is implemented by a Member State regulation -->
+                        <sdg:Identifier>799a1307-3ae1-44eb-9f77-e91ed1d61564</sdg:Identifier>
+                        <sdg:Title lang="EN">Procedure #21 - Payment of social contributions for employees</sdg:Title>
+                        <sdg:Title lang="DE">Verfahren #21 - Zahlung von Sozialbeiträgen für Beschäftigte</sdg:Title>
+                        <sdg:Description lang="EN"> Procedure #21 "Payment of social contributions for employees" belongs to the life event "Starting, running and closing a business" of Annex II of the Regulation (EU) 2018/1724 of the European Parliament and of the Council of 2 October 2018 establishing a single digital gateway to provide access to information, to procedures and to assistance and problem-solving services and amending Regulation (EU) No 1024/2012
+                        </sdg:Description>
+                        <sdg:Description lang="DE"> Das Verfahren #21 "Zahlung von Sozialbeiträgen für Beschäftigte" gehört zum Lebensereignis "Gründung, Führung und Schließung eines Unternehmens" des Anhangs II der Verordnung (EU) 2018/1724 des Europäischen Parlaments und des Rates vom 2. Oktober 2018 über die Einrichtung eines einheitlichen digitalen Zugangstors zu Informationen, Verfahren, Hilfs und Problemlösungsdiensten und zur Änderung der Verordnung (EU) Nr. 1024/2012
+                        </sdg:Description>
+
+                        <!-- The Identifier of the SDGR Procedure which this procedure relates to encoded according to Procedures-CodeList.gc. In this case X6 relates to "Payment of social contributions for employees" -->
+                        <sdg:RelatedTo>
+                            <sdg:Identifier>X6</sdg:Identifier>
+                        </sdg:RelatedTo>
+
+                        <!-- Country - Mandatory - ISO code. Requirement is connected to the implementation of Procedure 1 in Germany. Regional Codes (AdminUnitLevel 2 and 3) not applicable for DE in this Procedure (Common Reference Framework for the country)  -->
+                        <sdg:Jurisdiction>
+                            <sdg:AdminUnitLevel1>DE</sdg:AdminUnitLevel1>
+                        </sdg:Jurisdiction>
+
+                    </sdg:ReferenceFramework>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- A unique id for this classification 750869ec-aeac-4cc6-9386-75c86544e433 -->
+            <!-- The classification scheme under which the specific classification nodes reside for the EB Service -->
+            <!-- A classification node defining the registry object as ReferenceFramework -->
+            <rim:Classification id="urn:uuid:82dbd940-4d5b-4ebd-a45f-cc2d9db5cba7"
+                                classificationScheme="urn:fdc:oots:classification:eb"
+                                classificationNode="ReferenceFramework"/>
+        </rim:RegistryObject>
+
+        <!-- Associations for Proof of Birth Requirement -->
+
+        <!-- Associate the EvidenceTypeList "List of Birth Certificates" with EvidenceType "Certificate of Birth"-->
+        <!-- A unique id for this association 826a2206-5dd0-45ff-abbc-23ba8f38477f -->
+        <!-- The sourceObject is the 'rim:RegistryObject' id of the EvidenceTypeList "List of Birth Certificates" -->
+        <!-- The targetObject is the 'rim:RegistryObject' id of the EvidenceType "Certificate of Birth" -->
+        <rim:RegistryObject xsi:type="rim:AssociationType"
+            id="urn:uuid:826a2206-5dd0-45ff-abbc-23ba8f38477f"
+            sourceObject="urn:uuid:91197b3c-890b-475f-a07e-709742e59f23"
+            targetObject="urn:uuid:a1be6e74-e9ba-4d44-b04c-0376f367b8fd"
+            type="urn:oasis:names:tc:ebxml-regrep:AssociationType:ContainsEvidence"/>
+
+        <!-- Associate the EvidenceTypeList "List of Birth Certificates" with Requirement "Proof of Birth"-->
+        <!-- A unique id for this association 3da4288b-e2ca-4d40-bde2-d3fc2dd04bab -->
+        <!-- The sourceObject is the 'rim:RegistryObject' id of the EvidenceTypeList "List of Birth Certificates" -->
+        <!-- The targetObject is the 'rim:RegistryObject' id of the Requirement "Proof of Birth" -->
+        <rim:RegistryObject xsi:type="rim:AssociationType"
+            id="urn:uuid:3da4288b-e2ca-4d40-bde2-d3fc2dd04bab"
+            sourceObject="urn:uuid:91197b3c-890b-475f-a07e-709742e59f23"
+            targetObject="urn:uuid:530936b7-9281-4ec8-8a70-e98a3f06e022"
+            type="urn:oasis:names:tc:ebxml-regrep:AssociationType:FulfillsRequirement"/>
+
+        <!-- Associate the Requirement "Proof of Birth" with ReferenceFramework "Procedure #1 - Requesting proof of registration of birth"-->
+        <!-- A unique id for this association d650d08b-4ca3-4d04-a5d2-255d83b84ce1 -->
+        <!-- The sourceObject is the 'rim:RegistryObject' id of the Requirement "Proof of Birth" -->
+        <!-- The targetObject is the 'rim:RegistryObject' id of the ReferenceFramework "Procedure #1 - Requesting proof of registration of birth" -->
+        <rim:RegistryObject xsi:type="rim:AssociationType"
+            id="urn:uuid:d650d08b-4ca3-4d04-a5d2-255d83b84ce1"
+            sourceObject="urn:uuid:530936b7-9281-4ec8-8a70-e98a3f06e022"
+            targetObject="urn:uuid:b0c90eb4-6b66-4dd8-8c79-6d964ac3b9a1"
+            type="urn:oasis:names:tc:ebxml-regrep:AssociationType:DerivesFromReferenceFramework"/>
+
+
+
+        <!-- Associations for Proof of secondary education diploma/certificate -->
+
+        <!-- Associate the EvidenceTypeList "Certificates about Higher education entrance qualification" with EvidenceType "Secondary Education Completion Evidence"-->
+        <!-- A unique id for this association 441870ed-7755-4a67-acd2-8c57d8e1e7d5 -->
+        <!-- The sourceObject is the 'rim:RegistryObject' id of the EvidenceTypeList "Certificates about Higher education entrance qualification" -->
+        <!-- The targetObject is the 'rim:RegistryObject' id of the EvidenceType "Secondary Education Completion Evidence" -->
+        <rim:RegistryObject xsi:type="rim:AssociationType"
+                            id="urn:uuid:441870ed-7755-4a67-acd2-8c57d8e1e7d5"
+                            sourceObject="urn:uuid:7638cc4c-51ea-40d8-93a9-29e8c4c2bb2a"
+                            targetObject="urn:uuid:30855a65-562d-4a57-af81-e4f9c4db73fc"
+                            type="urn:oasis:names:tc:ebxml-regrep:AssociationType:ContainsEvidence"/>
+
+        <!-- Associate the EvidenceTypeList "Certificates about Higher education entrance qualification" with EvidenceType "Subject-specific higher education entrance qualification"-->
+        <!-- A unique id for this association 2c147e9d-1474-4796-8022-375c8af6ac1c -->
+        <!-- The sourceObject is the 'rim:RegistryObject' id of the EvidenceTypeList "Certificates about Higher education entrance qualification" -->
+        <!-- The targetObject is the 'rim:RegistryObject' id of the EvidenceType "Subject-specific higher education entrance qualification" -->
+        <rim:RegistryObject xsi:type="rim:AssociationType"
+                            id="urn:uuid:2c147e9d-1474-4796-8022-375c8af6ac1c"
+                            sourceObject="urn:uuid:7638cc4c-51ea-40d8-93a9-29e8c4c2bb2a"
+                            targetObject="urn:uuid:d854080b-6dde-4969-967f-ad94faeb3cab"
+                            type="urn:oasis:names:tc:ebxml-regrep:AssociationType:ContainsEvidence"/>
+
+        <!-- Associate the EvidenceTypeList "Certificates about Higher education entrance qualification" with EvidenceType "Entrance qualification for studies at universities of applied sciences"-->
+        <!-- A unique id for this association 72f25f37-81eb-4d4f-8919-7e0acf53d4c0 -->
+        <!-- The sourceObject is the 'rim:RegistryObject' id of the EvidenceTypeList "Certificates about Higher education entrance qualification" -->
+        <!-- The targetObject is the 'rim:RegistryObject' id of the EvidenceType "Entrance qualification for studies at universities of applied sciences" -->
+        <rim:RegistryObject xsi:type="rim:AssociationType"
+                            id="urn:uuid:72f25f37-81eb-4d4f-8919-7e0acf53d4c0"
+                            sourceObject="urn:uuid:7638cc4c-51ea-40d8-93a9-29e8c4c2bb2a"
+                            targetObject="urn:uuid:6e381a39-ab57-45b4-b847-90e7fba31960"
+                            type="urn:oasis:names:tc:ebxml-regrep:AssociationType:ContainsEvidence"/>
+
+        <!-- Associate the EvidenceTypeList "Other University Entrance Qualifications" with EvidenceType "Completed master craftsman's examination"-->
+        <!-- A unique id for this association bb99a16b-9d0e-499c-97fc-ee738256282d -->
+        <!-- The sourceObject is the 'rim:RegistryObject' id of the EvidenceTypeList "Other University Entrance Qualifications" -->
+        <!-- The targetObject is the 'rim:RegistryObject' id of the EvidenceType "Completed master craftsman's examination" -->
+        <rim:RegistryObject xsi:type="rim:AssociationType"
+                            id="urn:uuid:bb99a16b-9d0e-499c-97fc-ee738256282d"
+                            sourceObject="urn:uuid:ce3f7323-69f1-4b45-92f0-fbd15453313b"
+                            targetObject="urn:uuid:4e83cf9a-cc07-4f41-877f-58697f4e04ff"
+                            type="urn:oasis:names:tc:ebxml-regrep:AssociationType:ContainsEvidence"/>
+
+        <!-- Associate the EvidenceTypeList "Other University Entrance Qualifications" with EvidenceType "Completed professional training with work experience"-->
+        <!-- A unique id for this association 59bc0cbc-5783-4fe0-b8ab-b8ba279e2ad2 -->
+        <!-- The sourceObject is the 'rim:RegistryObject' id of the EvidenceTypeList "Other University Entrance Qualifications" -->
+        <!-- The targetObject is the 'rim:RegistryObject' id of the EvidenceType "Completed professional training with work experience" -->
+        <rim:RegistryObject xsi:type="rim:AssociationType"
+                            id="urn:uuid:59bc0cbc-5783-4fe0-b8ab-b8ba279e2ad2"
+                            sourceObject="urn:uuid:ce3f7323-69f1-4b45-92f0-fbd15453313b"
+                            targetObject="urn:uuid:70946cc4-ab39-4545-90fc-1b0d00a12715"
+                            type="urn:oasis:names:tc:ebxml-regrep:AssociationType:ContainsEvidence"/>
+
+        <!-- Associate the EvidenceTypeList "Certificates about Higher education entrance qualification" with Requirement "Proof of secondary education diploma/certificate" -->
+        <!-- A unique id for this association 314a7f56-6721-4407-8f0a-29ac2f416852 -->
+        <!-- The sourceObject is the 'rim:RegistryObject' id of the EvidenceTypeList "Certificates about Higher education entrance qualification" -->
+        <!-- The targetObject is the 'rim:RegistryObject' id of the Requirement "Proof of secondary education diploma/certificate" -->
+        <rim:RegistryObject xsi:type="rim:AssociationType"
+                            id="urn:uuid:314a7f56-6721-4407-8f0a-29ac2f416852"
+                            sourceObject="urn:uuid:7638cc4c-51ea-40d8-93a9-29e8c4c2bb2a"
+                            targetObject="urn:uuid:96f14213-a9f3-4126-af76-4e43615855aa"
+                            type="urn:oasis:names:tc:ebxml-regrep:AssociationType:FulfillsRequirement"/>
+
+        <!-- Associate the EvidenceTypeList "Other University Entrance Qualifications" with Requirement "Proof of secondary education diploma/certificate"-->
+        <!-- A unique id for this association d6d81b80-01e8-430a-af15-49b637da7f0d -->
+        <!-- The sourceObject is the 'rim:RegistryObject' id of the EvidenceTypeList "Other University Entrance Qualifications" -->
+        <!-- The targetObject is the 'rim:RegistryObject' id of the Requirement "Proof of secondary education diploma/certificate" -->
+        <rim:RegistryObject xsi:type="rim:AssociationType"
+                            id="urn:uuid:d6d81b80-01e8-430a-af15-49b637da7f0d"
+                            sourceObject="urn:uuid:ce3f7323-69f1-4b45-92f0-fbd15453313b"
+                            targetObject="urn:uuid:96f14213-a9f3-4126-af76-4e43615855aa"
+                            type="urn:oasis:names:tc:ebxml-regrep:AssociationType:FulfillsRequirement"/>
+
+        <!-- Associate the Requirement "Proof of secondary education diploma/certificate" with ReferenceFramework "39 HSG - University Admission, Schleswig-Holstein"-->
+        <!-- A unique id for this association ae0d7f9b-39c3-4b47-b4bf-8e17b878d3e7 -->
+        <!-- The sourceObject is the 'rim:RegistryObject' id of the Requirement "Proof of secondary education diploma/certificate" -->
+        <!-- The targetObject is the 'rim:RegistryObject' id of the ReferenceFramework "39 HSG - University Admission, Schleswig-Holstein" -->
+        <rim:RegistryObject xsi:type="rim:AssociationType"
+                            id="urn:uuid:ae0d7f9b-39c3-4b47-b4bf-8e17b878d3e7"
+                            sourceObject="urn:uuid:96f14213-a9f3-4126-af76-4e43615855aa"
+                            targetObject="urn:uuid:20e4eeab-6b3f-49b6-8e13-05ae4e250d14"
+                            type="urn:oasis:names:tc:ebxml-regrep:AssociationType:DerivesFromReferenceFramework"/>
+
+        <!-- Associate the Requirement "Proof of secondary education diploma/certificate" with ReferenceFramework "54 HessHG 2009 - University Admission, Hesse"-->
+        <!-- A unique id for this association 0c7536a1-0aee-4089-be64-6458d31aa704 -->
+        <!-- The sourceObject is the 'rim:RegistryObject' id of the Requirement "Proof of secondary education diploma/certificate" -->
+        <!-- The targetObject is the 'rim:RegistryObject' id of the ReferenceFramework "54 HessHG 2009 - University Admission, Hesse" -->
+        <rim:RegistryObject xsi:type="rim:AssociationType"
+                            id="urn:uuid:0c7536a1-0aee-4089-be64-6458d31aa704"
+                            sourceObject="urn:uuid:96f14213-a9f3-4126-af76-4e43615855aa"
+                            targetObject="urn:uuid:dd6024b2-e7f7-4130-900c-0273f4423e2f"
+                            type="urn:oasis:names:tc:ebxml-regrep:AssociationType:DerivesFromReferenceFramework"/>
+
+
+        <!-- Associations for Proof of payment of social contributions for employees -->
+
+        <!-- Associate the EvidenceTypeList "Certificates that proof the payment of social security contributions" with EvidenceType "Certificate on the payment of social security contributions"-->
+        <!-- A unique id for this association 14db3eb1-4fce-4aff-be23-f2261837736e -->
+        <!-- The sourceObject is the 'rim:RegistryObject' id of the EvidenceTypeList "Certificates that proof the payment of social security contributions" -->
+        <!-- The targetObject is the 'rim:RegistryObject' id of the EvidenceType "Certificate on the payment of social security contributions" -->
+        <rim:RegistryObject xsi:type="rim:AssociationType"
+                            id="urn:uuid:14db3eb1-4fce-4aff-be23-f2261837736e"
+                            sourceObject="urn:uuid:80638d77-646b-4678-8274-b35f3947b4b3"
+                            targetObject="urn:uuid:02295404-0780-4cfd-888b-74b07f4223ee"
+                            type="urn:oasis:names:tc:ebxml-regrep:AssociationType:ContainsEvidence"/>
+
+        <!-- Associate the EvidenceTypeList "Certificates that proof the payment of social security contributions" with Requirement "Proof of payment of social contributions for employees"-->
+        <!-- A unique id for this association 114827ca-c58d-4b7e-b8a2-15bbe46c80fa -->
+        <!-- The sourceObject is the 'rim:RegistryObject' id of the EvidenceTypeList "Certificates that proof the payment of social security contributions" -->
+        <!-- The targetObject is the 'rim:RegistryObject' id of the Requirement "Proof of payment of social contributions for employees" -->
+        <rim:RegistryObject xsi:type="rim:AssociationType"
+                            id="urn:uuid:114827ca-c58d-4b7e-b8a2-15bbe46c80fa"
+                            sourceObject="urn:uuid:80638d77-646b-4678-8274-b35f3947b4b3"
+                            targetObject="urn:uuid:44a830ca-0f89-47ae-a6c2-c2c57d7e6087"
+                            type="urn:oasis:names:tc:ebxml-regrep:AssociationType:FulfillsRequirement"/>
+
+        <!-- Associate the Requirement "Proof of payment of social contributions for employees" with ReferenceFramework "Procedure #1 - Requesting proof of registration of birth"-->
+        <!-- A unique id for this association 6b3b5b79-a0b6-4fb6-a001-10863809cec2 -->
+        <!-- The sourceObject is the 'rim:RegistryObject' id of the Requirement "Proof of payment of social contributions for employees" -->
+        <!-- The targetObject is the 'rim:RegistryObject' id of the ReferenceFramework "Procedure #21 - Payment of social contributions for employees" -->
+        <rim:RegistryObject xsi:type="rim:AssociationType"
+                            id="urn:uuid:6b3b5b79-a0b6-4fb6-a001-10863809cec2"
+                            sourceObject="urn:uuid:44a830ca-0f89-47ae-a6c2-c2c57d7e6087"
+                            targetObject="urn:uuid:30dbba63-dcff-4722-947c-17f0261dcd4e"
+                            type="urn:oasis:names:tc:ebxml-regrep:AssociationType:DerivesFromReferenceFramework"/>
+ 
+    </rim:RegistryObjectList>
+</lcm:SubmitObjectsRequest>

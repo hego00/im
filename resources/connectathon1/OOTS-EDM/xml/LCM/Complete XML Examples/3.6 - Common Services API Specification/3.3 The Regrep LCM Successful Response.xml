@@ -1,0 +1,4 @@
+<rs:RegistryResponse xmlns="urn:oasis:names:tc:ebxml-regrep:xsd:rs:4.0"
+                  xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:4.0"
+                  status="urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Success"
+                  requestId="urn:uuid:f7dc04fe-337c-4523-85c7-35a7ab95bbac"/>

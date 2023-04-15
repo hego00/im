@@ -1,0 +1,2771 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Schema documentation for lcm.xsd</title>
+      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript"><!--
+        var propertiesBoxes= new Array('properties_lcm.xsd', 
+				'properties_SubmitObjectsRequest', 
+				'properties_UpdateActionType_ValueHolder', 
+				'properties_UpdateActionType_Selector', 
+				'properties_UpdateObjectsRequest', 
+				'properties_UpdateObjectsRequest_Query', 
+				'properties_UpdateObjectsRequest_UpdateAction', 
+				'properties_RemoveObjectsRequest', 
+				'properties_RemoveObjectsRequest_Query', 
+				'properties_SubmitObjectsRequest_checkReferences', 
+				'properties_SubmitObjectsRequest_mode', 
+				'properties_UpdateActionType_mode', 
+				'properties_UpdateObjectsRequest_checkReferences', 
+				'properties_UpdateObjectsRequest_mode', 
+				'properties_RemoveObjectsRequest_checkReferences', 
+				'properties_RemoveObjectsRequest_deleteChildren', 
+				'properties_RemoveObjectsRequest_deletionScope');
+var facetsBoxes= new Array('facets_mode', 
+				'facets_SubmitObjectsRequest_mode', 
+				'facets_UpdateActionType_mode', 
+				'facets_UpdateObjectsRequest_mode');
+var usedByBoxes= new Array('usedBy_mode', 
+				'usedBy_UpdateActionType', 
+				'usedBy_SubmitObjectsRequest_checkReferences', 
+				'usedBy_SubmitObjectsRequest_mode', 
+				'usedBy_UpdateActionType_mode', 
+				'usedBy_UpdateObjectsRequest_checkReferences', 
+				'usedBy_UpdateObjectsRequest_mode', 
+				'usedBy_RemoveObjectsRequest_checkReferences', 
+				'usedBy_RemoveObjectsRequest_deleteChildren', 
+				'usedBy_RemoveObjectsRequest_deletionScope');
+var sourceBoxes= new Array('source_SubmitObjectsRequest', 
+				'source_UpdateActionType_ValueHolder', 
+				'source_UpdateActionType_Selector', 
+				'source_UpdateObjectsRequest', 
+				'source_UpdateObjectsRequest_Query', 
+				'source_UpdateObjectsRequest_UpdateAction', 
+				'source_RemoveObjectsRequest', 
+				'source_RemoveObjectsRequest_Query', 
+				'source_mode', 
+				'source_UpdateActionType', 
+				'source_SubmitObjectsRequest_checkReferences', 
+				'source_SubmitObjectsRequest_mode', 
+				'source_UpdateActionType_mode', 
+				'source_UpdateObjectsRequest_checkReferences', 
+				'source_UpdateObjectsRequest_mode', 
+				'source_RemoveObjectsRequest_checkReferences', 
+				'source_RemoveObjectsRequest_deleteChildren', 
+				'source_RemoveObjectsRequest_deletionScope');
+var instanceBoxes= new Array('instance_SubmitObjectsRequest', 
+				'instance_UpdateActionType_Selector', 
+				'instance_UpdateObjectsRequest', 
+				'instance_UpdateObjectsRequest_Query', 
+				'instance_UpdateObjectsRequest_UpdateAction', 
+				'instance_RemoveObjectsRequest', 
+				'instance_RemoveObjectsRequest_Query');
+var diagramBoxes= new Array('diagram_SubmitObjectsRequest', 
+				'diagram_UpdateActionType_ValueHolder', 
+				'diagram_UpdateActionType_Selector', 
+				'diagram_UpdateObjectsRequest', 
+				'diagram_UpdateObjectsRequest_Query', 
+				'diagram_UpdateObjectsRequest_UpdateAction', 
+				'diagram_RemoveObjectsRequest', 
+				'diagram_RemoveObjectsRequest_Query', 
+				'diagram_mode', 
+				'diagram_UpdateActionType');
+var annotationBoxes= new Array('annotations_lcm.xsd', 
+				'annotations_SubmitObjectsRequest', 
+				'annotations_UpdateObjectsRequest', 
+				'annotations_RemoveObjectsRequest', 
+				'annotations_UpdateActionType');
+var attributesBoxes= new Array('attributes_SubmitObjectsRequest', 
+				'attributes_UpdateActionType_Selector', 
+				'attributes_UpdateObjectsRequest', 
+				'attributes_UpdateObjectsRequest_Query', 
+				'attributes_UpdateObjectsRequest_UpdateAction', 
+				'attributes_RemoveObjectsRequest', 
+				'attributes_RemoveObjectsRequest_Query', 
+				'attributes_UpdateActionType');
+var modelBoxes= new Array('model_SubmitObjectsRequest', 
+				'model_UpdateActionType_Selector', 
+				'model_UpdateObjectsRequest', 
+				'model_UpdateObjectsRequest_Query', 
+				'model_UpdateObjectsRequest_UpdateAction', 
+				'model_RemoveObjectsRequest', 
+				'model_RemoveObjectsRequest_Query', 
+				'model_UpdateActionType');
+
+      
+        var button_prefix = 'button_';
+        
+        /**
+        * Returns an element in the current HTML document.
+        *
+        * @param elementID Identifier of HTML element
+        * @return               HTML element object
+        */
+        function getElementObject(elementID) {
+            var elemObj = null;
+            if (document.getElementById) {
+                elemObj = document.getElementById(elementID);
+            }
+            return elemObj;
+        }
+        
+        /**
+        * Switches the state of a collapseable box, e.g.
+        * if it's opened, it'll be closed, and vice versa.
+        *
+        * @param boxID Identifier of box
+        */
+        function switchState(boxID) {
+            var boxObj = getElementObject(boxID);
+            var buttonObj = getElementObject(button_prefix + boxID);
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else if (boxObj.style.display == "none") {
+                // Box is closed, so open it
+                openBox(boxObj, buttonObj);
+            } else if (boxObj.style.display == "block") {
+                // Box is opened, so close it
+                closeBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+        * Opens a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function openBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "block";
+                
+                // Change text of button
+                if (boxObj.style.display == "block") {
+                    buttonObj.src = "img/btM.gif";
+                }
+            }
+        }
+        
+        /**
+        * Closes a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function closeBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "none";
+                
+                // Change text of button
+                if (boxObj.style.display == "none") {
+                    buttonObj.src = "img/btP.gif";
+                }
+            }
+        }
+    
+       function switchStateForAll(buttonObj, boxList) {
+            if (buttonObj == null) {
+                // button not found
+            } else if (buttonObj.value == "+") {
+                // Expand all
+                expandAll(boxList);
+                buttonObj.value = "-";
+            } else if (buttonObj.value == "-") {
+                // Collapse all
+                collapseAll(boxList);
+                buttonObj.value = "+";
+            }
+        }
+        
+        /**
+        * Closes all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function collapseAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                closeBox(boxObj, buttonObj);
+            }
+        }
+            
+        /**
+        * Open all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function expandAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                openBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+         * Update the message presented in the title of the html page.
+         * - If the documentation was splited by namespace we present something like: "Documentation for namespace 'ns'"
+         * - If the documentation was splited by location we present somehing like: "Documentation for 'Schema.xsd'"
+         * - If no split we always present: "Documentation for 'MainSchema.xsd'"
+         */
+        function updatePageTitle(message) {
+            top.document.title = message;
+        }
+        
+          
+                    
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function findAndFloat(id, x_displacement, y_displacement){
+
+            var element = getElementObject(id);            
+            
+            window[id + "_obj"] = element;
+            
+            if(document.layers) {
+               element.style = element;
+            }
+            
+            element.current_y = y_displacement;      
+            element.first_time = true;
+         
+            element.floatElement = function(){
+               // It may be closed by an user action.
+                
+               // Target X and Y coordinates.
+               var x, y;
+               
+               var myWidth = 0, myHeight = 0;
+               if( typeof( window.innerWidth ) == 'number' ) {
+                  //Non-IE
+                  myWidth = window.innerWidth;
+                  myHeight = window.innerHeight;
+               } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                  //IE 6+ in 'standards compliant mode'
+                  myWidth = document.documentElement.clientWidth;
+                  myHeight = document.documentElement.clientHeight;
+               } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                  //IE 4 compatible
+                  myWidth = document.body.clientWidth;
+                  myHeight = document.body.clientHeight;
+               }
+               
+               
+               x = myWidth - x_displacement;
+               
+               var ns = (navigator.appName.indexOf("Netscape") != -1);               
+               y = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+                  document.documentElement.scrollTop : document.body.scrollTop;               
+               y = y + y_displacement;               
+               
+               // The current y is the current coordinate of the floating element.
+               // This should be at the limit the y target coordinate.
+               this.current_y += (y - this.current_y)/1.25;
+               
+               // Add the pixels constant after the values
+               // and move the element.
+               var px = document.layers ? "" : "px";
+               this.style.left =  x + px;
+               this.style.top =  this.current_y + px;
+                              
+               setTimeout(this.id + "_obj.floatElement()", 100);
+            }
+            
+            element.floatElement();
+            return element;
+          }
+
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function selectTOCGroupBy(id, isChunked, indexFileLocation, indexFileNamespace, indexFileComponent){
+
+            if (!isChunked) {
+             var selectIds = new Array('toc_group_by_namespace', 'toc_group_by_location', 'toc_group_by_component_type');
+             // Make all the tabs invisible.
+               for (i = 0; i < 3; i++){
+                  var tab = getElementObject(selectIds[i]);
+                  tab.style.display = 'none';
+               }
+               var selTab = getElementObject(id);
+               selTab.style.display = 'block';
+            } else {
+             if (id == 'toc_group_by_namespace') {
+               parent.indexFrame.location = indexFileNamespace;
+             } else  if (id == 'toc_group_by_location') {
+               parent.indexFrame.location = indexFileLocation;
+             } else  if (id == 'toc_group_by_component_type') {
+              parent.indexFrame.location = indexFileComponent;
+             }
+            }
+         }
+          
+
+    
+                    //--></script></head>
+   <body>
+      <div id="global_controls" class="globalControls" style="position:absolute;right:0;">
+         <table class="rt">
+            <tr>
+               <td class="rt_cornerTopLeft"></td>
+               <td class="rt_lineTop"></td>
+               <td class="rt_cornerTopRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_lineLeft"></td>
+               <td class="rt_content">
+                  <h3>Showing:</h3>
+                  <table>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, annotationBoxes);" class="control" /></span><span class="globalControlName">Annotations</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, attributesBoxes);" class="control" /></span><span class="globalControlName">Attributes </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, diagramBoxes);" class="control" /></span><span class="globalControlName">Diagrams</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, facetsBoxes);" class="control" /></span><span class="globalControlName">Facets </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, instanceBoxes);" class="control" /></span><span class="globalControlName">Instances</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, modelBoxes);" class="control" /></span><span class="globalControlName">Model </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, propertiesBoxes);" class="control" /></span><span class="globalControlName">Properties </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, sourceBoxes);" class="control" /></span><span class="globalControlName">Source</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, usedByBoxes);" class="control" /></span><span class="globalControlName">Used by </span></td>
+                     </tr>
+                  </table>
+                  <div align="right"><span><input type="button" onclick="getElementObject('global_controls').style.display = 'none';" value="Close" /></span></div>
+               </td>
+               <td class="rt_lineRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_cornerBottomLeft"></td>
+               <td class="rt_lineBottom"></td>
+               <td class="rt_cornerBottomRight"></td>
+            </tr>
+         </table>
+      </div><a id="lcm.xsd"></a><div class="componentTitle">Imported schema <span class="qname">lcm.xsd</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_lcm.xsd" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_lcm.xsd');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_lcm.xsd" style="display:block">
+                              <div class="annotation">The schema for OASIS ebXML Registry Services</div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_lcm.xsd" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_lcm.xsd');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_lcm.xsd" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">attribute form default</td>
+                                    <td><b>unqualified</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">element form default</td>
+                                    <td><b>qualified</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="SubmitObjectsRequest"></a><div class="componentTitle">Element <span class="qname">tns:SubmitObjectsRequest</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_SubmitObjectsRequest" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_SubmitObjectsRequest');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_SubmitObjectsRequest" style="display:block">
+                              <div class="annotation">This SubmitObjects protocol allows a client to submit RegistryObjects to the server.
+                                 It also allows a client to completely replace existing RegistryObjects in the server.</div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_SubmitObjectsRequest" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_SubmitObjectsRequest');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_SubmitObjectsRequest" style="display:block"><img alt="Diagram" border="0" src="img/lcm_xsd_Element_tns_SubmitObjectsRequest.jpeg" usemap="#lcm_xsd_Element_tns_SubmitObjectsRequest" /><map name="lcm_xsd_Element_tns_SubmitObjectsRequest" id="lcm_xsd_Element_tns_SubmitObjectsRequest"><area alt="rim_xsd.tmp#ExtensibleObjectType_Slot" href="rim_xsd.html#ExtensibleObjectType_Slot" coords="365,87,422,114" /><area alt="rim_xsd.tmp#ExtensibleObjectType" href="rim_xsd.html#ExtensibleObjectType" coords="256,46,603,69" /><area alt="rs_xsd.tmp#RegistryRequestType_id" href="rs_xsd.html#RegistryRequestType_id" coords="267,225,340,252" /><area alt="rs_xsd.tmp#RegistryRequestType_comment" href="rs_xsd.html#RegistryRequestType_comment" coords="267,262,386,289" /><area alt="rs_xsd.tmp#RegistryRequestType" href="rs_xsd.html#RegistryRequestType" coords="242,5,580,28" /><area alt="lcm_xsd.tmp#SubmitObjectsRequest_checkReferences" href="lcm_xsd.html#SubmitObjectsRequest_checkReferences" coords="253,388,428,415" /><area alt="lcm_xsd.tmp#SubmitObjectsRequest_mode" href="lcm_xsd.html#SubmitObjectsRequest_mode" coords="253,425,346,452" /><area alt="rim_xsd.tmp#RegistryObjectList" href="rim_xsd.html#RegistryObjectList" coords="310,472,491,499" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td>extension of <b><a href="rs_xsd.html#RegistryRequestType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rs:4.0" onclick="updatePageTitle('Schema documentation for rs.xsd')">tns:RegistryRequestType</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type hierarchy</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="rim_xsd.html#ExtensibleObjectType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:ExtensibleObjectType</a></b><ul class="internal">
+                                    <li class="internal"><b><a href="rs_xsd.html#RegistryRequestType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rs:4.0" onclick="updatePageTitle('Schema documentation for rs.xsd')">tns:RegistryRequestType</a></b></li>
+                                 </ul>
+                              </li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_SubmitObjectsRequest" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_SubmitObjectsRequest');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_SubmitObjectsRequest" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_SubmitObjectsRequest" type="image" src="img/btM.gif" value="-" onclick="switchState('model_SubmitObjectsRequest');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_SubmitObjectsRequest" style="display:block"><b><a href="rim_xsd.html#ExtensibleObjectType_Slot" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:Slot*</a></b> , <b><a href="rim_xsd.html#RegistryObjectList" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:RegistryObjectList{0,1}</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="rim_xsd.html#RegistryObjectList" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:RegistryObjectList</a></b>, <b><a href="rim_xsd.html#ExtensibleObjectType_Slot" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:Slot</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_SubmitObjectsRequest" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_SubmitObjectsRequest');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_SubmitObjectsRequest" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;tns:SubmitObjectsRequest</span><span class="tT"> </span><span class="tAN">checkReferences=</span><span class="tAV">"false"</span><span class="tT"> </span><span class="tAN">comment=</span><span class="tAV">""</span><span class="tT"> </span><span class="tAN">id=</span><span class="tAV">""</span><span class="tT"> </span><span class="tAN">mode=</span><span class="tAV">"CreateOrReplace"</span><span class="tT"> </span><span class="tAN">xmlns:tns=</span><span class="tAV">"urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0"</span><span class="tT"> </span><span class="tAN">xmlns:rim=</span><span class="tAV">"urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;rim:Slot</span><span class="tT"> </span><span class="tAN">name=</span><span class="tAV">""</span><span class="tT"> </span><span class="tAN">type=</span><span class="tAV">""</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,unbounded}</span><span class="tEl">&lt;/rim:Slot&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;rim:RegistryObjectList</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/rim:RegistryObjectList&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/tns:SubmitObjectsRequest&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Attributes</b></div>
+                           <div class="floatRight"><input id="button_attributes_SubmitObjectsRequest" type="image" src="img/btM.gif" value="-" onclick="switchState('attributes_SubmitObjectsRequest');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="attributes_SubmitObjectsRequest" style="display:block">
+                              <table class="attributesTable">
+                                 <thead>
+                                    <tr>
+                                       <th>QName</th>
+                                       <th width="10%">Type</th>
+                                       <th width="10%">Default</th>
+                                       <th width="5%">Use</th>
+                                       <th></th>
+                                    </tr>
+                                 </thead>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="lcm_xsd.html#SubmitObjectsRequest_checkReferences" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lcm.xsd')">checkReferences</a></b></td>
+                                    <td><b>boolean</b></td>
+                                    <td>false</td>
+                                    <td>optional</td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="rs_xsd.html#RegistryRequestType_comment" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for rs.xsd')">comment</a></b></td>
+                                    <td><b>string</b></td>
+                                    <td></td>
+                                    <td>optional</td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="rs_xsd.html#RegistryRequestType_id" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for rs.xsd')">id</a></b></td>
+                                    <td><b>string</b></td>
+                                    <td></td>
+                                    <td>required</td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="lcm_xsd.html#SubmitObjectsRequest_mode" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lcm.xsd')">mode</a></b></td>
+                                    <td><b><a href="lcm_xsd.html#mode" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:mode</a></b></td>
+                                    <td>CreateOrReplace</td>
+                                    <td>optional</td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_SubmitObjectsRequest" type="image" src="img/btM.gif" value="-" onclick="switchState('source_SubmitObjectsRequest');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_SubmitObjectsRequest" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;element</span><span class="tAN"> name=</span><span class="tAV">"SubmitObjectsRequest"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;documentation</span><span class="tAN"> xml:lang=</span><span class="tAV">"en"</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">This SubmitObjects protocol allows a client to submit RegistryObjects to the server. It also allows a client to completely replace existing RegistryObjects in the server.</span><span class="tEl">&lt;/documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;complexContent</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;extension</span><span class="tAN"> base=</span><span class="tAV">"rs:RegistryRequestType"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;sequence</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;element</span><span class="tAN"> ref=</span><span class="tAV">"rim:RegistryObjectList"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"1"</span><span class="tEl">/&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/sequence&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;attribute</span><span class="tAN"> name=</span><span class="tAV">"checkReferences"</span><span class="tAN"> type=</span><span class="tAV">"boolean"</span><span class="tAN"> use=</span><span class="tAV">"optional"</span><span class="tAN"> default=</span><span class="tAV">"false"</span><span class="tEl">/&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;attribute</span><span class="tAN"> name=</span><span class="tAV">"mode"</span><span class="tAN"> type=</span><span class="tAV">"tns:mode"</span><span class="tAN"> use=</span><span class="tAV">"optional"</span><span class="tAN"> default=</span><span class="tAV">"CreateOrReplace"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/extension&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/complexContent&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="UpdateActionType_ValueHolder"></a><div class="componentTitle">Element <span class="qname"><b><a href="lcm_xsd.html#UpdateActionType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:UpdateActionType</a></b> / tns:ValueHolder</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_UpdateActionType_ValueHolder" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_UpdateActionType_ValueHolder');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_UpdateActionType_ValueHolder" style="display:block"><img alt="Diagram" border="0" src="img/lcm_xsd_Element_tns_ValueHolder.jpeg" usemap="#lcm_xsd_Element_tns_ValueHolder" /><map name="lcm_xsd_Element_tns_ValueHolder" id="lcm_xsd_Element_tns_ValueHolder"><area alt="rim_xsd.tmp#ValueType" href="rim_xsd.html#ValueType" coords="145,3,283,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="rim_xsd.html#ValueType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:ValueType</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_UpdateActionType_ValueHolder" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_UpdateActionType_ValueHolder');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_UpdateActionType_ValueHolder" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>0</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">maxOccurs</td>
+                                    <td><b>1</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_UpdateActionType_ValueHolder" type="image" src="img/btM.gif" value="-" onclick="switchState('source_UpdateActionType_ValueHolder');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_UpdateActionType_ValueHolder" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;element</span><span class="tAN"> name=</span><span class="tAV">"ValueHolder"</span><span class="tAN"> type=</span><span class="tAV">"rim:ValueType"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"1"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="UpdateActionType_Selector"></a><div class="componentTitle">Element <span class="qname"><b><a href="lcm_xsd.html#UpdateActionType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:UpdateActionType</a></b> / tns:Selector</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_UpdateActionType_Selector" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_UpdateActionType_Selector');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_UpdateActionType_Selector" style="display:block"><img alt="Diagram" border="0" src="img/lcm_xsd_Element_tns_Selector.jpeg" usemap="#lcm_xsd_Element_tns_Selector" /><map name="lcm_xsd_Element_tns_Selector" id="lcm_xsd_Element_tns_Selector"><area alt="rim_xsd.tmp#ExtensibleObjectType_Slot" href="rim_xsd.html#ExtensibleObjectType_Slot" coords="242,85,299,112" /><area alt="rim_xsd.tmp#ExtensibleObjectType" href="rim_xsd.html#ExtensibleObjectType" coords="133,44,481,67" /><area alt="rim_xsd.tmp#QueryExpressionType_queryLanguage" href="rim_xsd.html#QueryExpressionType_queryLanguage" coords="144,223,304,250" /><area alt="rim_xsd.tmp#QueryExpressionType" href="rim_xsd.html#QueryExpressionType" coords="119,3,347,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="rim_xsd.html#QueryExpressionType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:QueryExpressionType</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type hierarchy</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="rim_xsd.html#ExtensibleObjectType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:ExtensibleObjectType</a></b><ul class="internal">
+                                    <li class="internal"><b><a href="rim_xsd.html#QueryExpressionType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:QueryExpressionType</a></b></li>
+                                 </ul>
+                              </li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_UpdateActionType_Selector" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_UpdateActionType_Selector');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_UpdateActionType_Selector" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>1</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">maxOccurs</td>
+                                    <td><b>1</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_UpdateActionType_Selector" type="image" src="img/btM.gif" value="-" onclick="switchState('model_UpdateActionType_Selector');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_UpdateActionType_Selector" style="display:block"><b><a href="rim_xsd.html#ExtensibleObjectType_Slot" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:Slot*</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="rim_xsd.html#ExtensibleObjectType_Slot" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:Slot</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_UpdateActionType_Selector" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_UpdateActionType_Selector');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_UpdateActionType_Selector" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;tns:Selector</span><span class="tT"> </span><span class="tAN">queryLanguage=</span><span class="tAV">""</span><span class="tT"> </span><span class="tAN">xmlns:tns=</span><span class="tAV">"urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0"</span><span class="tT"> </span><span class="tAN">xmlns:rim=</span><span class="tAV">"urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;rim:Slot</span><span class="tT"> </span><span class="tAN">name=</span><span class="tAV">""</span><span class="tT"> </span><span class="tAN">type=</span><span class="tAV">""</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,unbounded}</span><span class="tEl">&lt;/rim:Slot&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/tns:Selector&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Attributes</b></div>
+                           <div class="floatRight"><input id="button_attributes_UpdateActionType_Selector" type="image" src="img/btM.gif" value="-" onclick="switchState('attributes_UpdateActionType_Selector');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="attributes_UpdateActionType_Selector" style="display:block">
+                              <table class="attributesTable">
+                                 <thead>
+                                    <tr>
+                                       <th>QName</th>
+                                       <th width="10%">Type</th>
+                                       <th width="5%">Use</th>
+                                       <th></th>
+                                    </tr>
+                                 </thead>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="rim_xsd.html#QueryExpressionType_queryLanguage" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for rim.xsd')">queryLanguage</a></b></td>
+                                    <td><b><a href="rim_xsd.html#objectReferenceType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:objectReferenceType</a></b></td>
+                                    <td>required</td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_UpdateActionType_Selector" type="image" src="img/btM.gif" value="-" onclick="switchState('source_UpdateActionType_Selector');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_UpdateActionType_Selector" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;element</span><span class="tAN"> name=</span><span class="tAV">"Selector"</span><span class="tAN"> type=</span><span class="tAV">"rim:QueryExpressionType"</span><span class="tAN"> minOccurs=</span><span class="tAV">"1"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"1"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="UpdateObjectsRequest"></a><div class="componentTitle">Element <span class="qname">tns:UpdateObjectsRequest</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_UpdateObjectsRequest" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_UpdateObjectsRequest');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_UpdateObjectsRequest" style="display:block">
+                              <div class="annotation">This UpdateObjectsRequest allows a client to updates elements and attributes within
+                                 RegistryObjects already existing in the server.</div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_UpdateObjectsRequest" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_UpdateObjectsRequest');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_UpdateObjectsRequest" style="display:block"><img alt="Diagram" border="0" src="img/lcm_xsd_Element_tns_UpdateObjectsRequest.jpeg" usemap="#lcm_xsd_Element_tns_UpdateObjectsRequest" /><map name="lcm_xsd_Element_tns_UpdateObjectsRequest" id="lcm_xsd_Element_tns_UpdateObjectsRequest"><area alt="rim_xsd.tmp#ExtensibleObjectType_Slot" href="rim_xsd.html#ExtensibleObjectType_Slot" coords="367,87,424,114" /><area alt="rim_xsd.tmp#ExtensibleObjectType" href="rim_xsd.html#ExtensibleObjectType" coords="258,46,605,69" /><area alt="rs_xsd.tmp#RegistryRequestType_id" href="rs_xsd.html#RegistryRequestType_id" coords="269,225,342,252" /><area alt="rs_xsd.tmp#RegistryRequestType_comment" href="rs_xsd.html#RegistryRequestType_comment" coords="269,262,388,289" /><area alt="rs_xsd.tmp#RegistryRequestType" href="rs_xsd.html#RegistryRequestType" coords="244,5,582,28" /><area alt="lcm_xsd.tmp#UpdateObjectsRequest_checkReferences" href="lcm_xsd.html#UpdateObjectsRequest_checkReferences" coords="255,388,430,415" /><area alt="lcm_xsd.tmp#UpdateObjectsRequest_mode" href="lcm_xsd.html#UpdateObjectsRequest_mode" coords="255,425,348,452" /><area alt="lcm_xsd.tmp#UpdateObjectsRequest_Query" href="lcm_xsd.html#UpdateObjectsRequest_Query" coords="339,469,411,496" /><area alt="rim_xsd.tmp#ObjectRefList" href="rim_xsd.html#ObjectRefList" coords="339,506,487,533" /><area alt="lcm_xsd.tmp#UpdateObjectsRequest_UpdateAction" href="lcm_xsd.html#UpdateObjectsRequest_UpdateAction" coords="339,543,463,570" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td>extension of <b><a href="rs_xsd.html#RegistryRequestType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rs:4.0" onclick="updatePageTitle('Schema documentation for rs.xsd')">tns:RegistryRequestType</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type hierarchy</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="rim_xsd.html#ExtensibleObjectType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:ExtensibleObjectType</a></b><ul class="internal">
+                                    <li class="internal"><b><a href="rs_xsd.html#RegistryRequestType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rs:4.0" onclick="updatePageTitle('Schema documentation for rs.xsd')">tns:RegistryRequestType</a></b></li>
+                                 </ul>
+                              </li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_UpdateObjectsRequest" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_UpdateObjectsRequest');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_UpdateObjectsRequest" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_UpdateObjectsRequest" type="image" src="img/btM.gif" value="-" onclick="switchState('model_UpdateObjectsRequest');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_UpdateObjectsRequest" style="display:block"><b><a href="rim_xsd.html#ExtensibleObjectType_Slot" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:Slot*</a></b> , <b><a href="lcm_xsd.html#UpdateObjectsRequest_Query" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:Query{0,1}</a></b> , <b><a href="rim_xsd.html#ObjectRefList" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:ObjectRefList{0,1}</a></b> , <b><a href="lcm_xsd.html#UpdateObjectsRequest_UpdateAction" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:UpdateAction+</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="rim_xsd.html#ObjectRefList" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:ObjectRefList</a></b>, <b><a href="lcm_xsd.html#UpdateObjectsRequest_Query" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:Query</a></b>, <b><a href="rim_xsd.html#ExtensibleObjectType_Slot" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:Slot</a></b>, <b><a href="lcm_xsd.html#UpdateObjectsRequest_UpdateAction" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:UpdateAction</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_UpdateObjectsRequest" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_UpdateObjectsRequest');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_UpdateObjectsRequest" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;tns:UpdateObjectsRequest</span><span class="tT"> </span><span class="tAN">checkReferences=</span><span class="tAV">"false"</span><span class="tT"> </span><span class="tAN">comment=</span><span class="tAV">""</span><span class="tT"> </span><span class="tAN">id=</span><span class="tAV">""</span><span class="tT"> </span><span class="tAN">mode=</span><span class="tAV">"CreateOrReplace"</span><span class="tT"> </span><span class="tAN">xmlns:tns=</span><span class="tAV">"urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0"</span><span class="tT"> </span><span class="tAN">xmlns:rim=</span><span class="tAV">"urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;rim:Slot</span><span class="tT"> </span><span class="tAN">name=</span><span class="tAV">""</span><span class="tT"> </span><span class="tAN">type=</span><span class="tAV">""</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,unbounded}</span><span class="tEl">&lt;/rim:Slot&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;tns:Query</span><span class="tT"> </span><span class="tAN">queryDefinition=</span><span class="tAV">""</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/tns:Query&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;rim:ObjectRefList</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/rim:ObjectRefList&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;tns:UpdateAction</span><span class="tT"> </span><span class="tAN">mode=</span><span class="tAV">""</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,unbounded}</span><span class="tEl">&lt;/tns:UpdateAction&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/tns:UpdateObjectsRequest&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Attributes</b></div>
+                           <div class="floatRight"><input id="button_attributes_UpdateObjectsRequest" type="image" src="img/btM.gif" value="-" onclick="switchState('attributes_UpdateObjectsRequest');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="attributes_UpdateObjectsRequest" style="display:block">
+                              <table class="attributesTable">
+                                 <thead>
+                                    <tr>
+                                       <th>QName</th>
+                                       <th width="10%">Type</th>
+                                       <th width="10%">Default</th>
+                                       <th width="5%">Use</th>
+                                       <th></th>
+                                    </tr>
+                                 </thead>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="lcm_xsd.html#UpdateObjectsRequest_checkReferences" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lcm.xsd')">checkReferences</a></b></td>
+                                    <td><b>boolean</b></td>
+                                    <td>false</td>
+                                    <td>optional</td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="rs_xsd.html#RegistryRequestType_comment" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for rs.xsd')">comment</a></b></td>
+                                    <td><b>string</b></td>
+                                    <td></td>
+                                    <td>optional</td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="rs_xsd.html#RegistryRequestType_id" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for rs.xsd')">id</a></b></td>
+                                    <td><b>string</b></td>
+                                    <td></td>
+                                    <td>required</td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="lcm_xsd.html#UpdateObjectsRequest_mode" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lcm.xsd')">mode</a></b></td>
+                                    <td><b><a href="lcm_xsd.html#mode" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:mode</a></b></td>
+                                    <td>CreateOrReplace</td>
+                                    <td>optional</td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_UpdateObjectsRequest" type="image" src="img/btM.gif" value="-" onclick="switchState('source_UpdateObjectsRequest');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_UpdateObjectsRequest" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;element</span><span class="tAN"> name=</span><span class="tAV">"UpdateObjectsRequest"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;documentation</span><span class="tAN"> xml:lang=</span><span class="tAV">"en"</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">This UpdateObjectsRequest allows a client to updates elements and attributes within RegistryObjects already existing in the server.</span><span class="tEl">&lt;/documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;complexContent</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;extension</span><span class="tAN"> base=</span><span class="tAV">"rs:RegistryRequestType"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;sequence</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tC">&lt;!-- Query and ObjectRefList select objects to update --&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;element</span><span class="tAN"> name=</span><span class="tAV">"Query"</span><span class="tAN"> type=</span><span class="tAV">"rim:QueryType"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"1"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;element</span><span class="tAN"> ref=</span><span class="tAV">"rim:ObjectRefList"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"1"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tC">&lt;!-- Specifies how to update selected objects --&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;element</span><span class="tAN"> name=</span><span class="tAV">"UpdateAction"</span><span class="tAN"> type=</span><span class="tAV">"tns:UpdateActionType"</span><span class="tAN"> minOccurs=</span><span class="tAV">"1"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tEl">/&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/sequence&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;attribute</span><span class="tAN"> name=</span><span class="tAV">"checkReferences"</span><span class="tAN"> type=</span><span class="tAV">"boolean"</span><span class="tAN"> use=</span><span class="tAV">"optional"</span><span class="tAN"> default=</span><span class="tAV">"false"</span><span class="tEl">/&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;attribute</span><span class="tAN"> name=</span><span class="tAV">"mode"</span><span class="tAN"> type=</span><span class="tAV">"tns:mode"</span><span class="tAN"> use=</span><span class="tAV">"optional"</span><span class="tAN"> default=</span><span class="tAV">"CreateOrReplace"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/extension&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/complexContent&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="UpdateObjectsRequest_Query"></a><div class="componentTitle">Element <span class="qname"><b><a href="lcm_xsd.html#UpdateObjectsRequest" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:UpdateObjectsRequest</a></b> / tns:Query</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_UpdateObjectsRequest_Query" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_UpdateObjectsRequest_Query');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_UpdateObjectsRequest_Query" style="display:block"><img alt="Diagram" border="0" src="img/lcm_xsd_Element_tns_Query.jpeg" usemap="#lcm_xsd_Element_tns_Query" /><map name="lcm_xsd_Element_tns_Query" id="lcm_xsd_Element_tns_Query"><area alt="rim_xsd.tmp#ExtensibleObjectType_Slot" href="rim_xsd.html#ExtensibleObjectType_Slot" coords="226,85,283,112" /><area alt="rim_xsd.tmp#ExtensibleObjectType" href="rim_xsd.html#ExtensibleObjectType" coords="117,44,465,67" /><area alt="rim_xsd.tmp#QueryType_queryDefinition" href="rim_xsd.html#QueryType_queryDefinition" coords="128,223,285,250" /><area alt="rim_xsd.tmp#QueryType" href="rim_xsd.html#QueryType" coords="103,3,255,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="rim_xsd.html#QueryType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:QueryType</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type hierarchy</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="rim_xsd.html#ExtensibleObjectType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:ExtensibleObjectType</a></b><ul class="internal">
+                                    <li class="internal"><b><a href="rim_xsd.html#QueryType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:QueryType</a></b></li>
+                                 </ul>
+                              </li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_UpdateObjectsRequest_Query" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_UpdateObjectsRequest_Query');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_UpdateObjectsRequest_Query" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>0</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">maxOccurs</td>
+                                    <td><b>1</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_UpdateObjectsRequest_Query" type="image" src="img/btM.gif" value="-" onclick="switchState('model_UpdateObjectsRequest_Query');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_UpdateObjectsRequest_Query" style="display:block"><b><a href="rim_xsd.html#ExtensibleObjectType_Slot" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:Slot*</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="rim_xsd.html#ExtensibleObjectType_Slot" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:Slot</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_UpdateObjectsRequest_Query" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_UpdateObjectsRequest_Query');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_UpdateObjectsRequest_Query" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;tns:Query</span><span class="tT"> </span><span class="tAN">queryDefinition=</span><span class="tAV">""</span><span class="tT"> </span><span class="tAN">xmlns:tns=</span><span class="tAV">"urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0"</span><span class="tT"> </span><span class="tAN">xmlns:rim=</span><span class="tAV">"urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;rim:Slot</span><span class="tT"> </span><span class="tAN">name=</span><span class="tAV">""</span><span class="tT"> </span><span class="tAN">type=</span><span class="tAV">""</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,unbounded}</span><span class="tEl">&lt;/rim:Slot&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/tns:Query&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Attributes</b></div>
+                           <div class="floatRight"><input id="button_attributes_UpdateObjectsRequest_Query" type="image" src="img/btM.gif" value="-" onclick="switchState('attributes_UpdateObjectsRequest_Query');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="attributes_UpdateObjectsRequest_Query" style="display:block">
+                              <table class="attributesTable">
+                                 <thead>
+                                    <tr>
+                                       <th>QName</th>
+                                       <th width="10%">Type</th>
+                                       <th width="5%">Use</th>
+                                       <th></th>
+                                    </tr>
+                                 </thead>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="rim_xsd.html#QueryType_queryDefinition" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for rim.xsd')">queryDefinition</a></b></td>
+                                    <td><b><a href="rim_xsd.html#objectReferenceType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:objectReferenceType</a></b></td>
+                                    <td>required</td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_UpdateObjectsRequest_Query" type="image" src="img/btM.gif" value="-" onclick="switchState('source_UpdateObjectsRequest_Query');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_UpdateObjectsRequest_Query" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;element</span><span class="tAN"> name=</span><span class="tAV">"Query"</span><span class="tAN"> type=</span><span class="tAV">"rim:QueryType"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"1"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="UpdateObjectsRequest_UpdateAction"></a><div class="componentTitle">Element <span class="qname"><b><a href="lcm_xsd.html#UpdateObjectsRequest" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:UpdateObjectsRequest</a></b> / tns:UpdateAction</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_UpdateObjectsRequest_UpdateAction" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_UpdateObjectsRequest_UpdateAction');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_UpdateObjectsRequest_UpdateAction" style="display:block"><img alt="Diagram" border="0" src="img/lcm_xsd_Element_tns_UpdateAction.jpeg" usemap="#lcm_xsd_Element_tns_UpdateAction" /><map name="lcm_xsd_Element_tns_UpdateAction" id="lcm_xsd_Element_tns_UpdateAction"><area alt="lcm_xsd.tmp#UpdateActionType_mode" href="lcm_xsd.html#UpdateActionType_mode" coords="180,82,273,109" /><area alt="lcm_xsd.tmp#UpdateActionType_ValueHolder" href="lcm_xsd.html#UpdateActionType_ValueHolder" coords="237,126,351,153" /><area alt="lcm_xsd.tmp#UpdateActionType_Selector" href="lcm_xsd.html#UpdateActionType_Selector" coords="237,163,325,190" /><area alt="lcm_xsd.tmp#UpdateActionType" href="lcm_xsd.html#UpdateActionType" coords="155,3,360,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="lcm_xsd.html#UpdateActionType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:UpdateActionType</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_UpdateObjectsRequest_UpdateAction" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_UpdateObjectsRequest_UpdateAction');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_UpdateObjectsRequest_UpdateAction" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>1</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">maxOccurs</td>
+                                    <td><b>unbounded</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_UpdateObjectsRequest_UpdateAction" type="image" src="img/btM.gif" value="-" onclick="switchState('model_UpdateObjectsRequest_UpdateAction');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_UpdateObjectsRequest_UpdateAction" style="display:block"><b><a href="lcm_xsd.html#UpdateActionType_ValueHolder" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:ValueHolder{0,1}</a></b> , <b><a href="lcm_xsd.html#UpdateActionType_Selector" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:Selector</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="lcm_xsd.html#UpdateActionType_Selector" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:Selector</a></b>, <b><a href="lcm_xsd.html#UpdateActionType_ValueHolder" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:ValueHolder</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_UpdateObjectsRequest_UpdateAction" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_UpdateObjectsRequest_UpdateAction');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_UpdateObjectsRequest_UpdateAction" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;tns:UpdateAction</span><span class="tT"> </span><span class="tAN">mode=</span><span class="tAV">""</span><span class="tT"> </span><span class="tAN">xmlns:tns=</span><span class="tAV">"urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;tns:ValueHolder</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/tns:ValueHolder&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;tns:Selector</span><span class="tT"> </span><span class="tAN">queryLanguage=</span><span class="tAV">""</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/tns:Selector&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/tns:UpdateAction&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Attributes</b></div>
+                           <div class="floatRight"><input id="button_attributes_UpdateObjectsRequest_UpdateAction" type="image" src="img/btM.gif" value="-" onclick="switchState('attributes_UpdateObjectsRequest_UpdateAction');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="attributes_UpdateObjectsRequest_UpdateAction" style="display:block">
+                              <table class="attributesTable">
+                                 <thead>
+                                    <tr>
+                                       <th>QName</th>
+                                       <th width="10%">Type</th>
+                                       <th width="5%">Use</th>
+                                       <th></th>
+                                    </tr>
+                                 </thead>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="lcm_xsd.html#UpdateActionType_mode" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lcm.xsd')">mode</a></b></td>
+                                    <td>restriction of <b>NCName</b></td>
+                                    <td>required</td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_UpdateObjectsRequest_UpdateAction" type="image" src="img/btM.gif" value="-" onclick="switchState('source_UpdateObjectsRequest_UpdateAction');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_UpdateObjectsRequest_UpdateAction" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;element</span><span class="tAN"> name=</span><span class="tAV">"UpdateAction"</span><span class="tAN"> type=</span><span class="tAV">"tns:UpdateActionType"</span><span class="tAN"> minOccurs=</span><span class="tAV">"1"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="RemoveObjectsRequest"></a><div class="componentTitle">Element <span class="qname">tns:RemoveObjectsRequest</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_RemoveObjectsRequest" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_RemoveObjectsRequest');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_RemoveObjectsRequest" style="display:block">
+                              <div class="annotation">
+                                 The ObjectRefList is the list of
+                                 refs to the registry entries being removed
+                                 </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_RemoveObjectsRequest" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_RemoveObjectsRequest');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_RemoveObjectsRequest" style="display:block"><img alt="Diagram" border="0" src="img/lcm_xsd_Element_tns_RemoveObjectsRequest.jpeg" usemap="#lcm_xsd_Element_tns_RemoveObjectsRequest" /><map name="lcm_xsd_Element_tns_RemoveObjectsRequest" id="lcm_xsd_Element_tns_RemoveObjectsRequest"><area alt="rim_xsd.tmp#ExtensibleObjectType_Slot" href="rim_xsd.html#ExtensibleObjectType_Slot" coords="374,87,431,114" /><area alt="rim_xsd.tmp#ExtensibleObjectType" href="rim_xsd.html#ExtensibleObjectType" coords="265,46,612,69" /><area alt="rs_xsd.tmp#RegistryRequestType_id" href="rs_xsd.html#RegistryRequestType_id" coords="276,225,349,252" /><area alt="rs_xsd.tmp#RegistryRequestType_comment" href="rs_xsd.html#RegistryRequestType_comment" coords="276,262,395,289" /><area alt="rs_xsd.tmp#RegistryRequestType" href="rs_xsd.html#RegistryRequestType" coords="251,5,589,28" /><area alt="lcm_xsd.tmp#RemoveObjectsRequest_checkReferences" href="lcm_xsd.html#RemoveObjectsRequest_checkReferences" coords="262,388,437,415" /><area alt="lcm_xsd.tmp#RemoveObjectsRequest_deleteChildren" href="lcm_xsd.html#RemoveObjectsRequest_deleteChildren" coords="262,425,416,452" /><area alt="lcm_xsd.tmp#RemoveObjectsRequest_deletionScope" href="lcm_xsd.html#RemoveObjectsRequest_deletionScope" coords="262,462,415,489" /><area alt="lcm_xsd.tmp#RemoveObjectsRequest_Query" href="lcm_xsd.html#RemoveObjectsRequest_Query" coords="319,506,391,533" /><area alt="rim_xsd.tmp#ObjectRefList" href="rim_xsd.html#ObjectRefList" coords="319,543,467,570" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td>extension of <b><a href="rs_xsd.html#RegistryRequestType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rs:4.0" onclick="updatePageTitle('Schema documentation for rs.xsd')">tns:RegistryRequestType</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type hierarchy</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="rim_xsd.html#ExtensibleObjectType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:ExtensibleObjectType</a></b><ul class="internal">
+                                    <li class="internal"><b><a href="rs_xsd.html#RegistryRequestType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rs:4.0" onclick="updatePageTitle('Schema documentation for rs.xsd')">tns:RegistryRequestType</a></b></li>
+                                 </ul>
+                              </li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_RemoveObjectsRequest" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_RemoveObjectsRequest');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_RemoveObjectsRequest" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_RemoveObjectsRequest" type="image" src="img/btM.gif" value="-" onclick="switchState('model_RemoveObjectsRequest');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_RemoveObjectsRequest" style="display:block"><b><a href="rim_xsd.html#ExtensibleObjectType_Slot" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:Slot*</a></b> , <b><a href="lcm_xsd.html#RemoveObjectsRequest_Query" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:Query{0,1}</a></b> , <b><a href="rim_xsd.html#ObjectRefList" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:ObjectRefList{0,1}</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="rim_xsd.html#ObjectRefList" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:ObjectRefList</a></b>, <b><a href="lcm_xsd.html#RemoveObjectsRequest_Query" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:Query</a></b>, <b><a href="rim_xsd.html#ExtensibleObjectType_Slot" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:Slot</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_RemoveObjectsRequest" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_RemoveObjectsRequest');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_RemoveObjectsRequest" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;tns:RemoveObjectsRequest</span><span class="tT"> </span><span class="tAN">checkReferences=</span><span class="tAV">"false"</span><span class="tT"> </span><span class="tAN">comment=</span><span class="tAV">""</span><span class="tT"> </span><span class="tAN">deleteChildren=</span><span class="tAV">"false"</span><span class="tT"> </span><span class="tAN">deletionScope=</span><span class="tAV">"urn:oasis:names:tc:ebxml-regrep:DeletionScopeType:DeleteAll"</span><span class="tT"> </span><span class="tAN">id=</span><span class="tAV">""</span><span class="tT"> </span><span class="tAN">xmlns:tns=</span><span class="tAV">"urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0"</span><span class="tT"> </span><span class="tAN">xmlns:rim=</span><span class="tAV">"urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;rim:Slot</span><span class="tT"> </span><span class="tAN">name=</span><span class="tAV">""</span><span class="tT"> </span><span class="tAN">type=</span><span class="tAV">""</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,unbounded}</span><span class="tEl">&lt;/rim:Slot&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;tns:Query</span><span class="tT"> </span><span class="tAN">queryDefinition=</span><span class="tAV">""</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/tns:Query&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;rim:ObjectRefList</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/rim:ObjectRefList&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/tns:RemoveObjectsRequest&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Attributes</b></div>
+                           <div class="floatRight"><input id="button_attributes_RemoveObjectsRequest" type="image" src="img/btM.gif" value="-" onclick="switchState('attributes_RemoveObjectsRequest');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="attributes_RemoveObjectsRequest" style="display:block">
+                              <table class="attributesTable">
+                                 <thead>
+                                    <tr>
+                                       <th>QName</th>
+                                       <th width="10%">Type</th>
+                                       <th width="10%">Default</th>
+                                       <th width="5%">Use</th>
+                                       <th></th>
+                                    </tr>
+                                 </thead>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="lcm_xsd.html#RemoveObjectsRequest_checkReferences" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lcm.xsd')">checkReferences</a></b></td>
+                                    <td><b>boolean</b></td>
+                                    <td>false</td>
+                                    <td>optional</td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="rs_xsd.html#RegistryRequestType_comment" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for rs.xsd')">comment</a></b></td>
+                                    <td><b>string</b></td>
+                                    <td></td>
+                                    <td>optional</td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="lcm_xsd.html#RemoveObjectsRequest_deleteChildren" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lcm.xsd')">deleteChildren</a></b></td>
+                                    <td><b>boolean</b></td>
+                                    <td>false</td>
+                                    <td>optional</td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="lcm_xsd.html#RemoveObjectsRequest_deletionScope" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lcm.xsd')">deletionScope</a></b></td>
+                                    <td><b><a href="rim_xsd.html#objectReferenceType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:objectReferenceType</a></b></td>
+                                    <td>urn:oasis:names:tc:ebxml-regrep:DeletionScopeType:DeleteAll</td>
+                                    <td>optional</td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="rs_xsd.html#RegistryRequestType_id" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for rs.xsd')">id</a></b></td>
+                                    <td><b>string</b></td>
+                                    <td></td>
+                                    <td>required</td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_RemoveObjectsRequest" type="image" src="img/btM.gif" value="-" onclick="switchState('source_RemoveObjectsRequest');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_RemoveObjectsRequest" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;element</span><span class="tAN"> name=</span><span class="tAV">"RemoveObjectsRequest"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;documentation</span><span class="tAN"> xml:lang=</span><span class="tAV">"en"</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">The ObjectRefList is the list of refs to the registry entries being removed</span><span class="tEl">&lt;/documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;complexContent</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;extension</span><span class="tAN"> base=</span><span class="tAV">"rs:RegistryRequestType"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;sequence</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;element</span><span class="tAN"> name=</span><span class="tAV">"Query"</span><span class="tAN"> type=</span><span class="tAV">"rim:QueryType"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"1"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;element</span><span class="tAN"> ref=</span><span class="tAV">"rim:ObjectRefList"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"1"</span><span class="tEl">/&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/sequence&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;attribute</span><span class="tAN"> name=</span><span class="tAV">"checkReferences"</span><span class="tAN"> type=</span><span class="tAV">"boolean"</span><span class="tAN"> use=</span><span class="tAV">"optional"</span><span class="tAN"> default=</span><span class="tAV">"false"</span><span class="tEl">/&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;attribute</span><span class="tAN"> name=</span><span class="tAV">"deleteChildren"</span><span class="tAN"> type=</span><span class="tAV">"boolean"</span><span class="tAN"> use=</span><span class="tAV">"optional"</span><span class="tAN"> default=</span><span class="tAV">"false"</span><span class="tEl">/&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;attribute</span><span class="tAN"> name=</span><span class="tAV">"deletionScope"</span><span class="tAN"> type=</span><span class="tAV">"rim:objectReferenceType"</span><span class="tAN"> use=</span><span class="tAV">"optional"</span><span class="tAN"> default=</span><span class="tAV">"urn:oasis:names:tc:ebxml-regrep:DeletionScopeType:DeleteAll"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/extension&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/complexContent&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="RemoveObjectsRequest_Query"></a><div class="componentTitle">Element <span class="qname"><b><a href="lcm_xsd.html#RemoveObjectsRequest" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:RemoveObjectsRequest</a></b> / tns:Query</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_RemoveObjectsRequest_Query" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_RemoveObjectsRequest_Query');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_RemoveObjectsRequest_Query" style="display:block"><img alt="Diagram" border="0" src="img/lcm_xsd_Element_tns_Query_1.jpeg" usemap="#lcm_xsd_Element_tns_Query_1" /><map name="lcm_xsd_Element_tns_Query_1" id="lcm_xsd_Element_tns_Query_1"><area alt="rim_xsd.tmp#ExtensibleObjectType_Slot" href="rim_xsd.html#ExtensibleObjectType_Slot" coords="226,85,283,112" /><area alt="rim_xsd.tmp#ExtensibleObjectType" href="rim_xsd.html#ExtensibleObjectType" coords="117,44,465,67" /><area alt="rim_xsd.tmp#QueryType_queryDefinition" href="rim_xsd.html#QueryType_queryDefinition" coords="128,223,285,250" /><area alt="rim_xsd.tmp#QueryType" href="rim_xsd.html#QueryType" coords="103,3,255,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="rim_xsd.html#QueryType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:QueryType</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type hierarchy</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="rim_xsd.html#ExtensibleObjectType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:ExtensibleObjectType</a></b><ul class="internal">
+                                    <li class="internal"><b><a href="rim_xsd.html#QueryType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:QueryType</a></b></li>
+                                 </ul>
+                              </li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_RemoveObjectsRequest_Query" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_RemoveObjectsRequest_Query');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_RemoveObjectsRequest_Query" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>0</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">maxOccurs</td>
+                                    <td><b>1</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_RemoveObjectsRequest_Query" type="image" src="img/btM.gif" value="-" onclick="switchState('model_RemoveObjectsRequest_Query');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_RemoveObjectsRequest_Query" style="display:block"><b><a href="rim_xsd.html#ExtensibleObjectType_Slot" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:Slot*</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="rim_xsd.html#ExtensibleObjectType_Slot" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:Slot</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_RemoveObjectsRequest_Query" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_RemoveObjectsRequest_Query');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_RemoveObjectsRequest_Query" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;tns:Query</span><span class="tT"> </span><span class="tAN">queryDefinition=</span><span class="tAV">""</span><span class="tT"> </span><span class="tAN">xmlns:tns=</span><span class="tAV">"urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0"</span><span class="tT"> </span><span class="tAN">xmlns:rim=</span><span class="tAV">"urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;rim:Slot</span><span class="tT"> </span><span class="tAN">name=</span><span class="tAV">""</span><span class="tT"> </span><span class="tAN">type=</span><span class="tAV">""</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,unbounded}</span><span class="tEl">&lt;/rim:Slot&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/tns:Query&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Attributes</b></div>
+                           <div class="floatRight"><input id="button_attributes_RemoveObjectsRequest_Query" type="image" src="img/btM.gif" value="-" onclick="switchState('attributes_RemoveObjectsRequest_Query');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="attributes_RemoveObjectsRequest_Query" style="display:block">
+                              <table class="attributesTable">
+                                 <thead>
+                                    <tr>
+                                       <th>QName</th>
+                                       <th width="10%">Type</th>
+                                       <th width="5%">Use</th>
+                                       <th></th>
+                                    </tr>
+                                 </thead>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="rim_xsd.html#QueryType_queryDefinition" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for rim.xsd')">queryDefinition</a></b></td>
+                                    <td><b><a href="rim_xsd.html#objectReferenceType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:objectReferenceType</a></b></td>
+                                    <td>required</td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_RemoveObjectsRequest_Query" type="image" src="img/btM.gif" value="-" onclick="switchState('source_RemoveObjectsRequest_Query');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_RemoveObjectsRequest_Query" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;element</span><span class="tAN"> name=</span><span class="tAV">"Query"</span><span class="tAN"> type=</span><span class="tAV">"rim:QueryType"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"1"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="mode"></a><div class="componentTitle">Simple Type <span class="qname">tns:mode</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_mode" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_mode');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_mode" style="display:block"><img alt="Diagram" border="0" src="img/lcm_xsd_Simple_Type_tns_mode.jpeg" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td>restriction of <b>NCName</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Facets</b></div>
+                           <div class="floatRight"><input id="button_facets_mode" type="image" src="img/btM.gif" value="-" onclick="switchState('facets_mode');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="facets_mode" style="display:block">
+                              <table class="facetsTable">
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>CreateOrReplace</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>CreateOrVersion</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>CreateOnly</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_mode" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_mode');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_mode" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Attributes </td>
+                                    <td><b><a href="lcm_xsd.html#SubmitObjectsRequest_mode" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:SubmitObjectsRequest/@mode</a></b>, <b><a href="lcm_xsd.html#UpdateObjectsRequest_mode" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:UpdateObjectsRequest/@mode</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_mode" type="image" src="img/btM.gif" value="-" onclick="switchState('source_mode');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_mode" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;simpleType</span><span class="tAN"> name=</span><span class="tAV">"mode"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;restriction</span><span class="tAN"> base=</span><span class="tAV">"NCName"</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;enumeration</span><span class="tAN"> value=</span><span class="tAV">"CreateOrReplace"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;enumeration</span><span class="tAN"> value=</span><span class="tAV">"CreateOrVersion"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;enumeration</span><span class="tAN"> value=</span><span class="tAV">"CreateOnly"</span><span class="tEl">/&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/restriction&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/simpleType&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="UpdateActionType"></a><div class="componentTitle">Complex Type <span class="qname">tns:UpdateActionType</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_UpdateActionType" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_UpdateActionType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_UpdateActionType" style="display:block">
+                              <div class="annotation">
+                                 </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_UpdateActionType" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_UpdateActionType');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_UpdateActionType" style="display:block"><img alt="Diagram" border="0" src="img/lcm_xsd_Complex_Type_tns_UpdateActionType.jpeg" usemap="#lcm_xsd_Complex_Type_tns_UpdateActionType" /><map name="lcm_xsd_Complex_Type_tns_UpdateActionType" id="lcm_xsd_Complex_Type_tns_UpdateActionType"><area alt="lcm_xsd.tmp#UpdateActionType_mode" href="lcm_xsd.html#UpdateActionType_mode" coords="224,41,317,68" /><area alt="lcm_xsd.tmp#UpdateActionType_ValueHolder" href="lcm_xsd.html#UpdateActionType_ValueHolder" coords="281,85,395,112" /><area alt="lcm_xsd.tmp#UpdateActionType_Selector" href="lcm_xsd.html#UpdateActionType_Selector" coords="281,122,369,149" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_UpdateActionType" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_UpdateActionType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_UpdateActionType" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="lcm_xsd.html#UpdateObjectsRequest_UpdateAction" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:UpdateObjectsRequest/tns:UpdateAction</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_UpdateActionType" type="image" src="img/btM.gif" value="-" onclick="switchState('model_UpdateActionType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_UpdateActionType" style="display:block"><b><a href="lcm_xsd.html#UpdateActionType_ValueHolder" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:ValueHolder{0,1}</a></b> , <b><a href="lcm_xsd.html#UpdateActionType_Selector" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:Selector</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="lcm_xsd.html#UpdateActionType_Selector" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:Selector</a></b>, <b><a href="lcm_xsd.html#UpdateActionType_ValueHolder" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:ValueHolder</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Attributes</b></div>
+                           <div class="floatRight"><input id="button_attributes_UpdateActionType" type="image" src="img/btM.gif" value="-" onclick="switchState('attributes_UpdateActionType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="attributes_UpdateActionType" style="display:block">
+                              <table class="attributesTable">
+                                 <thead>
+                                    <tr>
+                                       <th>QName</th>
+                                       <th width="10%">Type</th>
+                                       <th width="5%">Use</th>
+                                       <th></th>
+                                    </tr>
+                                 </thead>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="lcm_xsd.html#UpdateActionType_mode" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lcm.xsd')">mode</a></b></td>
+                                    <td>restriction of <b>NCName</b></td>
+                                    <td>required</td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_UpdateActionType" type="image" src="img/btM.gif" value="-" onclick="switchState('source_UpdateActionType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_UpdateActionType" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;complexType</span><span class="tAN"> name=</span><span class="tAV">"UpdateActionType"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;documentation</span><span class="tAN"> xml:lang=</span><span class="tAV">"en"</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;sequence</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tC">&lt;!-- Value for attribute or element --&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;element</span><span class="tAN"> name=</span><span class="tAV">"ValueHolder"</span><span class="tAN"> type=</span><span class="tAV">"rim:ValueType"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"1"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tC">&lt;!-- 
+      Value of selector is an XPATH expression that uniquely identifies an attribute 
+      or an element within target documents.    
+      --&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;element</span><span class="tAN"> name=</span><span class="tAV">"Selector"</span><span class="tAN"> type=</span><span class="tAV">"rim:QueryExpressionType"</span><span class="tAN"> minOccurs=</span><span class="tAV">"1"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"1"</span><span class="tEl">/&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/sequence&gt;</span><span class="tI">
+  </span><span class="tC">&lt;!--
+    Specifies whether to insert, update or delete a fragment from target document.
+    --&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;attribute</span><span class="tAN"> name=</span><span class="tAV">"mode"</span><span class="tAN"> use=</span><span class="tAV">"required"</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;simpleType</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;restriction</span><span class="tAN"> base=</span><span class="tAV">"NCName"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;enumeration</span><span class="tAN"> value=</span><span class="tAV">"Insert"</span><span class="tEl">/&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;enumeration</span><span class="tAN"> value=</span><span class="tAV">"Update"</span><span class="tEl">/&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;enumeration</span><span class="tAN"> value=</span><span class="tAV">"Delete"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/restriction&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/simpleType&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/attribute&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/complexType&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="SubmitObjectsRequest_checkReferences"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="lcm_xsd.html#SubmitObjectsRequest" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:SubmitObjectsRequest</a></b> / @checkReferences</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>boolean</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_SubmitObjectsRequest_checkReferences" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_SubmitObjectsRequest_checkReferences');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_SubmitObjectsRequest_checkReferences" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">use</td>
+                                    <td><b>optional</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">default</td>
+                                    <td><b>false</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_SubmitObjectsRequest_checkReferences" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_SubmitObjectsRequest_checkReferences');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_SubmitObjectsRequest_checkReferences" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="lcm_xsd.html#SubmitObjectsRequest" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:SubmitObjectsRequest</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_SubmitObjectsRequest_checkReferences" type="image" src="img/btM.gif" value="-" onclick="switchState('source_SubmitObjectsRequest_checkReferences');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_SubmitObjectsRequest_checkReferences" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;attribute</span><span class="tAN"> name=</span><span class="tAV">"checkReferences"</span><span class="tAN"> type=</span><span class="tAV">"boolean"</span><span class="tAN"> use=</span><span class="tAV">"optional"</span><span class="tAN"> default=</span><span class="tAV">"false"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="SubmitObjectsRequest_mode"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="lcm_xsd.html#SubmitObjectsRequest" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:SubmitObjectsRequest</a></b> / @mode</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="lcm_xsd.html#mode" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:mode</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_SubmitObjectsRequest_mode" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_SubmitObjectsRequest_mode');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_SubmitObjectsRequest_mode" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">use</td>
+                                    <td><b>optional</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">default</td>
+                                    <td><b>CreateOrReplace</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Facets</b></div>
+                           <div class="floatRight"><input id="button_facets_SubmitObjectsRequest_mode" type="image" src="img/btM.gif" value="-" onclick="switchState('facets_SubmitObjectsRequest_mode');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="facets_SubmitObjectsRequest_mode" style="display:block">
+                              <table class="facetsTable">
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>CreateOrReplace</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>CreateOrVersion</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>CreateOnly</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_SubmitObjectsRequest_mode" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_SubmitObjectsRequest_mode');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_SubmitObjectsRequest_mode" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="lcm_xsd.html#SubmitObjectsRequest" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:SubmitObjectsRequest</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_SubmitObjectsRequest_mode" type="image" src="img/btM.gif" value="-" onclick="switchState('source_SubmitObjectsRequest_mode');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_SubmitObjectsRequest_mode" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;attribute</span><span class="tAN"> name=</span><span class="tAV">"mode"</span><span class="tAN"> type=</span><span class="tAV">"tns:mode"</span><span class="tAN"> use=</span><span class="tAV">"optional"</span><span class="tAN"> default=</span><span class="tAV">"CreateOrReplace"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="UpdateActionType_mode"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="lcm_xsd.html#UpdateActionType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:UpdateActionType</a></b> / @mode</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td>restriction of <b>NCName</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_UpdateActionType_mode" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_UpdateActionType_mode');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_UpdateActionType_mode" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">use</td>
+                                    <td><b>required</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Facets</b></div>
+                           <div class="floatRight"><input id="button_facets_UpdateActionType_mode" type="image" src="img/btM.gif" value="-" onclick="switchState('facets_UpdateActionType_mode');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="facets_UpdateActionType_mode" style="display:block">
+                              <table class="facetsTable">
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Insert</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Update</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>Delete</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_UpdateActionType_mode" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_UpdateActionType_mode');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_UpdateActionType_mode" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Complex Type </td>
+                                    <td><b><a href="lcm_xsd.html#UpdateActionType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:UpdateActionType</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_UpdateActionType_mode" type="image" src="img/btM.gif" value="-" onclick="switchState('source_UpdateActionType_mode');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_UpdateActionType_mode" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;attribute</span><span class="tAN"> name=</span><span class="tAV">"mode"</span><span class="tAN"> use=</span><span class="tAV">"required"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;simpleType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;restriction</span><span class="tAN"> base=</span><span class="tAV">"NCName"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;enumeration</span><span class="tAN"> value=</span><span class="tAV">"Insert"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;enumeration</span><span class="tAN"> value=</span><span class="tAV">"Update"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;enumeration</span><span class="tAN"> value=</span><span class="tAV">"Delete"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/restriction&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/simpleType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/attribute&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="UpdateObjectsRequest_checkReferences"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="lcm_xsd.html#UpdateObjectsRequest" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:UpdateObjectsRequest</a></b> / @checkReferences</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>boolean</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_UpdateObjectsRequest_checkReferences" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_UpdateObjectsRequest_checkReferences');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_UpdateObjectsRequest_checkReferences" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">use</td>
+                                    <td><b>optional</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">default</td>
+                                    <td><b>false</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_UpdateObjectsRequest_checkReferences" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_UpdateObjectsRequest_checkReferences');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_UpdateObjectsRequest_checkReferences" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="lcm_xsd.html#UpdateObjectsRequest" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:UpdateObjectsRequest</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_UpdateObjectsRequest_checkReferences" type="image" src="img/btM.gif" value="-" onclick="switchState('source_UpdateObjectsRequest_checkReferences');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_UpdateObjectsRequest_checkReferences" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;attribute</span><span class="tAN"> name=</span><span class="tAV">"checkReferences"</span><span class="tAN"> type=</span><span class="tAV">"boolean"</span><span class="tAN"> use=</span><span class="tAV">"optional"</span><span class="tAN"> default=</span><span class="tAV">"false"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="UpdateObjectsRequest_mode"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="lcm_xsd.html#UpdateObjectsRequest" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:UpdateObjectsRequest</a></b> / @mode</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="lcm_xsd.html#mode" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:mode</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_UpdateObjectsRequest_mode" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_UpdateObjectsRequest_mode');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_UpdateObjectsRequest_mode" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">use</td>
+                                    <td><b>optional</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">default</td>
+                                    <td><b>CreateOrReplace</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Facets</b></div>
+                           <div class="floatRight"><input id="button_facets_UpdateObjectsRequest_mode" type="image" src="img/btM.gif" value="-" onclick="switchState('facets_UpdateObjectsRequest_mode');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="facets_UpdateObjectsRequest_mode" style="display:block">
+                              <table class="facetsTable">
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>CreateOrReplace</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>CreateOrVersion</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>CreateOnly</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_UpdateObjectsRequest_mode" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_UpdateObjectsRequest_mode');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_UpdateObjectsRequest_mode" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="lcm_xsd.html#UpdateObjectsRequest" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:UpdateObjectsRequest</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_UpdateObjectsRequest_mode" type="image" src="img/btM.gif" value="-" onclick="switchState('source_UpdateObjectsRequest_mode');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_UpdateObjectsRequest_mode" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;attribute</span><span class="tAN"> name=</span><span class="tAV">"mode"</span><span class="tAN"> type=</span><span class="tAV">"tns:mode"</span><span class="tAN"> use=</span><span class="tAV">"optional"</span><span class="tAN"> default=</span><span class="tAV">"CreateOrReplace"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="RemoveObjectsRequest_checkReferences"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="lcm_xsd.html#RemoveObjectsRequest" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:RemoveObjectsRequest</a></b> / @checkReferences</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>boolean</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_RemoveObjectsRequest_checkReferences" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_RemoveObjectsRequest_checkReferences');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_RemoveObjectsRequest_checkReferences" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">use</td>
+                                    <td><b>optional</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">default</td>
+                                    <td><b>false</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_RemoveObjectsRequest_checkReferences" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_RemoveObjectsRequest_checkReferences');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_RemoveObjectsRequest_checkReferences" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="lcm_xsd.html#RemoveObjectsRequest" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:RemoveObjectsRequest</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_RemoveObjectsRequest_checkReferences" type="image" src="img/btM.gif" value="-" onclick="switchState('source_RemoveObjectsRequest_checkReferences');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_RemoveObjectsRequest_checkReferences" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;attribute</span><span class="tAN"> name=</span><span class="tAV">"checkReferences"</span><span class="tAN"> type=</span><span class="tAV">"boolean"</span><span class="tAN"> use=</span><span class="tAV">"optional"</span><span class="tAN"> default=</span><span class="tAV">"false"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="RemoveObjectsRequest_deleteChildren"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="lcm_xsd.html#RemoveObjectsRequest" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:RemoveObjectsRequest</a></b> / @deleteChildren</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>boolean</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_RemoveObjectsRequest_deleteChildren" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_RemoveObjectsRequest_deleteChildren');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_RemoveObjectsRequest_deleteChildren" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">use</td>
+                                    <td><b>optional</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">default</td>
+                                    <td><b>false</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_RemoveObjectsRequest_deleteChildren" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_RemoveObjectsRequest_deleteChildren');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_RemoveObjectsRequest_deleteChildren" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="lcm_xsd.html#RemoveObjectsRequest" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:RemoveObjectsRequest</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_RemoveObjectsRequest_deleteChildren" type="image" src="img/btM.gif" value="-" onclick="switchState('source_RemoveObjectsRequest_deleteChildren');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_RemoveObjectsRequest_deleteChildren" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;attribute</span><span class="tAN"> name=</span><span class="tAV">"deleteChildren"</span><span class="tAN"> type=</span><span class="tAV">"boolean"</span><span class="tAN"> use=</span><span class="tAV">"optional"</span><span class="tAN"> default=</span><span class="tAV">"false"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="RemoveObjectsRequest_deletionScope"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="lcm_xsd.html#RemoveObjectsRequest" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:RemoveObjectsRequest</a></b> / @deletionScope</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="rim_xsd.html#objectReferenceType" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" onclick="updatePageTitle('Schema documentation for rim.xsd')">tns:objectReferenceType</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_RemoveObjectsRequest_deletionScope" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_RemoveObjectsRequest_deletionScope');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_RemoveObjectsRequest_deletionScope" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">use</td>
+                                    <td><b>optional</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">default</td>
+                                    <td><b>urn:oasis:names:tc:ebxml-regrep:DeletionScopeType:DeleteAll</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_RemoveObjectsRequest_deletionScope" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_RemoveObjectsRequest_deletionScope');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_RemoveObjectsRequest_deletionScope" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="lcm_xsd.html#RemoveObjectsRequest" target="mainFrame" title="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0" onclick="updatePageTitle('Schema documentation for lcm.xsd')">tns:RemoveObjectsRequest</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_RemoveObjectsRequest_deletionScope" type="image" src="img/btM.gif" value="-" onclick="switchState('source_RemoveObjectsRequest_deletionScope');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_RemoveObjectsRequest_deletionScope" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;attribute</span><span class="tAN"> name=</span><span class="tAV">"deletionScope"</span><span class="tAN"> type=</span><span class="tAV">"rim:objectReferenceType"</span><span class="tAN"> use=</span><span class="tAV">"optional"</span><span class="tAN"> default=</span><span class="tAV">"urn:oasis:names:tc:ebxml-regrep:DeletionScopeType:DeleteAll"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table>
+      <div class="footer">
+         <hr />
+         <div align="center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Developer.</div>
+      </div><script type="text/javascript"><!--
+                     // The namespace is the selected option in the TOC combo.
+                    
+                     // Floats the toolbar.
+                     var globalControls = getElementObject("global_controls"); 
+                     
+                     if(globalControls != null){
+	                     var browser=navigator.appName;
+						 var version = parseFloat(navigator.appVersion.split('MSIE')[1]);
+						 
+						 var IE6 = false;
+						 if ((browser=="Microsoft Internet Explorer") && (version < 7)){
+						 	IE6 = true;
+						 }
+	
+	                     //alert (IE6 + " |V| " + version);
+	                     
+	                     if(IE6){
+	                     	// On IE 6 the 'fixed' property is not supported. We must use javascript. 
+	                         globalControls.style.position='absolute';                         
+	                         // The global controls will do not exist in the TOC frame, when chunking.
+	                         findAndFloat("global_controls", 225, 30);    
+	                     } else {
+	                      	  globalControls.style.position='fixed';                     	
+	                     }
+	                     
+	                     globalControls.style.right='0';                       
+                     }
+                //--></script></body>
+</html>

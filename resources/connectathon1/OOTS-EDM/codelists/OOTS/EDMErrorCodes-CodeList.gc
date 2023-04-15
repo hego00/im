@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gc:CodeList xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             xmlns:fn="http://www.w3.org/2005/xpath-functions"
+             xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+             xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Identification>
+      <ShortName>EDMErrorCodes</ShortName>
+      <LongName xml:lang="en">Exchange Data Model Error Response Codes </LongName>
+      <Version>2022-12</Version>
+      <CanonicalUri>urn:sr.oots.tech.europa.eu:codelists:edmerrorcodes</CanonicalUri>
+      <CanonicalVersionUri>urn:sr.oots.tech.europa.eu:codelists:edmerrorcodes-2022-12</CanonicalVersionUri>
+      <LocationUri>https://sr.oots.tech.europa.eu/codelists/edmerrorcodes</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Directorate-General for Informatics</LongName>
+         <Identifier>DIGIT</Identifier>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" Lang="en"/>
+      </Column>
+      <Column Use="optional" Id="name-Value">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="Value"/>
+      </Column>
+      <Column Use="optional" Id="name-Type">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="Type"/>
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EDM:ERR:0001</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Value">
+            <SimpleValue>Failed Authentication</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Type">
+            <SimpleValue>rs:AuthenticationExceptionType</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EDM:ERR:0002</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Value">
+            <SimpleValue>Missing Authorization</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Type">
+            <SimpleValue>rs:AuthorizationExceptionType</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EDM:ERR:0003</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Value">
+            <SimpleValue>Syntactically or semantically invalid request</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Type">
+            <SimpleValue>rs:InvalidRequestExceptionType</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EDM:ERR:0004</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Value">
+            <SimpleValue>Object not found</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Type">
+            <SimpleValue>rs:ObjectNotFoundExceptionType</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EDM:ERR:0005</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Value">
+            <SimpleValue>Exceeding timeout period</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Type">
+            <SimpleValue>rs:TimeoutExceptionType</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EDM:ERR:0006</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Value">
+            <SimpleValue>Referenced object that cannot be resolved</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Type">
+            <SimpleValue>rs:UnresolvedReferenceExceptionType</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EDM:ERR:0007</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Value">
+            <SimpleValue>Optional feature or capability is not supported</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Type">
+            <SimpleValue>rs:UnsupportedCapabilityExceptionType</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EDM:ERR:0008</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Value">
+            <SimpleValue>Problem during the processing of a QueryRequest/SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Type">
+            <SimpleValue>query:QueryExceptionType</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

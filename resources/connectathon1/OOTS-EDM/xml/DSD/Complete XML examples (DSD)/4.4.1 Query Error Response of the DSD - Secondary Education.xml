@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<query:QueryResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:4.0"
+    xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"
+    xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:4.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    status="urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Failure">
+
+    <!-- Validated by sch/dsd_query_error.sch -->
+    <rs:Exception xsi:type="rs:ObjectNotFoundExceptionType"
+        severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"
+        message="The Evidence Type requested cannot be found" detail="https://sr.oots.tech.europa.eu/evidencetypeclassifications/DE/edf717b7-b373-40b1-b51b-cbb7c9d64de5" code="DSD:ERR:0002">
+        
+    </rs:Exception>
+</query:QueryResponse>
