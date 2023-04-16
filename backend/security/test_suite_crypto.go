@@ -1,6 +1,6 @@
 package security
 
-func test_CreateCertificate()	{
+func Test_CreateCertificate()	{
 	
 	CreateCertificate()
 
