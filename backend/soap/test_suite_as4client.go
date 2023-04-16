@@ -2,7 +2,7 @@ package soap
 
 import "fmt"
 
-func test_NewClient() {
+func Test_NewClient() {
 
 	//create config
 	config := &Config{
