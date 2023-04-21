@@ -1,7 +1,0 @@
-<!-- TimeStamp -->
- <rim:Slot name="Timestamp">
-     <rim:SlotValue xsi:type="rim:DateTimeValueType">
-         <!-- The 'rim:Value' of 'Timestamp' MUST be according to xsd:dateTime.  -->
-         <rim:Value>2020-02-14T19:20:30+01:00</rim:Value>
-     </rim:SlotValue>
- </rim:Slot>

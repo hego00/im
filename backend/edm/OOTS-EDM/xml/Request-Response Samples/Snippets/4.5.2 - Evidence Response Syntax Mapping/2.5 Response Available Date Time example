@@ -1,7 +1,0 @@
-<!-- ResponseAvailableDateTime Slot  -->
- <rim:Slot name="ResponseAvailableDateTime">
-     <rim:SlotValue xsi:type="rim:DateTimeValueType">
-         <!-- The 'rim:Value' of 'ResponseAvailableDateTime' MUST be according to xsd:dateTime.   -->
-         <rim:Value>2022-05-30T15:00:00.000Z</rim:Value>
-     </rim:SlotValue>
- </rim:Slot>

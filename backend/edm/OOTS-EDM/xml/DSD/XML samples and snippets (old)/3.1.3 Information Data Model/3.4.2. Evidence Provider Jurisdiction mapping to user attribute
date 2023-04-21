@@ -1,7 +1,0 @@
-<sdg:EvidenceProviderJurisdictionDetermination>
-    <sdg:JurisdictionContextId>PlaceOfBirthIdentifier</sdg:JurisdictionContextId>
-    <sdg:JurisdictionContext lang="en">Place Of Birth</sdg:JurisdictionContext>
-    <sdg:JurisdictionContext lang="de">Geburtsort</sdg:JurisdictionContext>
-    <!-- Codelist defining the jurisdiction levels, registered in the semantic repository -->
-    <sdg:JurisdictionLevel>https://sr.ec.europa.eu/codelist/locationLevel/LAU</sdg:JurisdictionLevel>
-</sdg:EvidenceProviderJurisdictionDetermination>

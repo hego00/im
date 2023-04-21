@@ -1,7 +1,0 @@
-<!-- SpecificationIdentifier Slot -->
-    <rim:Slot name="SpecificationIdentifier">
-        <rim:SlotValue xsi:type="rim:StringValueType">
-            <!-- MUST be the fixed value "oots-edm:v1.0". -->
-            <rim:Value>oots-edm:v1.0</rim:Value>
-        </rim:SlotValue>
-    </rim:Slot>

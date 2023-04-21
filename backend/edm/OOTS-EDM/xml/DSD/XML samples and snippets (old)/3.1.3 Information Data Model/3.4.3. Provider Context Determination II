@@ -1,7 +1,0 @@
-<sdg:EvidenceProviderClassification>
-    <sdg:Identifier>CertificateOfBirth</sdg:Identifier>
-    <sdg:Type>Codelist</sdg:Type>
-    <!-- Value from a Codelist required. Must be publised in the Semantic Repository -->
-    <sdg:ValueExpression>http://sr.europa.eu/codelists/birthCertificate</sdg:ValueExpression>
-    <sdg:Description lang="en">Certificate of Birth</sdg:Description>
-</sdg:EvidenceProviderClassification>

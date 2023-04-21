@@ -1,7 +1,0 @@
-<!-- Preview Method -->
- <rim:Slot name="PreviewMethod">
-     <rim:SlotValue xsi:type="rim:StringValueType">
-         <!-- The 'rim:Value' of a 'PreviewMethod' MUST be either the HTTP verb 'GET' or 'POST'. -->
-         <rim:Value>GET</rim:Value>
-     </rim:SlotValue>
- </rim:Slot>

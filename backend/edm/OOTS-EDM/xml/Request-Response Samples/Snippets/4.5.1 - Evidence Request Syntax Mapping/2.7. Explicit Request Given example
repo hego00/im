@@ -1,7 +1,0 @@
-<!-- ExplicitRequestGiven Slot  -->
- <rim:Slot name="ExplicitRequestGiven">
-     <rim:SlotValue xsi:type="rim:BooleanValueType">
-         <!-- MUST be according to xs:boolean -->
-         <rim:Value>true</rim:Value>
-     </rim:SlotValue>
- </rim:Slot>
