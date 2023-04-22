@@ -2,6 +2,7 @@ package webapp
 
 import (
 	"crypto/tls"
+	"fmt"
 	"net/http"
 )
 
@@ -28,6 +29,10 @@ func Run() {
 	}
 
 	err := server.ListenAndServeTLS("cert.pem", "key.pem")
+
+	// print the error returned when starting the server details to cconsole
+	fmt.Println(err)
+
 	if err != nil {
 		panic(err)
 	}
