@@ -5,74 +5,42 @@ import (
 	"fmt"
 	"os"
 	"sdg/backend"
-	"sdg/wallet"
-	"sdg/webapp"
 	"strings"
 )
 
 func main() {
-	demo()
-	// live()
+	LiveDemo()
 }
 
-func demo() {
-	// start backend
-	// display tests
-
-	// start webapp
-	// display tests
-
-	// start wallet
-	// display tests
-
-	// admin console - messages, config files, etc
-
-	// publish links to console
-
-	// start liveControl
-	liveControl()
-	// cli commands
-	// exit - links to system report to console
-}
-
-func liveControl() {
+func LiveDemo() {
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Println("Welcome!\nCommands: help, demo, deploy")
-
-	ServerLoop(reader)
-	// MonitorLoop(reader)
-}
-
-func ServerLoop(reader *bufio.Reader) {
-
+	fmt.Println("Welcome!\n\nCommands: start, stop, restart, status, exit\n")
 	for {
-		fmt.Println("Please enter the service you want to start: ")
-
-		service, _ := reader.ReadString('\n')
-		service = strings.TrimSpace(service)
+		command, _ := reader.ReadString('\n')
+		command = strings.TrimSpace(command)
 
 		switch {
-		case service == "backend":
-			fmt.Println("Starting backend...")
-			go backend.Run()
+		case command == "start":
+			fmt.Println("Starting...")
+			backend.Run()
 			break
-		case service == "webapp":
-			fmt.Println("Starting webapp...")
-			go webapp.Run()
+		case command == "stop":
+			fmt.Println("Stopping...")
 			break
-		case service == "wallet":
-			fmt.Println("Starting wallet...")
-			go wallet.Run()
+		case command == "restart":
+			fmt.Println("Restarting...")
 			break
-		case service == "exit":
+		case command == "status":
+			fmt.Println("Status...")
+			break
+		case command == "exit":
 			fmt.Println("Exiting...")
 			os.Exit(0)
 			break
 		}
 
-		if service == "exit" {
+		if command == "exit" {
 			break
 		}
-
 	}
 }
