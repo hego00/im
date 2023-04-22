@@ -1,12 +1,14 @@
-package unit
+package aprilprojectathon
 
 import (
 	"fmt"
 	"sdg/backend/soap"
+
+	"golang.org/x/text/message"
 )
 
 func Test_NewClient() {
-
+	fmt.Println("Test_NewClient()")
 	//create config
 	config := &soap.Config{
 		EndpointURL:    "https://localhost:8080",
@@ -24,8 +26,16 @@ func Test_NewClient() {
 	// NewClient()
 	client, err := soap.NewClient(config)
 	if err != nil {
-		fmt.Printf("Error creating client: %v\n", err)
+		fmt.Printf("Error creating client: %v ", err)
 	}
-	fmt.Printf("Created client: %v\n", client)
+
+	//create query request message
+	queryRequest := &message.QueryRequest{
+		RefToMessageID: "uuid:12345678-1234-5678-1234-567890abcdef",
+	}
+
+
+	client.Send()
+	fmt.Printf("Created client: %v ", client)
 
 }

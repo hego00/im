@@ -1,7 +1,9 @@
-package security
+package unit
 
-func Test_CreateCertificate()	{
-	
-	CreateCertificate()
+import "sdg/backend/security"
+
+func Test_CreateCertificate() {
+
+	security.CreateCertificate()
 
 }
