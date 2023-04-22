@@ -1,4 +1,4 @@
-package frontend
+package webapp
 
 import (
 	"crypto/tls"
@@ -9,7 +9,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	// handle incoming requests
 }
 
-func main() {
+func Run() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", handler)
 

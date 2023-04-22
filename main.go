@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 	"sdg/backend"
-	"sdg/frontend"
+	"sdg/webapp"
 )
 
 func main() {
@@ -15,20 +15,18 @@ func main() {
 
 func live() {
 	backend.Run()
-	frontend.Run()
+	webapp.Run()
 	liveControl()
 }
-
 
 func demo() {
-	
+
 	backend.Run()
-	frontend.Run()
-	wallet.Run()
+	webapp.Run()
+	// wallet.Run()
 
 	liveControl()
 }
-
 
 func liveControl() {
 
