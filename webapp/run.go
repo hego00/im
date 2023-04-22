@@ -1,17 +1,34 @@
 package frontend
 
 import (
-	"fmt"
+	"crypto/tls"
 	"net/http"
 )
 
-func Run() string {
-	fmt.Println("frontend online")
+func handler(w http.ResponseWriter, r *http.Request) {
+	// handle incoming requests
+}
 
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "form.html")
-	})
+func main() {
+	mux := http.NewServeMux()
+	mux.HandleFunc("/", handler)
 
-	http.ListenAndServe("localhost:8080", nil)
-	return "frontend started"
+	tlsConfig := &tls.Config{
+		// specify the certificate and private key
+		Certificates: []tls.Certificate{},
+		// set other TLS configuration options as needed
+		MinVersion: tls.VersionTLS12,
+		MaxVersion: tls.VersionTLS13,
+	}
+
+	server := &http.Server{
+		Addr:      ":443",
+		Handler:   mux,
+		TLSConfig: tlsConfig,
+	}
+
+	err := server.ListenAndServeTLS("cert.pem", "key.pem")
+	if err != nil {
+		panic(err)
+	}
 }
