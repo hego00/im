@@ -7,9 +7,8 @@ import (
 
 func Run() {
 
-	
 	fmt.Println("Backend started")
-	fmt.Println(exchange.ReadQueryExample())
-	
+	fmt.Println(exchange.CreateResponse())
+
 	// go as4
 }
