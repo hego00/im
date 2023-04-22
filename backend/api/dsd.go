@@ -18,7 +18,7 @@ var providers []Provider
 
 // function to start the api handler
 func StartHandler() {
-	http.HandleFunc("/api/providers", providersHandler)
+	http.HandleFunc("/api/dsd", providersHandler)
 }
 
 // function to handle GET, POST, PUT, and DELETE requests for data providers
