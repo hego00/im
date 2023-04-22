@@ -1,14 +1,13 @@
-package unit
+package soap
 
 import (
 	"fmt"
-	"sdg/backend/soap"
 )
 
 func Test_NewClient() {
 
 	//create config
-	config := &soap.Config{
+	config := &Config{
 		EndpointURL:    "https://localhost:8080",
 		SoapAction:     "http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/submit",
 		MessageID:      "uuid:12345678-1234-5678-1234-567890abcdef",
@@ -22,7 +21,7 @@ func Test_NewClient() {
 	}
 
 	// NewClient()
-	client, err := soap.NewClient(config)
+	client, err := NewClient(config)
 	if err != nil {
 		fmt.Printf("Error creating client: %v\n", err)
 	}
