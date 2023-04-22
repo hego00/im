@@ -8,7 +8,7 @@ import (
 	"aqwari.net/xml/xmltree"
 )
 
-func readQueryExample() {
+func ReadQueryExample() string {
 	// read xml from file
 	xmlFile, err := ioutil.ReadFile("example.xml")
 	if err != nil {
@@ -22,4 +22,5 @@ func readQueryExample() {
 		fmt.Printf("%s\n", el.Content)
 	}
 
+	return root.String()
 }

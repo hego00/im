@@ -2,14 +2,14 @@ package backend
 
 import (
 	"fmt"
-	"sdg/backend/soap"
+	"sdg/backend/messages/exchange"
 )
 
 func Run() {
 
-	soap.StartHandler()
-	fmt.Println("Backend started")
-
 	
-
+	fmt.Println("Backend started")
+	fmt.Println(exchange.ReadQueryExample())
+	
+	// go as4
 }

@@ -7,6 +7,7 @@ import (
 	"sdg/backend"
 	"sdg/wallet"
 	"sdg/webapp"
+	"strings"
 )
 
 func main() {
@@ -15,44 +16,63 @@ func main() {
 }
 
 func demo() {
-	liveControl()
-}
+	// start backend
+	// display tests
 
-func live() {
-	backend.Run()
-	webapp.Run()
+	// start webapp
+	// display tests
+
+	// start wallet
+	// display tests
+
+	// admin console - messages, config files, etc
+
+	// publish links to console
+
+	// start liveControl
 	liveControl()
+	// cli commands
+	// exit - links to system report to console
 }
 
 func liveControl() {
-
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Println("Welcome!")
+	fmt.Println("Welcome!\nCommands: help, demo, deploy")
 
-serviceloop:
+	ServerLoop(reader)
+	// MonitorLoop(reader)
+}
+
+func ServerLoop(reader *bufio.Reader) {
+
 	for {
 		fmt.Println("Please enter the service you want to start: ")
 
 		service, _ := reader.ReadString('\n')
-		fmt.Printf("Starting '%s'", service)
+		service = strings.TrimSpace(service)
 
 		switch {
-		case service == "backend\n":
+		case service == "backend":
+			fmt.Println("Starting backend...")
 			go backend.Run()
 			break
 		case service == "webapp":
+			fmt.Println("Starting webapp...")
 			go webapp.Run()
 			break
 		case service == "wallet":
+			fmt.Println("Starting wallet...")
 			go wallet.Run()
 			break
 		case service == "exit":
-			fmt.Println("Exiting CLI")
-			break serviceloop
-		default:
-			fmt.Println("Service not found")
+			fmt.Println("Exiting...")
+			os.Exit(0)
+			break
+		}
+
+		if service == "exit" {
+			break
 		}
 
 	}
-
 }
