@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	queryResponseTemplate string = "C:/Users/ajphe/DEV/sdg/backend/models/xml/Exchange/Response/ebRIM_QueryResponse_template.xml"
+	queryResponseTemplate string = "C:/Users/ajphe/DEV/sdg/backend/messages/exchange/snippets/QueryResponse.xml"
 )
 
 func CreateResponse() string {

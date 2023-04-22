@@ -8,7 +8,25 @@ import (
 func Run() {
 
 	fmt.Println("Backend started")
-	fmt.Println(exchange.CreateResponse())
 
-	// go as4
+	// create handler
+
+	// create client
+
+	// connect to domibus
+
+	// create request
+
+	// send request
+	
+	// process request
+
+	// create response
+
+	fmt.Println(exchange.CreateResponse())
+	//process response
+	
+
+
+
 }
