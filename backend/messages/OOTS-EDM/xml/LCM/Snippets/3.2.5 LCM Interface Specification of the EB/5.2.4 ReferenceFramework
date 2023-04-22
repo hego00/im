@@ -1,0 +1,48 @@
+<lcm:SubmitObjectsRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:4.0"
+                          xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"
+                          xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:4.0"
+                          xmlns:lcm="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0"
+                          xmlns:sdg="http://data.europa.eu/p4s"
+                          id="urn:uuid:e5af5ba0-39a2-43d7-89c0-04f623c59855">
+
+    <rim:RegistryObjectList>
+        <!-- Other registry objects are omitted for clarity -->
+
+        <rim:RegistryObject id="urn:uuid:b0c90eb4-6b66-4dd8-8c79-6d964ac3b9a1">
+            <rim:Slot name="ReferenceFramework">
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <sdg:ReferenceFramework>
+                        
+                        <!-- Link to the Procedure as implemented in Germany, uniquely identified by the Identifier and Jurisdiction. The name of the procedure, as declared in the SDG Regulation; Is possibly extended or replaced with national reference frameworks when the procedure is implemented by a Member State regulation -->
+                        <sdg:Identifier>118fd444-6443-42be-a084-c9fbfd1f674d</sdg:Identifier>
+                        <sdg:Title lang="EN">Procedure #1 - Requesting proof of registration of birth</sdg:Title>
+                        <sdg:Title lang="DE">Verfahren #1 - Beantragung des Nachweises über die Eintragung in das Geburtenregister</sdg:Title>
+                        <sdg:Description lang="EN"> Procedure #1 "Requesting proof of registration of birth" belongs to the life event "Birth" of Annex II of the Regulation (EU) 2018/1724
+                            of the European Parliament and of the Council of 2 October 2018 establishing a single digital gateway to provide access to information, to procedures and to assistance and problem-solving services and amending Regulation (EU) No 1024/2012
+                        </sdg:Description>
+                        <sdg:Description lang="DE"> Das Verfahren #1 "Beantragung des Nachweises über die Eintragung in das Geburtenregister" gehört zum Lebensereignis "Geburt" des Anhangs II der Verordnung (EU) 2018/1724 des Europäischen Parlaments und des Rates vom 2. Oktober 2018 über die Einrichtung eines einheitlichen digitalen Zugangstors zu Informationen, Verfahren, Hilfsund Problemlösungsdiensten und zur Änderung der Verordnung (EU) Nr. 1024/2012
+                        </sdg:Description>
+                        
+                        <!-- The Identifier of the SDGR Procedure which this procedure relates to encoded according to Procedures-CodeList.gc. In this case R1 relates to "Requesting a birth certificate" -->
+                        <sdg:RelatedTo>
+                            <sdg:Identifier>R1</sdg:Identifier>
+                        </sdg:RelatedTo>
+                        
+                        <!-- Country - Mandatory - ISO code. Requirement is connected to the implementation of Procedure 1 in Germany. Regional Codes (AdminUnitLevel 2 and 3) not applicable for DE in this Procedure (Common Reference Framework for the country)  -->
+                        <sdg:Jurisdiction>
+                            <sdg:AdminUnitLevel1>DE</sdg:AdminUnitLevel1>
+                        </sdg:Jurisdiction>
+                        
+                    </sdg:ReferenceFramework>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- A unique id for this classification 750869ec-aeac-4cc6-9386-75c86544e433 -->
+            <!-- The classification scheme under which the specific classification nodes reside for the EB Service -->
+            <!-- A classification node defining the registry object as ReferenceFramework -->
+            <rim:Classification id="urn:uuid:750869ec-aeac-4cc6-9386-75c86544e433"
+                classificationScheme="urn:fdc:oots:classification:eb"
+                classificationNode="ReferenceFramework"/>
+        </rim:RegistryObject>
+    </rim:RegistryObjectList>
+</lcm:SubmitObjectsRequest>

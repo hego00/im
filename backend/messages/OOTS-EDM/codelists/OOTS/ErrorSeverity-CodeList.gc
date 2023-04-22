@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gc:CodeList xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             xmlns:fn="http://www.w3.org/2005/xpath-functions"
+             xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+             xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Identification>
+      <ShortName>ErrorSeverity</ShortName>
+      <LongName xml:lang="en">Error Severity</LongName>
+      <Version>2022-12</Version>
+      <CanonicalUri>urn:sr.oots.tech.europa.eu:codelists:errorseverity</CanonicalUri>
+      <CanonicalVersionUri>urn:sr.oots.tech.europa.eu:codelists:errorseverity-2022-12</CanonicalVersionUri>
+      <LocationUri>https://sr.oots.tech.europa.eu/codelists/errorseverity</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Directorate-General for Informatics</LongName>
+         <Identifier>DIGIT</Identifier>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" Lang="en"/>
+      </Column>
+      <Column Use="optional" Id="name-Value">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="Value"/>
+      </Column>
+      <Column Use="optional" Id="name-ApplicableErrorCode">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="ApplicableErrorCode"/>
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Value">
+            <SimpleValue>Exception pointing to a request that was not processed successfully.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>urn:sr.oots.tech.europa.eu:codes:ErrorSeverity:DSDErrorResponse:AdditionalInput</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Value">
+            <SimpleValue>Exception pointing to a DSD request that requires additional discovery metadata of the user in order to be answered successfully.</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-ApplicableErrorCode">
+            <SimpleValue>DSD:ERR:005</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>urn:sr.oots.tech.europa.eu:codes:ErrorSeverity:EDMErrorResponse:PreviewRequired</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-Value">
+            <SimpleValue>Exception pointing to an Evidence Request that requires a preceding preview in order to be answered successfully.</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-ApplicableErrorCode">
+            <SimpleValue>EDM:ERR:0001</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

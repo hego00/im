@@ -1,0 +1,11 @@
+<!--   EvidenceRequester Slot  -->
+<rim:Slot name="EvidenceRequester">
+    <rim:SlotValue xsi:type="rim:AnyValueType">
+        <sdg:Agent>
+            <!-- The value of the 'schemeID' attribute of the 'Identifier' MUST be part of the code list 'EAS' (Electronic Address Scheme ) and use the prefix 'urn:cef.eu:names:identifier:EAS:[Code]'  -->
+            <sdg:Identifier schemeID="urn:cef.eu:names:identifier:EAS:0096">DK22233223</sdg:Identifier>
+            <!-- The value of 'lang' attribute MUST be part of the code list 'LanguageCode' (ISO 639-1 two-letter code).  -->
+            <sdg:Name lang="EN">Denmark University Portal</sdg:Name>
+        </sdg:Agent>
+    </rim:SlotValue>
+</rim:Slot>

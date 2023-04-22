@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:sdg="http://data.europa.eu/p4s"
+    targetNamespace="http://data.europa.eu/p4s" elementFormDefault="qualified"
+    xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"
+    xmlns:lcm="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0"
+    xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:4.0"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+    vc:minVersion="1.1"
+    attributeFormDefault="unqualified">
+
+    <xs:annotation>
+        <xs:documentation>
+            Simple driver schema for OOTS RegRep messages containing structure from the SDGv1.0.0 snapshot schema.
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:import namespace="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"
+        schemaLocation="http://docs.oasis-open.org/regrep/regrep-core/v4.0/os/xsd/rim.xsd"/>
+
+    <xs:import namespace="urn:oasis:names:tc:ebxml-regrep:xsd:query:4.0"
+        schemaLocation="http://docs.oasis-open.org/regrep/regrep-core/v4.0/os/xsd/query.xsd"/>
+
+    <xs:import namespace="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0"
+        schemaLocation="http://docs.oasis-open.org/regrep/regrep-core/v4.0/os/xsd/lcm.xsd"/>
+
+    <xs:include schemaLocation="SDG-GenericMetadataProfile-v1.0.0.xsd"/>
+</xs:schema>

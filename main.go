@@ -1,28 +1,26 @@
 package main
 
 import (
-	"bufio"
-	"fmt"
-	"os"
 	"sdg/backend"
+	"sdg/backend/soap"
 )
 
 func main() {
-
-	fmt.Println("Hello, you are at the main entry point for OOTS coordination")
-
-	// startup config
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Print("Enter your name: ")
-
-	name, _ := reader.ReadString('\n')
-	fmt.Printf("Hello, %s", name)
-
-	fmt.Println("Starting backend")
 	backend.Run()
-
-	// 	fmt.Println("Starting frontend")
-	// 	go frontend.Run()
-
-	
+	soap.
 }
+
+// func interactiveCli() {
+
+// 	reader := bufio.NewReader(os.Stdin)
+// 	fmt.Println("service: ")
+
+// 	service, _ := reader.ReadString('\n')
+// 	fmt.Printf("Hello, %s", service)
+
+// 	if service == "backend" {
+// 		fmt.Println("Starting backend")
+// 		backend.Run()
+// 	}
+
+// }

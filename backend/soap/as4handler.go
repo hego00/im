@@ -10,11 +10,15 @@ import (
 )
 
 func StartHandler() {
-	r := mux.NewRouter()
+	router := mux.NewRouter()
 
-	r.HandleFunc("/soap", as4Handler).Methods("POST")
+	router.HandleFunc("/soap", as4Handler).Methods("POST")
 
-	http.ListenAndServe("localhost:8080", r)
+	fmt.Println("started as4 handler - listenging on http://localhost:8080")
+
+	http.ListenAndServe("localhost:8080", router)
+
+	fmt.Println("started as4 handler - listening on localhost:8080")
 }
 
 func as4Handler(w http.ResponseWriter, r *http.Request) {
@@ -76,6 +80,11 @@ func validateSignature(userMessage *etree.Element) {
 
 func handleAS4Message(doc *etree.Document) string {
 	// Do some processing on the message and generate a response
+
+	// read edm/examples/oots_response.xml 
+	// and return it as a string
+
+
 	response := `
 		<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">
 			<soapenv:Header/>

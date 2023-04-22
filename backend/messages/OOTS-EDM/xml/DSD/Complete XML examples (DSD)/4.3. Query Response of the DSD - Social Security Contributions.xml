@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<query:QueryResponse
+    xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:4.0"
+    xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"
+    xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:4.0"
+    status="urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Success"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    
+    xmlns:sdg="http://data.europa.eu/p4s">
+
+    <!--Validate with sch/dsd_query_response.sch  -->
+    <rim:RegistryObjectList>
+        <!-- One registry object per dataset -->
+        <rim:RegistryObject id="urn:uuid:07c435ed-3c10-4b24-a31e-99eb7bebe2b1">
+            <rim:Slot name="DataServiceEvidenceType">
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <sdg:DataServiceEvidenceType>
+                        <!-- - - Evidence Type Metadata - - -->
+                        <sdg:Identifier>6ee853e4-7188-44b0-b850-785dfd4d8c48</sdg:Identifier>
+                        
+                        <!-- Classification Information - Used for linking with the Evidence Broker -->
+                        <sdg:EvidenceTypeClassification>https://sr.oots.tech.europa.eu/evidencetypeclassifications/DE/d6bef643-fb9d-404f-8377-323ec2955e44</sdg:EvidenceTypeClassification>
+                        <sdg:Title lang="EN">Certificate on the payment of social security contributions</sdg:Title>
+                        <sdg:Title lang="DE">Unbedenklichkeitsbescheinigung über die Zahlung von Sozialversicherungsbeiträgen </sdg:Title>
+                        <sdg:Description lang="EN">In the "clearance certificate", a health insurance fund declares that a company is listed as an employer and has fulfilled its obligation to pay social security contributions. The clearance certificate is often required for participation in a public tender.</sdg:Description>
+                        <sdg:Description lang="DE">In der "Unbedenklichkeitsbescheinigung" erklärt eine Krankenkasse, dass ein Unternehmen als Arbeitgeber geführt wird und seiner Pflicht zur Zahlung der Sozialversicherungsbeiträge nachgekommen ist.</sdg:Description>
+
+                        <!-- Distribution Information - Multiple Distributions per Data Service Evidence Type -->
+                        <!-- XML Distribution, conforming to the common data model on Social Security Contributions -->
+                        <sdg:DistributedAs>
+                            <sdg:Format>application/xml</sdg:Format>
+                            <sdg:ConformsTo>https://sr.oots.tech.europa.eu/distributions/social-security-contributions-1.0.0</sdg:ConformsTo>
+                        </sdg:DistributedAs>
+                        <!-- XML Distribution, conforming to the common data model on Social Security Contributions, Linking to the subset "Clearance Certificate" only -->
+                        <sdg:DistributedAs>
+                            <sdg:Format>application/xml</sdg:Format>
+                            <sdg:ConformsTo>https://sr.oots.tech.europa.eu/distributions/social-security-contributions-1.0.0</sdg:ConformsTo>
+                            <sdg:Transformation>https://sr.oots.tech.europa.eu/distributions/social-security-contributions-1.0.0/clearance-certificate</sdg:Transformation>
+                        </sdg:DistributedAs>
+                        <!-- PDF Distribution. PDF is unstructured data so there is no conformance to a data model -->
+                        <sdg:DistributedAs>
+                            <sdg:Format>application/pdf</sdg:Format>
+                        </sdg:DistributedAs>
+                        
+                        <!-- - - Evidence Provider and Data Service Metadata - - -->
+                        <!-- Access Service represents the Data Service serving the piece of Evidence on behalf of an Evidence Provider -->
+                        <!-- Multiple Access Services, one per Evidence Provider. In this example two different Access Services are referenced for the Evidence Providers (Publishers) -->
+                        <sdg:AccessService>
+                            <!-- The identifier of the Access Service, using ebcore Party ID Type. Used in eDelivery Evidence Exchange for PMode Mapping - Corner 3 (C3). C3 is an Access Point that receives messages on behalf of C4. The scheme ID must point to a valid Electronic Address Scheme (EAS) from the codelist EAS.gc -->
+                            <sdg:Identifier schemeID="urn:cef.eu:names:identifier:EAS:0060">150483782</sdg:Identifier>
+                            <!-- The Evidence Exchange profile version to which this access service expects / serves -->
+                            <sdg:ConformsTo>oots-edm:v1.0</sdg:ConformsTo>
+                            
+                            <!-- Access Service of an Evidence Provider supporting only PrivateHealthInsurance -->
+                            <sdg:Publisher>
+                                <sdg:Identifier schemeID="urn:cef.eu:names:identifier:EAS:0204">991-DebekaHealthInsurance-98</sdg:Identifier>
+                                <sdg:Name lang="EN">Debeka Health Insurance</sdg:Name>
+                                <sdg:Name lang="EN">Debeka Krankenkasse</sdg:Name>
+
+                                <sdg:Address>
+                                    <sdg:FullAddress>Ferdinand-Sauerbruch-Straße 18, 56073 Koblenz, Germany</sdg:FullAddress>
+                                    <sdg:LocatorDesignator>18</sdg:LocatorDesignator>
+                                    <sdg:PostCode>56073</sdg:PostCode>
+                                    <sdg:PostCityName>Koblenz</sdg:PostCityName>
+                                    <sdg:Thoroughfare>Ferdinand-Sauerbruch-Straße</sdg:Thoroughfare>
+                                    <sdg:AdminUnitLevel1>DE</sdg:AdminUnitLevel1>
+                                    <sdg:AdminUnitLevel2>DEB11</sdg:AdminUnitLevel2>
+                                </sdg:Address>
+                                
+                                <sdg:Jurisdiction>
+                                    <sdg:AdminUnitLevel1>DE</sdg:AdminUnitLevel1>
+                                </sdg:Jurisdiction>
+                                
+                                <!-- Information Concepts that classify the Evidence Provider. In this example the capablity of the publisher to provide information about PrivateHealthInsurance -->
+
+                                <sdg:ClassificationConcept>
+                                    <sdg:Identifier>1a56b43f-6fa7-4bbf-b2d7-af6134918716</sdg:Identifier>
+                                    <sdg:Type>Codelist</sdg:Type>
+                                    <!-- Definition of the value expression. Must be published in the Semantic Repository -->
+                                    <sdg:ValueExpression>https://sr.oots.tech.europa.eu/ep-classification/de/health-insurance-type</sdg:ValueExpression>
+                                    <sdg:Description lang="EN">Concept for distinguishing private and statutory health insurance
+                                    </sdg:Description>
+                                    <sdg:Description lang="DE">Konzept zur Unterscheidung von privaten und gesetzlichen Krankenversicherung</sdg:Description>
+                                    <sdg:SupportedValue>
+                                        <sdg:StringValue>PrivateHealthInsurance</sdg:StringValue>
+                                    </sdg:SupportedValue>
+                                </sdg:ClassificationConcept>
+                            </sdg:Publisher>
+                        </sdg:AccessService>
+
+
+                        <sdg:AccessService>
+                            <!-- The identifier of the Access Service, using ebcore Party ID Type. Used in eDelivery Evidence Exchange for PMode Mapping - Corner 3 (C3). C3 is an Access Point that receives messages on behalf of C4. The scheme ID must point to a valid Electronic Address Scheme (EAS) from the codelist EAS.gc -->
+                            <sdg:Identifier schemeID="urn:cef.eu:names:identifier:EAS:0060">093869170</sdg:Identifier>
+                            <!-- The Evidence Exchange profile version to which this access service expects / serves -->
+                            <sdg:ConformsTo>oots-edm:v1.0</sdg:ConformsTo>
+
+                            <!-- Access Service of an evidence provider supporting only StatutoryHealthInsurance -->
+                            <sdg:Publisher>
+                                <!-- The Evidence Provider Information -->
+                                <sdg:Identifier schemeID="urn:cef.eu:names:identifier:EAS:0204">991-TechnikerHealthInsurance-43</sdg:Identifier>
+                                <sdg:Name lang="EN">Techniker Health Insurance</sdg:Name>
+                                <sdg:Name lang="DE">Techniker Krankenkasse</sdg:Name>
+
+                                <sdg:Address>
+                                    <sdg:FullAddress>Bramfelder Straße 140, 22305 Hamburg, Germany</sdg:FullAddress>
+                                    <sdg:LocatorDesignator>140</sdg:LocatorDesignator>
+                                    <sdg:PostCode>22305</sdg:PostCode>
+                                    <sdg:PostCityName>Hamburg</sdg:PostCityName>
+                                    <sdg:Thoroughfare>Bramfelder Straße</sdg:Thoroughfare>
+                                    <sdg:AdminUnitLevel1>DE</sdg:AdminUnitLevel1>
+                                    <sdg:AdminUnitLevel2>DE6</sdg:AdminUnitLevel2>
+                                </sdg:Address>
+
+                                <sdg:Jurisdiction>
+                                    <sdg:AdminUnitLevel1>DE</sdg:AdminUnitLevel1>
+                                </sdg:Jurisdiction>
+
+                                <!-- Information Concepts that classify the Evidence Provider. In this example the capablity of the publisher to provide information about StatutoryHealthInsurance -->
+                                <sdg:ClassificationConcept>
+                                    <sdg:Identifier>1a56b43f-6fa7-4bbf-b2d7-af6134918716</sdg:Identifier>
+                                    <sdg:Type>Codelist</sdg:Type>
+                                    <!-- Definition of the value expression. Must be published in the Semantic Repository -->
+                                    <sdg:ValueExpression>https://sr.oots.tech.europa.eu/ep-classification/de/health-insurance-type</sdg:ValueExpression>
+                                    <sdg:Description lang="EN">Concept for distinguishing private and statutory health insurance
+                                    </sdg:Description>
+                                    <sdg:Description lang="DE">Konzept zur Unterscheidung von privaten und gesetzlichen Krankenversicherung</sdg:Description>
+                                    <sdg:SupportedValue>
+                                        <sdg:StringValue>StatutoryHealthInsurance</sdg:StringValue>
+                                    </sdg:SupportedValue>
+                                </sdg:ClassificationConcept>
+                            </sdg:Publisher>
+                        </sdg:AccessService>
+                        <!-- Level Of Assurance Required for the Evidence Type -->
+                        <sdg:AuthenticationLevelOfAssurance>Substantial</sdg:AuthenticationLevelOfAssurance>
+
+                        <!-- Declaration of the possible classifications of the Evidence provider. In this example a classification into private and statutory health insurance is described -->
+                        <sdg:EvidenceProviderClassification>
+                            <sdg:Identifier>1a56b43f-6fa7-4bbf-b2d7-af6134918716</sdg:Identifier>
+                            <sdg:Type>Codelist</sdg:Type>
+                            <!-- Definition of the value expression. Must be published in the Semantic Repository. In this example the codelist would consist of two values, StatutoryHealthInsurance and PrivateHealthInsurance -->
+                            <sdg:ValueExpression>https://sr.oots.tech.europa.eu/ep-classification/de/health-insurance-type</sdg:ValueExpression>
+                            <sdg:Description lang="EN">Concept for distinguishing private and statutory health insurance
+                            </sdg:Description>
+                            <sdg:Description lang="DE">Konzept zur Unterscheidung von privaten und gesetzlichen Krankenversicherung</sdg:Description>
+                        </sdg:EvidenceProviderClassification>
+
+                    </sdg:DataServiceEvidenceType>
+                </rim:SlotValue>
+            </rim:Slot>
+        </rim:RegistryObject>
+    </rim:RegistryObjectList>
+</query:QueryResponse>
+
+                        

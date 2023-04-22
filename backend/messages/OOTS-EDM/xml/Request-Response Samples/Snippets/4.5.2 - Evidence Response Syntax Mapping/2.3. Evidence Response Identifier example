@@ -1,0 +1,7 @@
+<!-- EvidenceResponseIdentifier Slot -->
+    <rim:Slot name="EvidenceResponseIdentifier">
+        <rim:SlotValue xsi:type="rim:StringValueType">
+            <!-- The 'rim:Value' of the 'EvidenceResponseIdentifier' MUST be unique UUID (RFC 4122) for each response. -->
+            <rim:Value>5af62cce-debe-11ec-9d64-0242ac120002</rim:Value>
+        </rim:SlotValue>
+    </rim:Slot>

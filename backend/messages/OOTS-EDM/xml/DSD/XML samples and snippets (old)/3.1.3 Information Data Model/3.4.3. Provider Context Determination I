@@ -1,0 +1,14 @@
+<sdg:AccessService>
+    <sdg:Identifier schemeID="urn:oasis:names:tc:ebcore:partyid-type:iso6523:0060">8889909099</Identifier>
+    <sdg:ConformsTo>oots-edm:v1.0</ConformsTo>
+    <sdg:Publisher>
+         /* Omitted ... */
+        <sdg:ClassificationConcept>
+            <sdg:Identifier>TypeOfInsurance</sdg:Identifier>
+            <sdg:SupportedValue>
+                <sdg:StringValue>Private</sdg:StringValue>
+            </sdg:SupportedValue>
+        </sdg:ClassificationConcept>    
+    /* Omitted ... */
+    </sdg:Publisher>
+</sdg:AccessService>
