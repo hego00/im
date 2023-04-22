@@ -1,15 +1,12 @@
 package domibus
 
 import (
-	"encoding/xml"
 	"fmt"
-	"io/ioutil"
-	"log"
 )
 
-func ()  {
-		// list pending messages
-		// open soap handler/client
-		// log details
-		
+func connectToDomibus() {
+	// list pending messages
+	// open soap handler/client
+	// log details
+	fmt.Println("Connecting to Domibus...")
 }

@@ -1,11 +1,13 @@
 package soap
 
 import (
+	"bytes"
 	"encoding/xml"
 	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
+	"reflect"
 	"time"
 
 	"aqwari.net/xml/xmltree"
@@ -208,8 +210,6 @@ func create_request() {
 	}
 
 }
-
-
 
 func create_response1() {
 	file, err := os.Open("backend/edm/templates/oots_response.xml")

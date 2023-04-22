@@ -1,26 +1,46 @@
 package main
 
 import (
+	"bufio"
+	"fmt"
+	"os"
 	"sdg/backend"
-	"sdg/backend/soap"
+	"sdg/frontend"
 )
 
 func main() {
-	backend.Run()
-	soap.
+	demo()
+	live()
 }
 
-// func interactiveCli() {
+func live() {
+	backend.Run()
+	frontend.Run()
+	liveControl()
+}
 
-// 	reader := bufio.NewReader(os.Stdin)
-// 	fmt.Println("service: ")
 
-// 	service, _ := reader.ReadString('\n')
-// 	fmt.Printf("Hello, %s", service)
+func demo() {
+	
+	backend.Run()
+	frontend.Run()
+	wallet.Run()
 
-// 	if service == "backend" {
-// 		fmt.Println("Starting backend")
-// 		backend.Run()
-// 	}
+	liveControl()
+}
 
-// }
+
+func liveControl() {
+
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Println("Hello!")
+
+	service, _ := reader.ReadString('\n')
+	fmt.Printf("Hello, %s", service)
+
+	if service == "backend" {
+		fmt.Println("Starting backend")
+		backend.Run()
+	}
+
+}
