@@ -9,11 +9,25 @@ import (
 )
 
 func main() {
-	LiveDemo()
+
+	if len(os.Args)-1 == 1 {
+		action := os.Args[1]
+
+		switch {
+		case action == "demo":
+			fmt.Println("Starting demo...")
+			backend.Run()
+			break
+		}
+
+	} else {
+		Welcome()
+	}
 }
 
-func LiveDemo() {
+func Welcome() {
 	reader := bufio.NewReader(os.Stdin)
+	//	actions should be an enum
 	fmt.Println("Welcome!\n\nCommands: start, stop, restart, status, exit\n")
 	for {
 		command, _ := reader.ReadString('\n')
