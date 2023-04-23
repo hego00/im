@@ -84,6 +84,9 @@ func handleAS4Message(doc *etree.Document) string {
 	// read edm/examples/oots_response.xml 
 	// and return it as a string
 
+	// handle evidence exchange request (EVP)
+	// handle evidence provider query (DSD)
+
 
 	response := `
 		<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">

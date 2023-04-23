@@ -10,8 +10,11 @@ import (
 )
 
 var (
+	nameSpace             string = "urn:be:fgov:ehealth:exchange:core:v1"
+	specID                string = "oots:query:1.0"
 	queryResponseTemplate string = "C:/Users/ajphe/DEV/sdg/backend/messages/exchange/snippets/QueryResponse.xml"
 )
+
 
 func CreateResponse() string {
 
@@ -25,8 +28,9 @@ func CreateResponse() string {
 		log.Fatal(err)
 	}
 
-	for _, el := range root.Search("", "FullName") {
+	for _, el := range root.Search("", "QueryResponse") {
 		fmt.Printf("%s\n", el.Content)
+		// el.SetAttr("xmlns", nameSpace)
 	}
 
 	return root.String()
@@ -36,3 +40,10 @@ func CreateResponse() string {
 func generateUIID() string {
 	return uuid.NewString()
 }
+
+// generate timestamp for response
+func generateTimestamp() string {
+	return "2019-11-01T12:00:00Z"
+}
+
+//
