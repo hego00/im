@@ -1,0 +1,67 @@
+<query:QueryResponse 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:4.0" 
+    xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0" 
+    xmlns:sdg="http://data.europa.eu/p4s" 
+    xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:4.0" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    status="urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Success" 
+    requestId="urn:uuid:4ffb5281-179d-4578-adf2-39fd13ccc797">
+    <!--  The 'id' attribute of a 'QueryResponse' MUST be unique UUID (RFC 4122) for each request starting with prefix "urn:uuid:"  -->
+    <!--  The 'status attribute of a 'QueryResponse' MUST be encoded as "urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Success" for successful responses or as "urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Unavailable" for responses that will be available at a later time .   -->
+    <!--  Top Level Slots, providing metadata about the Response and the Evidence Provider  -->
+    <rim:Slot name="SpecificationIdentifier">
+        <rim:SlotValue xsi:type="rim:StringValueType">
+            <!--  MUST be the fixed value "oots-edm:v1.0" depending on release version  -->
+            <rim:Value>oots-edm:v1.0</rim:Value>
+        </rim:SlotValue>
+    </rim:Slot>
+    <rim:Slot name="EvidenceResponseIdentifier">
+        <rim:SlotValue xsi:type="rim:StringValueType">
+            <!--  The 'rim:Value' of the 'EvidenceResponseIdentifier' MUST be unique UUID (RFC 4122) for each response.  -->
+            <rim:Value>2fa5c5c8-ef76-4e02-8793-28165b4a1f78</rim:Value>
+        </rim:SlotValue>
+    </rim:Slot>
+    <rim:Slot name="IssueDateTime">
+        <rim:SlotValue xsi:type="rim:DateTimeValueType">
+            <!--  MUST be according to xsd:dateTime.   -->
+            <rim:Value>2023-03-30T10:20:50+01:00</rim:Value>
+        </rim:SlotValue>
+    </rim:Slot>
+    <rim:Slot name="EvidenceProvider">
+        <rim:SlotValue xsi:type="rim:CollectionValueType">
+            <rim:Element xsi:type="rim:AnyValueType">
+                <sdg:Agent>
+                    <!--  The value of the 'schemeID' attribute of the 'Identifier' MUST be part of the code list 'EAS' (Electronic Address Scheme ) and use the prefix 'urn:cef.eu:names:identifier:EAS:[Code]'   -->
+                    <sdg:Identifier schemeID="urn:cef.eu:names:identifier:EAS:0204">02-SchoolAuthority-34</sdg:Identifier>
+                    <sdg:Name lang="EN">Authority for school and occupational training</sdg:Name>
+                    <sdg:Address>
+                        <sdg:FullAddress>Ubierring 48, 50678 Koeln, Germany</sdg:FullAddress>
+                        <sdg:LocatorDesignator>48</sdg:LocatorDesignator>
+                        <sdg:PostCode>50678</sdg:PostCode>
+                        <sdg:PostCityName>Koeln</sdg:PostCityName>
+                        <sdg:Thoroughfare>Lansstrasse</sdg:Thoroughfare>
+                        <!--  The value of the 'AdminUnitLevel1' MUST be coded using the code list 'CountryIdentificationCode' (ISO 3166-1' alpha-2 codes).   -->
+                        <sdg:AdminUnitLevel1>DE</sdg:AdminUnitLevel1>
+                        <!--  The value of the 'AdminUnitLevel2' MUST be coded using the code list 'NUTS' (Nomenclature of Territorial Units for Statistics).   -->
+                        <sdg:AdminUnitLevel2>DEA2</sdg:AdminUnitLevel2>
+                    </sdg:Address>
+                    <!--    The value MUST be part of the code list 'AgentClassification'. Default value: EP (Evidence Provider). If the code 'IP' (Intermediary Platform) is present there must be another 'sdg:Agent' Element containing the code 'EP'. The code 'ER' and 'ERRP' shall not be used by this transaction.   -->
+                    <sdg:Classification>EP</sdg:Classification>
+                </sdg:Agent>
+            </rim:Element>
+        </rim:SlotValue>
+    </rim:Slot>
+    <rim:Slot name="EvidenceRequester">
+        <rim:SlotValue xsi:type="rim:AnyValueType">
+            <sdg:Agent>
+                <!--  The value of the 'schemeID' attribute of the 'Identifier' MUST be part of the code list 'EAS' (Electronic Address Scheme ) and use the prefix 'urn:cef.eu:names:identifier:EAS:[Code]'   -->
+                <sdg:Identifier schemeID="urn:cef.eu:names:identifier:EAS:0190">NL222332239</sdg:Identifier>
+                <sdg:Name lang="EN">University of Amsterdam</sdg:Name>
+            </sdg:Agent>
+        </rim:SlotValue>
+    </rim:Slot>
+    <rim:RegistryObjectList>
+        <!--  Absences of any evidence is encoded as a RegistryObjectList that does not contain any RegistryObject elements. -->
+    </rim:RegistryObjectList>
+</query:QueryResponse>

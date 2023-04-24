@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<query:QueryRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:4.0" xmlns:sdg="http://data.europa.eu/p4s"
+					xmlns:xmime="http://www.w3.org/2005/05/xmlmime"
+					xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"
+					xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:4.0"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					xml:lang="DE"
+					id="urn:uuid:4ffb5281-179d-4578-adf2-39fd13ccc797">
+	
+	<rim:Slot name="SpecificationIdentifier">
+		<rim:SlotValue xsi:type="rim:StringValueType">
+			<rim:Value>oots-edm:v1.0</rim:Value>
+		</rim:SlotValue>
+	</rim:Slot>
+	<rim:Slot name="IssueDateTime">
+		<rim:SlotValue xsi:type="rim:DateTimeValueType">
+			<rim:Value>2023-03-30T10:20:30+01:00</rim:Value>
+		</rim:SlotValue>
+	</rim:Slot>
+	<rim:Slot name="Procedure">
+		<rim:SlotValue xsi:type="rim:InternationalStringValueType">
+			<rim:Value>
+				<rim:LocalizedString xml:lang="EN" value="T2"/>
+			</rim:Value>
+		</rim:SlotValue>
+	</rim:Slot>
+	<rim:Slot name="PossibilityForPreview">
+		<rim:SlotValue xsi:type="rim:BooleanValueType">
+			<!-- XXX This one needs to be switched to false for the non-preview cases -->
+			<rim:Value>true</rim:Value>
+		</rim:SlotValue>
+	</rim:Slot>
+	<rim:Slot name="ExplicitRequestGiven">
+		<rim:SlotValue xsi:type="rim:BooleanValueType">
+			<rim:Value>true</rim:Value>
+		</rim:SlotValue>
+	</rim:Slot>
+	<rim:Slot name="Requirements">
+		<rim:SlotValue xsi:type="rim:CollectionValueType"
+			collectionType="urn:oasis:names:tc:ebxml-regrep:CollectionType:Set">
+			<rim:Element xsi:type="rim:AnyValueType">
+				<sdg:Requirement>
+					<sdg:Identifier>https://sr.oots.tech.europa.eu/requirements/f8a6a284-34e9-42c7-9733-63b5c4f4aa42</sdg:Identifier>
+					<sdg:Name lang="EN">Proof of tertiary education diploma/certificate/degree</sdg:Name>
+				</sdg:Requirement>
+			</rim:Element>
+		</rim:SlotValue>
+	</rim:Slot>
+	<rim:Slot name="EvidenceRequester">
+		<!-- YYY if desired, Evidence Requesters can update this data -->
+		<rim:SlotValue xsi:type="rim:CollectionValueType">
+			<rim:Element xsi:type="rim:AnyValueType">
+				<sdg:Agent>
+					<sdg:Identifier schemeID="urn:cef.eu:names:identifier:EAS:0190">NL222332239</sdg:Identifier>
+					<sdg:Name lang="EN">University of Amsterdam</sdg:Name>
+					<sdg:Address>
+						<sdg:FullAddress>Binnengasthuisstraat 9</sdg:FullAddress>
+						<sdg:LocatorDesignator>9</sdg:LocatorDesignator>
+						<sdg:PostCode>1012</sdg:PostCode>
+						<sdg:PostCityName>Amsterdam</sdg:PostCityName>
+						<sdg:AdminUnitLevel1>NL</sdg:AdminUnitLevel1>
+						<sdg:AdminUnitLevel2>NL329</sdg:AdminUnitLevel2>
+					</sdg:Address>
+					<sdg:Classification>ER</sdg:Classification>
+				</sdg:Agent>
+			</rim:Element>
+		</rim:SlotValue>
+	</rim:Slot>
+	<rim:Slot name="EvidenceProvider">
+		<!-- ZZZ preferably, Evidence Requesters can update this data to match with the actual Evidence Provider they are sending the request to -->
+		<rim:SlotValue xsi:type="rim:AnyValueType">
+			<sdg:Agent>
+				<sdg:Identifier schemeID="urn:cef.eu:names:identifier:EAS:0204">02-SchoolAuthority-34</sdg:Identifier>
+				<sdg:Name lang="EN">Authority for school and occupational training</sdg:Name>
+			</sdg:Agent>
+		</rim:SlotValue>
+	</rim:Slot>
+	<query:ResponseOption returnType="LeafClassWithRepositoryItem"/>
+	<query:Query queryDefinition="DocumentQuery">
+		<rim:Slot name="NaturalPerson">
+			<rim:SlotValue xsi:type="rim:AnyValueType">
+				<sdg:Person>
+					<!-- This is the person for which an evidence must be available at EP side -->
+					<!-- Variations to the GivenName will be used to cover different Test Cases -->
+					<!-- Jonas is the variation that triggers reauthentication (in addition to the preview) -->
+					<sdg:LevelOfAssurance>High</sdg:LevelOfAssurance>
+					<sdg:Identifier schemeID="eidas">DE/DE/123456787</sdg:Identifier>
+					<sdg:FamilyName>Smith</sdg:FamilyName>
+					<sdg:GivenName>Jonas</sdg:GivenName>
+					<sdg:DateOfBirth>1999-03-01</sdg:DateOfBirth>
+					<sdg:PlaceOfBirth>Duesseldorf</sdg:PlaceOfBirth>
+					<sdg:CurrentAddress>
+						<sdg:FullAddress>Lansstrasse 81, 50825 Koeln, Germany</sdg:FullAddress>
+						<sdg:LocatorDesignator>81</sdg:LocatorDesignator>
+						<sdg:PostCode>50825</sdg:PostCode>
+						<sdg:PostCityName>Koeln</sdg:PostCityName>
+						<sdg:Thoroughfare>Lansstrasse</sdg:Thoroughfare>
+						<sdg:AdminUnitLevel1>DE</sdg:AdminUnitLevel1>
+						<sdg:AdminUnitLevel2>DEA2</sdg:AdminUnitLevel2>
+					</sdg:CurrentAddress>
+					<sdg:Gender>Male</sdg:Gender>
+				</sdg:Person>
+			</rim:SlotValue>
+		</rim:Slot>
+		<rim:Slot name="EvidenceRequest">
+			<rim:SlotValue xsi:type="rim:AnyValueType">
+				<sdg:DataServiceEvidenceType>
+					<sdg:Identifier>59f098d4-8afe-4ac2-9197-b8fe9e1c2c85</sdg:Identifier>
+					<sdg:EvidenceTypeClassification>https://sr.oots.tech.europa.eu/evidencetypeclassifications/EU/b6a49e54-8b3c-4688-acad-380440dc5962</sdg:EvidenceTypeClassification>
+					<sdg:Title lang="EN">EU-Wide Diploma/Bachelor's Degree</sdg:Title>
+					<sdg:Description lang="EN">The description that the OOTS team specified as static data for this Projectathon related to the EU-Wide evidence</sdg:Description>
+					<sdg:DistributedAs>
+						<sdg:Format>application/pdf</sdg:Format>
+					</sdg:DistributedAs>
+				</sdg:DataServiceEvidenceType>
+			</rim:SlotValue>
+		</rim:Slot>
+	</query:Query>
+</query:QueryRequest>
+
