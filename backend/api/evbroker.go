@@ -8,7 +8,7 @@ import (
 
 // define a struct to represent a data evidence
 type evidence struct {
-	rimID      int    "json:id"
+	ID      int    "json:id"
 	Name    string "json:name"
 	Contact string "json:contact"
 }

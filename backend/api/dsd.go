@@ -26,12 +26,12 @@ func providersHandler(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
 		getProviders(w, r)
-	case "POST":
-		createProvider(w, r)
-	case "PUT":
-		updateProvider(w, r)
-	case "DELETE":
-		deleteProvider(w, r)
+	// case "POST":
+	// 	createProvider(w, r)
+	// case "PUT":
+	// 	updateProvider(w, r)
+	// case "DELETE":
+	// 	deleteProvider(w, r)
 	default:
 		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 	}
