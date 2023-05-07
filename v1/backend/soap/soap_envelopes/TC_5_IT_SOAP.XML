@@ -1,0 +1,53 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ns="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/" xmlns:_1="http://org.ecodex.backend/1_1/" xmlns:xm="http://www.w3.org/2005/05/xmlmime">
+   <soap:Header>
+      <ns:Messaging>
+         <ns:UserMessage>           
+            <ns:PartyInfo>
+               <ns:From>
+                  <ns:PartyId type="urn:oasis:names:tc:ebcore:partyid-type:unregistered:oots-simulator">AP_IE_01</ns:PartyId>
+                  <ns:Role>http://sdg.europa.eu/edelivery/gateway</ns:Role>
+               </ns:From>
+               <ns:To>
+                  <ns:PartyId type="urn:oasis:names:tc:ebcore:partyid-type:unregistered:oots-simulator">apsdgit</ns:PartyId>
+                  <ns:Role>http://sdg.europa.eu/edelivery/gateway</ns:Role>
+               </ns:To>
+            </ns:PartyInfo>
+            <ns:CollaborationInfo>
+               <ns:Service type="urn:oasis:names:tc:ebcore:ebrs:ebms:binding:1.0">QueryManager</ns:Service>
+               <ns:Action>ExecuteQueryResponse</ns:Action>
+               <ns:ConversationId>ec11c01e-47ca-43cb-b53f-5ef3312186fe</ns:ConversationId>
+            </ns:CollaborationInfo>
+            <ns:MessageProperties>
+               <ns:Property name="originalSender">urn:oasis:names:tc:ebcore:partyid-type:unregistered:C1</ns:Property>
+               <ns:Property name="finalRecipient">urn:oasis:names:tc:ebcore:partyid-type:unregistered:C4</ns:Property>
+            </ns:MessageProperties>
+            <ns:PayloadInfo>
+               <ns:PartInfo href="cid:regrep@oots.eu">
+                  <ns:PartProperties>
+                     <ns:Property name="MimeType">application/x-ebrs+xml</ns:Property>
+                     <ns:Property name="PayloadName">response.xml</ns:Property>
+                  </ns:PartProperties>
+               </ns:PartInfo>
+               <ns:PartInfo href="cid:pdffile@ie">
+            <ns:PartProperties>
+              <ns:Property name="MimeType">application/pdf</ns:Property>
+              <ns:Property name="PayloadName">evidence.pdf</ns:Property>
+            </ns:PartProperties>
+          </ns:PartInfo>
+
+            </ns:PayloadInfo>
+         </ns:UserMessage>
+      </ns:Messaging>
+   </soap:Header>
+   <soap:Body>
+      <_1:submitRequest>
+         <payload payloadId="cid:regrep@oots.eu" contentType="application/x-ebrs+xml">
+            <value>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHF1ZXJ5OlF1ZXJ5UmVzcG9uc2UKICAgIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiCiAgICB4bWxuczpycz0idXJuOm9hc2lzOm5hbWVzOnRjOmVieG1sLXJlZ3JlcDp4c2Q6cnM6NC4wIgogICAgeG1sbnM6cmltPSJ1cm46b2FzaXM6bmFtZXM6dGM6ZWJ4bWwtcmVncmVwOnhzZDpyaW06NC4wIgogICAgeG1sbnM6c2RnPSJodHRwOi8vZGF0YS5ldXJvcGEuZXUvcDRzIgogICAgeG1sbnM6cXVlcnk9InVybjpvYXNpczpuYW1lczp0YzplYnhtbC1yZWdyZXA6eHNkOnF1ZXJ5OjQuMCIKICAgIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIgpzdGF0dXM9InVybjpvYXNpczpuYW1lczp0YzplYnhtbC1yZWdyZXA6UmVzcG9uc2VTdGF0dXNUeXBlOlN1Y2Nlc3MiCiAgICB4bWxuczp4bWw9Imh0dHA6Ly93d3cudzMub3JnL1hNTC8xOTk4L25hbWVzcGFjZSIgCnJlcXVlc3RJZD0idXJuOnV1aWQ6ZWMxMWMwMWUtNDdjYS00M2NiLWI1M2YtNWVmMzMxMjE4NmZlIj4KICAgIDwhLS0gVG9wIExldmVsIFNsb3RzLCBwcm92aWRpbmcgbWV0YWRhdGEgYWJvdXQgdGhlIFJlc3BvbnNlIGFuZCB0aGUgRXZpZGVuY2UgUHJvdmlkZXIgLS0+CiAgICA8cmltOlNsb3QgbmFtZT0iU3BlY2lmaWNhdGlvbklkZW50aWZpZXIiPgogICAgICAgIDxyaW06U2xvdFZhbHVlIHhzaTp0eXBlPSJyaW06U3RyaW5nVmFsdWVUeXBlIgogICAgICAgICAgICB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIj4KICAgICAgICAgICAgPHJpbTpWYWx1ZT5vb3RzLWVkbTp2MS4wPC9yaW06VmFsdWU+CiAgICAgICAgPC9yaW06U2xvdFZhbHVlPgogICAgPC9yaW06U2xvdD4KICAgIDxyaW06U2xvdCBuYW1lPSJFdmlkZW5jZVJlc3BvbnNlSWRlbnRpZmllciI+CiAgICAgICAgPHJpbTpTbG90VmFsdWUgeHNpOnR5cGU9InJpbTpTdHJpbmdWYWx1ZVR5cGUiPgogICAgICAgICAgICA8cmltOlZhbHVlPnVybjp1dWlkOmZjMmQ4N2FhLTVlZmUtNDIwYy04NDVlLWYzOWI0ZWRkMDNjMjwvcmltOlZhbHVlPgogICAgICAgIDwvcmltOlNsb3RWYWx1ZT4KICAgIDwvcmltOlNsb3Q+CiAgICA8cmltOlNsb3QgbmFtZT0iSXNzdWVEYXRlVGltZSI+CiAgICAgICAgPHJpbTpTbG90VmFsdWUgeHNpOnR5cGU9InJpbTpEYXRlVGltZVZhbHVlVHlwZSI+CiAgICAgICAgICAgIDxyaW06VmFsdWU+MjAyMy0wNC0yMVQxMzowMDoxOC41MzZaPC9yaW06VmFsdWU+CiAgICAgICAgPC9yaW06U2xvdFZhbHVlPgogICAgPC9yaW06U2xvdD4KICAgIDxyaW06U2xvdCBuYW1lPSJFdmlkZW5jZVByb3ZpZGVyIj4KICAgICAgICA8IS0tIFpaWiBwcmVmZXJhYmx5LCBFdmlkZW5jZSBQcm92aWRlcnMgY2FuIHVwZGF0ZSB0aGlzIGRhdGEgdG8gbWF0Y2ggd2l0aCB0aGUgYWN0dWFsIEV2aWRlbmNlIFByb3ZpZGVyIHRoZXkgYXJlIHNlbmRpbmcgdGhlIHJlcXVlc3QgZnJvbSAtLT4KICAgICAgICA8cmltOlNsb3RWYWx1ZSB4c2k6dHlwZT0icmltOkNvbGxlY3Rpb25WYWx1ZVR5cGUiPgogICAgICAgICAgICA8cmltOkVsZW1lbnQgeHNpOnR5cGU9InJpbTpBbnlWYWx1ZVR5cGUiPgogICAgICAgICAgICAgICAgPHNkZzpBZ2VudD4KICAgICAgICAgICAgICAgICAgICA8c2RnOklkZW50aWZpZXIgc2NoZW1lSUQ9InVybjpjZWYuZXU6bmFtZXM6aWRlbnRpZmllcjpFQVM6MDA2MCI+QlJfSUVfMDE8L3NkZzpJZGVudGlmaWVyPgogICAgICAgICAgICAgICAgICAgIDxzZGc6TmFtZSBsYW5nPSJFTiI+QXV0aG9yaXR5IGZvciBzY2hvb2wgYW5kIG9jY3VwYXRpb25hbCB0cmFpbmluZzwvc2RnOk5hbWU+CiAgICAgICAgICAgICAgICAgICAgPHNkZzpDbGFzc2lmaWNhdGlvbj5FUDwvc2RnOkNsYXNzaWZpY2F0aW9uPgogICAgICAgICAgICAgICAgPC9zZGc6QWdlbnQ+CiAgICAgICAgICAgIDwvcmltOkVsZW1lbnQ+CiAgICAgICAgPC9yaW06U2xvdFZhbHVlPgogICAgPC9yaW06U2xvdD4KICAgIDxyaW06U2xvdCBuYW1lPSJFdmlkZW5jZVJlcXVlc3RlciI+CiAgICAgICAgPCEtLSBaWlogcHJlZmVyYWJseSwgRXZpZGVuY2UgUHJvdmlkZXJzIGNhbiB1cGRhdGUgdGhpcyBkYXRhIHRvIG1hdGNoIHdpdGggdGhlIGFjdHVhbCBFdmlkZW5jZSBSZXF1ZXN0ZXIgdGhleSBhcmUgc2VuZGluZyB0aGUgcmVxdWVzdCB0byAtLT4KICAgICAgICA8cmltOlNsb3RWYWx1ZSB4c2k6dHlwZT0icmltOkFueVZhbHVlVHlwZSI+CiAgICAgICAgICAgIDxzZGc6QWdlbnQ+CiAgICAgICAgICAgICAgICA8c2RnOklkZW50aWZpZXIgc2NoZW1lSUQ9InVybjpjZWYuZXU6bmFtZXM6aWRlbnRpZmllcjpFQVM6MDA5NiI+QWdpZDwvc2RnOklkZW50aWZpZXI+CiAgICAgICAgICAgICAgICA8c2RnOk5hbWUgbGFuZz0iRU4iPkFnZW56aWEgcGVyIEwnSXRhbGlhIERpZ2l0YWxlPC9zZGc6TmFtZT4KICAgICAgICAgICAgPC9zZGc6QWdlbnQ+CiAgICAgICAgPC9yaW06U2xvdFZhbHVlPgogICAgPC9yaW06U2xvdD4KICAgIDxyaW06UmVnaXN0cnlPYmplY3RMaXN0PgogICAgICAgIDxyaW06UmVnaXN0cnlPYmplY3QgeHNpOnR5cGU9InJpbTpFeHRyaW5zaWNPYmplY3RUeXBlIiBpZD0idXJuOnV1aWQ6ZGM1MThhNWItZmYyNS00NGRlLTliYzUtMmVjZGE3MWQzZjZlIj4KICAgICAgICAgICAgPHJpbTpTbG90IG5hbWU9IkV2aWRlbmNlTWV0YWRhdGEiPgogICAgICAgICAgICAgICAgPHJpbTpTbG90VmFsdWUgeHNpOnR5cGU9InJpbTpBbnlWYWx1ZVR5cGUiPgogICAgICAgICAgICAgICAgICAgIDxzZGc6RXZpZGVuY2U+CiAgICAgICAgICAgICAgICAgICAgICAgIDxzZGc6SWRlbnRpZmllcj41ZWU1YzBkZS1jMDY2LTQ2MzctYmVhMy02ZTM1MTFhZGE5NzA8L3NkZzpJZGVudGlmaWVyPgogICAgICAgICAgICAgICAgICAgICAgICA8c2RnOklzQWJvdXQ+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c2RnOk5hdHVyYWxQZXJzb24+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNkZzpJZGVudGlmaWVyIHNjaGVtZUlEPSJlaWRhcyI+SVQvSUUvMTIzNDU2Nzg5PC9zZGc6SWRlbnRpZmllcj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c2RnOkZhbWlseU5hbWU+U21pdGg8L3NkZzpGYW1pbHlOYW1lPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzZGc6R2l2ZW5OYW1lPkphY2s8L3NkZzpHaXZlbk5hbWU+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNkZzpEYXRlT2ZCaXJ0aD4xOTk5LTAzLTAxPC9zZGc6RGF0ZU9mQmlydGg+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNkZzpQbGFjZU9mQmlydGg+RHVlc3NlbGRvcmY8L3NkZzpQbGFjZU9mQmlydGg+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3NkZzpOYXR1cmFsUGVyc29uPgogICAgICAgICAgICAgICAgICAgICAgICA8L3NkZzpJc0Fib3V0PgogICAgICAgICAgICAgICAgICAgICAgICA8c2RnOklzc3VpbmdBdXRob3JpdHk+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c2RnOklkZW50aWZpZXIgc2NoZW1lSUQ9InVybjpjZWYuZXU6bmFtZXM6aWRlbnRpZmllcjpFQVM6OTkzMCI+REU3NjU3NTg3MDAxPC9zZGc6SWRlbnRpZmllcj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzZGc6TmFtZT5XaWxoZWxtIEd5bW5hc2l1bTwvc2RnOk5hbWU+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvc2RnOklzc3VpbmdBdXRob3JpdHk+CiAgICAgICAgICAgICAgICAgICAgICAgIDxzZGc6SXNDb25mb3JtYW50VG8+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c2RnOkV2aWRlbmNlVHlwZUNsYXNzaWZpY2F0aW9uPmh0dHBzOi8vc3Iub290cy50ZWNoLmV1cm9wYS5ldS9ldmlkZW5jZXR5cGVjbGFzc2lmaWNhdGlvbnMvRVUvYzEwMDQ3Y2QtZjAyYi00Y2YyLWIzMzctZGUyYTBkMjRjZTRmPC9zZGc6RXZpZGVuY2VUeXBlQ2xhc3NpZmljYXRpb24+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c2RnOlRpdGxlIGxhbmc9IkVOIj5FVS1XaWRlwqBEaXBsb21hL0JhY2hlbG9yJ3PCoERlZ3JlZTwvc2RnOlRpdGxlPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNkZzpEZXNjcmlwdGlvbiBsYW5nPSJFTiI+VGhlIGRlc2NyaXB0aW9uIHRoYXQgdGhlIE9PVFMgdGVhbSBzcGVjaWZpZWQgYXMgc3RhdGljIGRhdGEgZm9yIHRoaXMgUHJvamVjdGF0aG9uIHJlbGF0ZWQgdG8gdGhlIEVVLVdpZGUgZXZpZGVuY2U8L3NkZzpEZXNjcmlwdGlvbj4KICAgICAgICAgICAgICAgICAgICAgICAgPC9zZGc6SXNDb25mb3JtYW50VG8+CiAgICAgICAgICAgICAgICAgICAgICAgIDxzZGc6SXNzdWluZ0RhdGU+MjAxOS0wNS0xMDwvc2RnOklzc3VpbmdEYXRlPgogICAgICAgICAgICAgICAgICAgICAgICA8c2RnOkRpc3RyaWJ1dGlvbj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzZGc6Rm9ybWF0PmFwcGxpY2F0aW9uL3BkZjwvc2RnOkZvcm1hdD4KICAgICAgICAgICAgICAgICAgICAgICAgPC9zZGc6RGlzdHJpYnV0aW9uPgogICAgICAgICAgICAgICAgICAgIDwvc2RnOkV2aWRlbmNlPgogICAgICAgICAgICAgICAgPC9yaW06U2xvdFZhbHVlPgogICAgICAgICAgICA8L3JpbTpTbG90PgogICAgICAgICAgICA8IS0tIFRoZSBhdHRhY2hlZCBEb2N1bWVudCBQcm92aWRlZCBhcyBFdmlkZW5jZS4gUG9pbnRzIHRvIGFuIEFTNCBhdHRhY2htZW50IC0tPgogICAgICAgICAgICA8cmltOlJlcG9zaXRvcnlJdGVtUmVmIHhsaW5rOmhyZWY9ImNpZDpwZGZmaWxlQGllIiB4bGluazp0aXRsZT0iRVVXaWRlRGVncmVlX0lSSVNIX0ZMQUciLz4KICAgICAgICA8L3JpbTpSZWdpc3RyeU9iamVjdD4KICAgIDwvcmltOlJlZ2lzdHJ5T2JqZWN0TGlzdD4KPC9xdWVyeTpRdWVyeVJlc3BvbnNlPg==</value>
+         </payload>
+          <payload payloadId="cid:pdffile@ie" contentType="application/pdf">
+            <value>JVBERi0xLjUKJbXtrvsKNCAwIG9iago8PCAvTGVuZ3RoIDUgMCBSCiAgIC9GaWx0ZXIgL0ZsYXRlRGVjb2RlCj4+CnN0cmVhbQp4nF2OSwoCQQxE9zlFLmBMKp/uPoZHENFZuXC8Pxg3A5qCIoR6RYy1dbK2MvDtSS/qi5T6AnpB9QzeNz5flbc3YYrHZAPEBnh4imuy15DK4v3ODzL+qhkMl4h1pGN1o/p/WiV1TY3+oqG0KZl2QIgUU/xCF/oA7QAmKgplbmRzdHJlYW0KZW5kb2JqCjUgMCBvYmoKICAgMTIyCmVuZG9iagozIDAgb2JqCjw8CiAgIC9FeHRHU3RhdGUgPDwKICAgICAgL2EwIDw8IC9DQSAxIC9jYSAxID4+CiAgID4+Cj4+CmVuZG9iagoyIDAgb2JqCjw8IC9UeXBlIC9QYWdlICUgMQogICAvUGFyZW50IDEgMCBSCiAgIC9NZWRpYUJveCBbIDAgMCA3OTIgNjEyIF0KICAgL0NvbnRlbnRzIDQgMCBSCiAgIC9Hcm91cCA8PAogICAgICAvVHlwZSAvR3JvdXAKICAgICAgL1MgL1RyYW5zcGFyZW5jeQogICAgICAvSSB0cnVlCiAgICAgIC9DUyAvRGV2aWNlUkdCCiAgID4+CiAgIC9SZXNvdXJjZXMgMyAwIFIKPj4KZW5kb2JqCjEgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzCiAgIC9LaWRzIFsgMiAwIFIgXQogICAvQ291bnQgMQo+PgplbmRvYmoKNiAwIG9iago8PCAvUHJvZHVjZXIgKGNhaXJvIDEuMTUuMTAgKGh0dHA6Ly9jYWlyb2dyYXBoaWNzLm9yZykpCiAgIC9DcmVhdGlvbkRhdGUgKEQ6MjAyMjA2MDkxMTUxMjgrMDUnMzApCj4+CmVuZG9iago3IDAgb2JqCjw8IC9UeXBlIC9DYXRhbG9nCiAgIC9QYWdlcyAxIDAgUgo+PgplbmRvYmoKeHJlZgowIDgKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwNTI2IDAwMDAwIG4gCjAwMDAwMDAzMDggMDAwMDAgbiAKMDAwMDAwMDIzNiAwMDAwMCBuIAowMDAwMDAwMDE1IDAwMDAwIG4gCjAwMDAwMDAyMTQgMDAwMDAgbiAKMDAwMDAwMDU5MSAwMDAwMCBuIAowMDAwMDAwNzA3IDAwMDAwIG4gCnRyYWlsZXIKPDwgL1NpemUgOAogICAvUm9vdCA3IDAgUgogICAvSW5mbyA2IDAgUgo+PgpzdGFydHhyZWYKNzU5CiUlRU9GCg==</value>
+         </payload>
+       
+      </_1:submitRequest>
+   </soap:Body>
+</soap:Envelope>

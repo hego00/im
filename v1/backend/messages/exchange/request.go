@@ -31,7 +31,7 @@ func ProcessEvidenceRequest(filename string) {
 	fmt.Println(qr.RequestID)
 }
 
-func create_request() {
+func CreateRequestInOutbox() {
 
 	stringVal1 := "oots-edm:v1.0"
 	value1 := Value{Basic: &stringVal1}
@@ -99,7 +99,7 @@ func create_request() {
 	}
 
 	t = time.Now()
-	filename := fmt.Sprintf("./backend/logs/query_request_%s.xml", t.Format("20060102150405"))
+	filename := fmt.Sprintf("./backend/messages/outbox/query_request_%s.xml", t.Format("20060102150405"))
 	file, err := os.Create(filename)
 	if err != nil {
 		fmt.Println("Error creating file:", err)

@@ -1,8 +1,9 @@
 package api
 
 import (
-	"encoding/json"
-	"net/http"
+	"strings"
+
+	"github.com/gofiber/fiber"
 )
 
 type Procedure struct {
@@ -33,8 +34,8 @@ type EvidenceType struct {
 	EvidenceDistributedAs string `xml:"EvidenceDistributedAs" json:"evidence_distributed_as"`
 }
 
-// instatiate a countries EvidenceRepo
-// TODO: this should be probably handled by A semantic repository
+// TODO: this should be populared from a database
+
 // all identifiers should be guid
 var evidence01 EvidenceType = EvidenceType{EvidenceIdentifier: "1", EvidenceName: "Proof of Address", EvidenceDescription: "This is evidence 1", EvidenceDistributedAs: "File"}
 var evidence02 EvidenceType = EvidenceType{EvidenceIdentifier: "2", EvidenceName: "Evidence 2", EvidenceDescription: "This is evidence 2", EvidenceDistributedAs: "File"}
@@ -68,42 +69,70 @@ var requirement03 Requirement = Requirement{RequirementIdentifier: "1", Requirem
 var requirement04 Requirement = Requirement{RequirementIdentifier: "2", RequirementName: "Requirement 2", RequirementDescription: "This is requirement 2", EvidenceLibrary: []EvidenceRepo{evidenceRepoIE02, evidenceRepoFR02}}
 
 // instatiate a new Procedure with values
-var procedure02 Procedure = Procedure{ProcedureIdentifier: "1", ProcedureName: "Procedure 1", ProcedureDescription: "This is procedure 1", Requirements: []Requirement{requirement03, requirement04}}
+var procedure02 Procedure = Procedure{ProcedureIdentifier: "2", ProcedureName: "Procedure 1", ProcedureDescription: "This is procedure 1", Requirements: []Requirement{requirement03, requirement04}}
 
 var procedures []Procedure = []Procedure{procedure01, procedure02}
+var requirements []Requirement = []Requirement{requirement01, requirement02, requirement03, requirement04}
+var evidenceRepos []EvidenceRepo = []EvidenceRepo{evidenceRepoIE01, evidenceRepoIE02, evidenceRepoFR01, evidenceRepoFR02}
+var evidences []EvidenceType = []EvidenceType{evidence01, evidence02, evidence03, evidence04, evidence05, evidence06, evidence07, evidence08}
 
 // function to start the api handler
 func StartEVB() {
-	http.HandleFunc("/evb/procedures", proceduresHandler)
-	// http.HandleFunc("/evb/requirements", requirementsHandler)
+	
+	app := fiber.New()
+
+	app.Get("/evb/procedures", getProcedures)
+	app.Get("/evb/procedures/:id", getProcedureByID)
+	app.Get("/evb/requirements/:ids", getRequirementsByIDS)
+	app.Get("/evb/evidences/:ids", getEvidencesByIDS)
+
+	app.Listen("localhost:8080")
+
 }
 
-func proceduresHandler(w http.ResponseWriter, r *http.Request) {
-	switch r.Method {
-	case "GET":
-		getProcedures(w, r)
-
-	// TODO: below only available to control mode
-
-	// case "POST":
-	// 	createProcedure(w, r)
-	// case "PUT":
-	// 	updateProcedure(w, r)
-	// case "DELETE":
-	// 	deleteProcedure(w, r)
-
-	default:
-		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
-	}
+func getProcedures(c *fiber.Ctx) {
+	c.JSON(procedures)
 }
 
-func getProcedures(w http.ResponseWriter, r *http.Request) {
-	// return all procedures in json format
-	jsonBytes, err := json.Marshal(procedures)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+func getProcedureByID(c *fiber.Ctx) {
+	id := c.Params("id")
+	for _, procedure := range procedures {
+		if procedure.ProcedureIdentifier == id {
+			c.JSON(procedure.ProcedureName)
+			return
+		}
 	}
-	w.Header().Set("Content-Type", "application/json")
-	w.Write(jsonBytes)
+	c.Status(404).Send("Procedure not found")
+}
+
+func getRequirementsByIDS(c *fiber.Ctx) {
+	ids := c.Params("ids")
+	var idsArray []string = strings.Split(ids, ",")
+	var requirements []Requirement
+	for _, procedure := range procedures {
+		for _, requirement := range procedure.Requirements {
+			for _, id := range idsArray {
+				if requirement.RequirementIdentifier == id {
+					requirements = append(requirements, requirement)
+				}
+			}
+		}
+	}
+	c.JSON(requirements)
+}
+
+func getEvidencesByIDS(c *fiber.Ctx) {
+	ids := c.Params("ids")
+	var idsArray []string = strings.Split(ids, ",")
+	var evidences []EvidenceType
+	for _, evidenceRepo := range evidenceRepos {
+		for _, evidence := range evidenceRepo.EvidenceTypes {
+			for _, id := range idsArray {
+				if evidence.EvidenceIdentifier == id {
+					evidences = append(evidences, evidence)
+				}
+			}
+		}
+	}
+	c.JSON(evidences)
 }
